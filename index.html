@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinedra - Artisans locaux</title>
+  <meta name="description" content="Annuaire d'artisans utilisant des produits locaux, par departement et region.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Accueil Vinedra">
+      <span class="brand-mark">V</span>
+      <span>
+        <strong>Vinedra</strong>
+        <small>Artisans & produits locaux</small>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#annuaire">Annuaire</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-pro" href="pro.html">Portail pro</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Annuaire regional des savoir-faire locaux</p>
+        <h1>Vinedra</h1>
+        <p>Decouvrez les patissiers, bouchers-charcutiers, boulangers et restaurants qui valorisent les produits locaux pres de chez vous.</p>
+      </div>
+      <form id="accessForm" class="access-panel">
+        <h2>Choisir mon territoire</h2>
+        <label>
+          Departement
+          <select id="entryDepartment" required></select>
+        </label>
+        <div class="field-grid">
+          <label>
+            Prenom
+            <input id="leadFirstName" autocomplete="given-name" required>
+          </label>
+          <label>
+            Nom
+            <input id="leadLastName" autocomplete="family-name" required>
+          </label>
+        </div>
+        <label>
+          Adresse email
+          <input id="leadEmail" type="email" autocomplete="email" required>
+        </label>
+        <label class="check-row">
+          <input id="leadConsent" type="checkbox" required>
+          <span>J'accepte de recevoir des emails du site Vinedra et je comprends que je peux retirer mon consentement a tout moment.</span>
+        </label>
+        <button type="submit">Acceder a l'annuaire</button>
+        <p class="form-note" id="accessNote"></p>
+      </form>
+    </section>
+
+    <section id="annuaire" class="directory is-locked" aria-live="polite">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Annuaire</p>
+          <h2>Artisans recommandes</h2>
+        </div>
+        <p id="territoryLabel">Selectionnez un departement pour commencer.</p>
+      </div>
+
+      <div class="filters">
+        <label>
+          Region
+          <select id="regionFilter"></select>
+        </label>
+        <label>
+          Departement
+          <select id="departmentFilter"></select>
+        </label>
+        <label>
+          Metier
+          <select id="tradeFilter">
+            <option value="">Tous les metiers</option>
+            <option>Patissier</option>
+            <option>Boucher/charcutier</option>
+            <option>Boulanger</option>
+            <option>Restaurant</option>
+          </select>
+        </label>
+        <label class="search-field">
+          Recherche
+          <input id="searchInput" placeholder="Nom, ville, produit...">
+        </label>
+      </div>
+
+      <div id="status" class="status"></div>
+      <div id="artisanGrid" class="artisan-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="artisanDialog" class="artisan-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Fermer">x</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <footer class="footer" id="contact">
+    <div>
+      <h2>Contactez-nous</h2>
+      <p>Telephone : <a href="tel:+33677718914">06 77 71 89 14</a></p>
+      <p>Email : <a href="mailto:jaysolution07@gmail.com">jaysolution07@gmail.com</a></p>
+    </div>
+    <div>
+      <h2>Mentions legales</h2>
+      <p>Editeur du site : Samuel Jay, Entrepreneur individuel - SIRET : 93963162800012.</p>
+      <p>Adresse : 07400 SAINT-MARTIN-SUR-LAVEZON. Responsable de la publication : Samuel Jay.</p>
+      <p>Hebergement : GitHub Pages, GitHub, Inc. 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.</p>
+    </div>
+    <div>
+      <h2>Confidentialite</h2>
+      <p>Les donnees collectees via les formulaires sont utilisees uniquement pour repondre aux demandes et gerer l'acces a l'annuaire.</p>
+      <p>Aucune donnee n'est vendue ou utilisee a des fins commerciales. Conservation maximale : 12 mois.</p>
+      <p>Vous pouvez demander l'acces, la modification ou la suppression de vos donnees a tout moment : <a href="mailto:jaysolution07@gmail.com">jaysolution07@gmail.com</a>.</p>
+      <p>Cookies : ce site n'utilise pas de cookies a des fins de suivi ou d'analyse.</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="assets/departments.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
