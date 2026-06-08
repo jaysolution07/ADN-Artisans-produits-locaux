@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ADN - Artisans locaux</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 115'%3E%3Crect width='160' height='115' rx='18' fill='%23f8f1df'/%3E%3Cpath d='M12 84c22-21 46-25 69-18 18 5 33 4 67-18-19 24-41 37-67 40-25 3-46 0-69-4Z' fill='%2352643f'/%3E%3Cpath d='M22 74c17-16 38-23 61-21 17 2 27-1 49-14-23 20-38 26-55 28-20 2-36 3-55 7Z' fill='%23b94e35' opacity='.78'/%3E%3Cpath d='M36 52l28-21 16 10 17-16 42 34H112V42h-13v17H36Z' fill='%232f3d28'/%3E%3Cpath d='M104 39h9v20h-9zM108 24l6 15h-13z' fill='%232f3d28'/%3E%3Ctext x='80' y='103' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='900' fill='%232f3d28'%3EADN%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 115'%3E%3Crect width='160' height='115' rx='22' fill='%23F7F1E3'/%3E%3Cpath d='M28 54 L58 34 L76 42 L95 28 L132 54' fill='none' stroke='%232F3D28' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18 67 Q50 56 82 64 Q114 72 146 56' fill='none' stroke='%23C46A3A' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M16 78 Q48 66 80 74 Q112 82 144 64' fill='none' stroke='%236E9E42' stroke-width='7' stroke-linecap='round'/%3E%3Ctext x='80' y='101' text-anchor='middle' font-family='Georgia, serif' font-size='34' font-weight='900' fill='%231D4E9F'%3EADN%3C/text%3E%3C/svg%3E">
   <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/e/e8/Simiane_la_Rotonde_-_village_et_lavande.JPG">
   <meta name="description" content="Annuaire d'artisans utilisant des produits locaux, par departement et region.">
   <style>
     :root{--ink:#20221f;--muted:#62665d;--line:#d9ded3;--paper:#fbfbf7;--surface:#fff;--olive:#52643f;--olive-dark:#2f3d28;--tomato:#b94e35;--gold:#d89d31;--sky:#dfeff2;--shadow:0 18px 50px rgba(32,34,31,.12)}
     *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:inherit}button,input,select,textarea{font:inherit}button{border:0;border-radius:6px;background:var(--olive-dark);color:#fff;padding:.85rem 1rem;cursor:pointer;font-weight:700}button:hover{background:var(--olive)}label{display:grid;gap:.35rem;color:var(--muted);font-size:.92rem;font-weight:700}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);padding:.8rem}textarea{resize:vertical}.hidden{display:none!important}
-    .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem clamp(1rem,4vw,3rem);background:rgba(251,251,247,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none}.brand-mark{display:grid;place-items:center;width:78px;min-height:58px;border-radius:6px;color:var(--olive-dark);background:#f8f1df;border:1px solid var(--line);font-weight:900}.brand-mark svg{width:70px;height:52px}.brand-text strong{display:block;font-size:1.2rem}.brand-text small{display:block;color:var(--muted);font-size:.78rem}.nav{display:flex;align-items:center;gap:1rem;font-weight:700}.nav a{text-decoration:none}.nav-pro{color:var(--tomato)}
+    .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem clamp(1rem,4vw,3rem);background:rgba(251,251,247,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none}.brand-mark{display:grid;place-items:center;width:78px;min-height:58px;border-radius:6px;color:var(--olive-dark);background:#f8f1df;border:1px solid var(--line);font-weight:900}.brand-mark img{
+  width:70px;
+  height:52px;
+  object-fit:contain;
+}.brand-text strong{display:block;font-size:1.2rem}.brand-text small{display:block;color:var(--muted);font-size:.78rem}.nav{display:flex;align-items:center;gap:1rem;font-weight:700}.nav a{text-decoration:none}.nav-pro{color:var(--tomato)}
     .hero{min-height:72vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,440px);align-items:end;gap:clamp(1.25rem,4vw,4rem);padding:clamp(2rem,6vw,5rem);background:linear-gradient(90deg,rgba(32,34,31,.76),rgba(82,100,63,.28)),url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Simiane_la_Rotonde_-_village_et_lavande.JPG") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;font-size:clamp(3rem,9vw,7rem);line-height:.95;letter-spacing:0}.hero-copy{max-width:720px;padding-bottom:2rem}.hero-copy p{max-width:620px;font-size:1.15rem}.hero-logo{
   display:block;
   width:min(720px,95vw);
@@ -87,7 +91,68 @@
 <body>
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Accueil ADN">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 160 115" role="img"><path d="M12 84c22-21 46-25 69-18 18 5 33 4 67-18-19 24-41 37-67 40-25 3-46 0-69-4Z" fill="#52643f"/><path d="M22 74c17-16 38-23 61-21 17 2 27-1 49-14-23 20-38 26-55 28-20 2-36 3-55 7Z" fill="#b94e35" opacity=".78"/><path d="M36 52l28-21 16 10 17-16 42 34H112V42h-13v17H36Z" fill="#2f3d28"/><path d="M104 39h9v20h-9zM108 24l6 15h-13z" fill="#2f3d28"/><text x="80" y="103" text-anchor="middle" font-family="Georgia,serif" font-size="34" font-weight="900" fill="#2f3d28">ADN</text></svg></span>
+      <span class="brand-mark" aria-hidden="true">
+
+<svg viewBox="0 0 160 115"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- fond -->
+  <rect width="160"
+        height="115"
+        rx="22"
+        fill="#F7F1E3"/>
+
+  <!-- montagne -->
+  <path
+    d="
+    M28 54
+    L58 34
+    L76 42
+    L95 28
+    L132 54"
+    fill="none"
+    stroke="#2F3D28"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <!-- ligne orange -->
+  <path
+    d="
+    M18 67
+    Q50 56 82 64
+    Q114 72 146 56"
+    fill="none"
+    stroke="#C46A3A"
+    stroke-width="5"
+    stroke-linecap="round"/>
+
+  <!-- ligne verte -->
+  <path
+    d="
+    M16 78
+    Q48 66 80 74
+    Q112 82 144 64"
+    fill="none"
+    stroke="#6E9E42"
+    stroke-width="7"
+    stroke-linecap="round"/>
+
+  <!-- ADN -->
+  <text
+    x="80"
+    y="101"
+    text-anchor="middle"
+    font-family="Georgia, serif"
+    font-size="34"
+    font-weight="900"
+    fill="#1D4E9F">
+    ADN
+  </text>
+
+</svg>
+
+</span>
       <span class="brand-text"><strong>ADN</strong><small id="brandDepartment">Selectionnez un departement</small></span>
     </a>
     <nav class="nav">
@@ -105,7 +170,7 @@
           <span class="sr-only">ADN</span>
           <img
   class="hero-logo"
-  src="ADN.png"
+  src="adn.png"
   alt="ADN Artisans">
         </h1>
         <p>Decouvrez les patissiers, bouchers-charcutiers, boulangers et restaurants qui valorisent les produits locaux pres de chez vous.</p>
