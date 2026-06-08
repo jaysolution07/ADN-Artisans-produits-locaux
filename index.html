@@ -11,7 +11,17 @@
     :root{--ink:#20221f;--muted:#62665d;--line:#d9ded3;--paper:#fbfbf7;--surface:#fff;--olive:#52643f;--olive-dark:#2f3d28;--tomato:#b94e35;--gold:#d89d31;--sky:#dfeff2;--shadow:0 18px 50px rgba(32,34,31,.12)}
     *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:inherit}button,input,select,textarea{font:inherit}button{border:0;border-radius:6px;background:var(--olive-dark);color:#fff;padding:.85rem 1rem;cursor:pointer;font-weight:700}button:hover{background:var(--olive)}label{display:grid;gap:.35rem;color:var(--muted);font-size:.92rem;font-weight:700}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);padding:.8rem}textarea{resize:vertical}.hidden{display:none!important}
     .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem clamp(1rem,4vw,3rem);background:rgba(251,251,247,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none}.brand-mark{display:grid;place-items:center;width:78px;min-height:58px;border-radius:6px;color:var(--olive-dark);background:#f8f1df;border:1px solid var(--line);font-weight:900}.brand-mark svg{width:70px;height:52px}.brand-text strong{display:block;font-size:1.2rem}.brand-text small{display:block;color:var(--muted);font-size:.78rem}.nav{display:flex;align-items:center;gap:1rem;font-weight:700}.nav a{text-decoration:none}.nav-pro{color:var(--tomato)}
-    .hero{min-height:72vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,440px);align-items:end;gap:clamp(1.25rem,4vw,4rem);padding:clamp(2rem,6vw,5rem);background:linear-gradient(90deg,rgba(32,34,31,.76),rgba(82,100,63,.28)),url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Simiane_la_Rotonde_-_village_et_lavande.JPG") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;font-size:clamp(3rem,9vw,7rem);line-height:.95;letter-spacing:0}.hero-copy{max-width:720px;padding-bottom:2rem}.hero-copy p{max-width:620px;font-size:1.15rem}.hero-logo{display:block;width:min(650px,92vw);height:auto;margin:.2rem 0 .9rem;color:#fff8df;filter:drop-shadow(0 0 10px rgba(255,248,223,.36)) drop-shadow(0 8px 16px rgba(0,0,0,.24))}.hero-logo text{font-family:Georgia,serif;font-weight:900;fill:rgba(255,248,223,.08);stroke:currentColor;stroke-width:1.35}.hero-logo .logo-line{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.hero-logo .logo-fill{fill:rgba(255,248,223,.16);stroke:currentColor;stroke-width:1.1}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.eyebrow{margin:0 0 .5rem;color:var(--tomato);font-size:.78rem;font-weight:900;letter-spacing:0;text-transform:uppercase}.hero .eyebrow{color:#ffd99b}
+    .hero{min-height:72vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,440px);align-items:end;gap:clamp(1.25rem,4vw,4rem);padding:clamp(2rem,6vw,5rem);background:linear-gradient(90deg,rgba(32,34,31,.76),rgba(82,100,63,.28)),url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Simiane_la_Rotonde_-_village_et_lavande.JPG") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;font-size:clamp(3rem,9vw,7rem);line-height:.95;letter-spacing:0}.hero-copy{max-width:720px;padding-bottom:2rem}.hero-copy p{max-width:620px;font-size:1.15rem}..hero-logo{
+  display:block;
+  width:min(650px,92vw);
+  max-width:420px;
+  height:auto;
+  margin:0 auto 1rem auto;
+  color:#fff8df;
+  filter:
+    drop-shadow(0 0 10px rgba(255,248,223,.36))
+    drop-shadow(0 8px 16px rgba(0,0,0,.24));
+}.hero-logo text{font-family:Georgia,serif;font-weight:900;fill:rgba(255,248,223,.08);stroke:currentColor;stroke-width:1.35}.hero-logo .logo-line{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.hero-logo .logo-fill{fill:rgba(255,248,223,.16);stroke:currentColor;stroke-width:1.1}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.eyebrow{margin:0 0 .5rem;color:var(--tomato);font-size:.78rem;font-weight:900;letter-spacing:0;text-transform:uppercase}.hero .eyebrow{color:#ffd99b}
     .access-panel,.pro-login,.editor-form{display:grid;gap:1rem;border:1px solid var(--line);border-radius:8px;padding:1.25rem;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}.access-panel h2,.pro-login h2,.editor-form h2{margin:0}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.check-row{grid-template-columns:auto 1fr;align-items:start;font-weight:400}.check-row input{width:auto;margin-top:.25rem}.form-note,.status{margin:0;min-height:1.4rem;color:var(--muted)}.upload-field{display:grid;gap:.45rem;color:var(--muted);font-size:.92rem}.upload-field strong{color:var(--muted)}.dropzone{display:grid;place-items:center;min-height:150px;border:2px dashed var(--line);border-radius:8px;background:#f7f8f3;color:var(--muted);padding:1rem;text-align:center;cursor:pointer}.dropzone.is-dragover{border-color:var(--tomato);background:#fff3ee}.photo-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:.6rem}.photo-preview img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
     .directory,.pro-shell{padding:clamp(1.25rem,4vw,3rem)}.is-locked{opacity:.55;pointer-events:none}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1rem}.section-heading h2{margin:0}.department-map-panel{display:grid;gap:.75rem;margin:1rem 0 1.15rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,#fff,#f3f7ed)}.department-map-head{display:flex;align-items:end;justify-content:space-between;gap:1rem}.department-map-head h3{margin:0}.department-map-head p,.map-hint{margin:0;color:var(--muted);font-size:.92rem}.department-map-scroll{overflow:auto;padding:.25rem}.department-map{position:relative;display:grid;grid-template-columns:repeat(19,34px);grid-auto-rows:30px;gap:3px;min-width:700px;width:max-content;margin:auto}.dept-tile{display:grid;place-items:center;width:34px;height:30px;padding:0;border:1px solid #c8d1bf;border-radius:0;background:#eef4ea;color:var(--olive-dark);font-size:.68rem;font-weight:900;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}.dept-tile:hover{background:#dcebd4}.dept-tile.has-artisans{background:#dfeff2;border-color:#99c1c8}.dept-tile.is-active{background:var(--tomato);border-color:var(--tomato);color:#fff;transform:scale(1.08);box-shadow:0 8px 18px rgba(185,78,53,.26)}.dept-tile.is-overseas{background:#f8f1df}.filters{display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr;gap:.8rem;align-items:end;margin:1rem 0 1.2rem}.artisan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}.artisan-card{display:grid;grid-template-rows:190px 1fr;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:var(--surface)}.artisan-card img,.product-card img{width:100%;height:100%;object-fit:cover;background:var(--sky)}.artisan-body{display:grid;gap:.55rem;padding:1rem}.artisan-body h3{margin:0}.meta-row,.rating-row{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.pill{display:inline-flex;align-items:center;border-radius:999px;background:var(--sky);color:var(--olive-dark);padding:.24rem .55rem;font-size:.8rem;font-weight:800}.stars{color:var(--gold);font-weight:900}
     .artisan-dialog{width:min(920px,calc(100vw - 2rem));border:1px solid var(--line);border-radius:8px;padding:0}.artisan-dialog::backdrop{background:rgba(32,34,31,.55)}.dialog-close{position:absolute;right:.75rem;top:.75rem;width:36px;height:36px;padding:0}.dialog-inner{padding:1.25rem}.contact-list{display:grid;gap:.35rem;margin:1rem 0}.contact-list p{margin:0}.contact-list a{color:var(--olive-dark);font-weight:700}.dialog-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}.dialog-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:var(--sky)}.product-grid,.review-list,.product-list{display:grid;gap:.8rem}.product-card,.review-item{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}.product-card{display:grid;grid-template-columns:110px 1fr;gap:.9rem}.review-form{display:grid;gap:.75rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
@@ -23,7 +33,49 @@
   margin-top:15px;
   flex-wrap:wrap;
 }.map-credit{margin:.35rem 0 0;color:var(--muted);font-size:.78rem;text-align:right}
-    @media(max-width:860px){.topbar,.section-heading,.department-map-head{align-items:start;flex-direction:column}.hero{grid-template-columns:1fr;min-height:auto}.filters,.footer{grid-template-columns:1fr}}@media(max-width:560px){.field-grid,.product-card{grid-template-columns:1fr}.nav{width:100%;justify-content:space-between;gap:.5rem;font-size:.9rem}.artisan-card{grid-template-rows:160px 1fr}.department-map{width:100%;min-width:0}.dept-tile{width:30px;height:26px;font-size:.6rem}}
+    @media(max-width:860px){.topbar,.section-heading,.department-map-head{align-items:start;flex-direction:column}.hero{grid-template-columns:1fr;min-height:auto}.filters,.footer{grid-template-columns:1fr}}@media(max-width:560px){
+
+  .field-grid,
+  .product-card{
+    grid-template-columns:1fr
+  }
+
+  .nav{
+    width:100%;
+    justify-content:space-between;
+    gap:.5rem;
+    font-size:.9rem
+  }
+
+  .artisan-card{
+    grid-template-rows:160px 1fr
+  }
+
+  .department-map{
+    width:100%;
+    min-width:0
+  }
+
+  .dept-tile{
+    width:30px;
+    height:26px;
+    font-size:.6rem
+  }
+
+  .hero-copy{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .hero-logo{
+    width:95vw;
+    max-width:420px;
+    margin:0 auto 1rem auto;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -45,7 +97,10 @@
         <p class="eyebrow">Annuaire regional des savoir-faire locaux</p>
         <h1>
           <span class="sr-only">ADN</span>
-          <svg class="hero-logo" viewBox="0 0 1000 430" aria-hidden="true">
+          <svg class="hero-logo"
+     viewBox="0 0 1000 430"
+     preserveAspectRatio="xMidYMid meet"
+     aria-hidden="true">
             <path class="logo-line" d="M164 164c117-29 240-62 327-105 38-19 63-18 95 1 26 16 49 20 78 10 28-10 58-8 87 4 74 31 137 54 205 78" stroke-width="3.2"/>
             <path class="logo-line" d="M422 107c34-11 66-26 98-48-12 33-45 59-103 80 60-12 119-34 177-68-23 43-64 72-123 93" stroke-width="2.4"/>
             <path class="logo-fill" d="M583 39h18v54h-18z"/>
