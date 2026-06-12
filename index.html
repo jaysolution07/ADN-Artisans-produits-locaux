@@ -6,7 +6,7 @@
   <title>ADN - Artisans locaux</title>
 <link rel="icon" type="image/png" href="FAV.png">
 <link rel="preload" as="image" href="FOND.png">
-  <meta name="description" content="Annuaire d'artisans utilisant des produits locaux, par departement et region.">
+  <meta name="description" content="Annuaire d'artisans utilisant des produits locaux, par département et region.">
   <style>
     :root{--ink:#20221f;--muted:#62665d;--line:#d9ded3;--paper:#fbfbf7;--surface:#fff;--olive:#52643f;--olive-dark:#2f3d28;--tomato:#b94e35;--gold:#d89d31;--sky:#dfeff2;--shadow:0 18px 50px rgba(32,34,31,.12)}
     *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:inherit}button,input,select,textarea{font:inherit}button{border:0;border-radius:6px;background:var(--olive-dark);color:#fff;padding:.85rem 1rem;cursor:pointer;font-weight:700}button:hover{background:var(--olive)}label{display:grid;gap:.35rem;color:var(--muted);font-size:.92rem;font-weight:700}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);padding:.8rem}textarea{resize:vertical}.hidden{display:none!important}
@@ -126,8 +126,15 @@ overflow:hidden;
 }
 
 .category-icon{
-  font-size:1.4rem;
-  margin-bottom:.6rem;
+  margin-bottom:.5rem;
+}
+
+.category-icon img{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto;
 }
 
 .category-card strong{
@@ -229,7 +236,7 @@ overflow:hidden;
 <img src="FAV.png" alt="ADN Logo">
 
 </span>
-      <span class="brand-text"><strong>ADN</strong><small id="brandDepartment">Selectionnez un departement</small></span>
+      <span class="brand-text"><strong>ADN</strong><small id="brandDepartment">Selectionnez un département</small></span>
     </a>
     <nav class="nav">
       <a href="#annuaire" id="navDirectory">Annuaire</a>
@@ -249,14 +256,14 @@ overflow:hidden;
   src="ADN.png"
   alt="ADN Artisans">
         </h1>
-        <p>Le réseau qui relie les producteurs, éleveurs, artisans et chefs engagés dans la valorisation du terroir,régional.</p>
+        <p>Le réseau qui relie les producteurs, éleveurs, artisans et chefs engagés dans la valorisation du terroir régional.</p>
       </div>
       <form id="accessForm" class="access-panel">
         <h2>Connexion au site</h2>
         <label>Deja inscrit ? Entrez votre email<input id="loginEmail" type="email" autocomplete="email"></label>
         <button type="button" id="loginLeadBtn">Me connecter</button>
         <p class="form-note">Premiere visite : remplissez le formulaire ci-dessous.</p>
-        <label>Departement<select id="entryDepartment" required></select></label>
+        <label>Département<select id="entryDepartment" required></select></label>
         <div class="field-grid">
           <label>Prenom<input id="leadFirstName" autocomplete="given-name" required></label>
           <label>Nom<input id="leadLastName" autocomplete="family-name" required></label>
@@ -270,9 +277,9 @@ overflow:hidden;
 
     <section id="annuaire" class="directory hidden" aria-live="polite">
       <div class="section-heading">
-        <div><p class="eyebrow">Annuaire</p><h2>Artisans recommandes</h2></div>
+        <div><p class="eyebrow">Annuaire</p><h2>Artisans recommandés</h2></div>
         <div>
-          <p id="territoryLabel">Selectionnez un departement pour commencer.</p>
+          <p id="territoryLabel">Selectionnez un département pour commencer.</p>
           <button type="button" id="logoutBtn">Se deconnecter</button>
         </div>
       </div>
@@ -280,48 +287,58 @@ overflow:hidden;
         <div class="department-map-head">
           <div>
             <p class="eyebrow">Carte interactive</p>
-            <h3 id="departmentMapTitle">Choisir un departement sur la carte</h3>
+            <h3 id="departmentMapTitle">Choisir un département sur la carte</h3>
           </div>
-          <p id="mapHint">Les departements avec artisans sont mis en avant.</p>
+          <p id="mapHint">Les départements avec artisans sont mis en avant.</p>
         </div>
         <div class="department-map-scroll">
-          <div id="departmentMap" class="department-map" aria-label="Carte interactive des departements de France"></div>
+          <div id="departmentMap" class="department-map" aria-label="Carte interactive des départements de France"></div>
         </div>
       </section>
       <div class="filters">
-        <label>Region<select id="regionFilter"></select></label>
-        <label>Departement<select id="departmentFilter"></select></label>
+        <label>Région<select id="regionFilter"></select></label>
+        <label>Département<select id="departmentFilter"></select></label>
         
         <label class="search-field">Recherche<input id="searchInput" placeholder="Nom, ville, produit..."></label>
       </div>
 <div class="category-cards">
 
   <div class="category-card" data-trade="Producteur">
-    <div class="category-icon">🥕</div>
+  <div class="category-icon">
+    <img src="PROD.png" alt="Producteurs">
+  </div>
     <strong>Producteurs</strong>
     <small>Fruits, légumes, huiles...</small>
   </div>
 
   <div class="category-card" data-trade="Eleveur">
-    <div class="category-icon">🐑</div>
+  <div class="category-icon">
+    <img src="ELE.png" alt="Éleveurs">
+  </div>
     <strong>Éleveurs</strong>
     <small>Produits fermiers...</small>
   </div>
 
   <div class="category-card" data-trade="Artisan">
-    <div class="category-icon">🥖/🍰/🥩</div>
+  <div class="category-icon">
+    <img src="ART.png" alt="Artisans">
+  </div>
     <strong>Artisans</strong>
     <small>Boulangers, pâtissiers, Boucher/charcutier...</small>
   </div>
 
-  <div class="category-card" data-trade="Restaurant">
-    <div class="category-icon">🍽️</div>
+<div class="category-card" data-trade="Restaurant">
+  <div class="category-icon">
+    <img src="REST.png" alt="Restaurants">
+  </div>
     <strong>Restaurateurs</strong>
     <small>Cuisine locale...</small>
   </div>
 
  <div class="category-card" data-trade="Boutique">
-  <div class="category-icon">🛒</div>
+  <div class="category-icon">
+    <img src="EPI.png" alt="Boutiques">
+  </div>
   <strong>Boutiques</strong>
   <small>Épiceries, magasins de terroir...</small>
 </div>
@@ -334,14 +351,14 @@ overflow:hidden;
 
   <main id="proApp" class="pro-shell hidden">
     <section class="pro-intro">
-      <p class="eyebrow">Espace adherent</p>
-      <h1>Gerer ma fiche artisan</h1>
-      <p>Ajoutez vos informations, produits, tarifs et photos hebergees sur Google Drive via des liens publics.</p>
+      <p class="eyebrow">Espace adhérent</p>
+      <h1>Gérer ma fiche artisan</h1>
+      <p>Ajoutez vos informations, produits, tarifs et photos.</p>
     </section>
     <section class="pro-login" id="loginPanel">
       <h2>Connexion</h2>
-      <p>Utilisez le lien personnel transmis par ADN. Il contient un token d'acces unique.</p>
-      <label>Token adherent<input id="tokenInput" placeholder="ex: pro_abc123"></label>
+      <p>Utilisez le lien personnel transmis par ADN. Il contient un token d'accès unique.</p>
+      <label>Token adhérent<input id="tokenInput" placeholder="ex: pro_abc123"></label>
       <button id="loadProfileBtn">Ouvrir mon portail</button>
       <p class="form-note" id="loginNote"></p>
     </section>
@@ -354,7 +371,7 @@ overflow:hidden;
         <div class="field-grid"><label>Nom du professionnel<input id="proName" required></label><label>Entreprise<input id="businessName" required></label></div>
         <div class="field-grid"><label>Email pro<input id="proEmail" type="email" required></label><label>Telephone<input id="proPhone"></label></div>
         <label>Adresse<input id="address" required></label>
-        <div class="field-grid"><label>Departement<select id="department" required></select></label><div class="checkbox-field"><span>Metiers</span><div class="checkbox-grid" id="tradeChoices">
+        <div class="field-grid"><label>Département<select id="department" required></select></label><div class="checkbox-field"><span>Métiers</span><div class="checkbox-grid" id="tradeChoices">
           <label class="checkbox-option"><input type="checkbox" name="trade" value="Producteur">Producteur</label>
           <label class="checkbox-option"><input type="checkbox" name="trade" value="Eleveur">Eleveur</label>
           <label class="checkbox-option"><input type="checkbox" name="trade" value="Boutique">Boutique</label>
@@ -406,18 +423,18 @@ overflow:hidden;
   <footer class="footer" id="contact">
     <details>
       <summary>Contactez-nous</summary>
-      <p>Telephone : <a href="tel:+33677718914">06 77 71 89 14</a></p>
+      <p>Téléphone : <a href="tel:+33677718914">06 77 71 89 14</a></p>
       <p>Email : <a href="mailto:jaysolution07@gmail.com">jaysolution07@gmail.com</a></p>
     </details>
     <details>
-      <summary>Mentions legales</summary>
+      <summary>Mentions légales</summary>
       <p>Editeur du site : Samuel Jay, Entrepreneur individuel - SIRET : 93963162800012.</p>
       <p>Adresse : 07400 SAINT-MARTIN-SUR-LAVEZON. Responsable de la publication : Samuel Jay.</p>
       <p>Hebergement : GitHub Pages, GitHub, Inc. 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.</p>
     </details>
     <details>
       <summary>Confidentialite</summary>
-      <p>Les donnees collectees via les formulaires sont utilisees uniquement pour repondre aux demandes et gerer l'acces a l'annuaire.</p>
+      <p>Les donnees collectees via les formulaires sont utilisees uniquement pour repondre aux demandes et gérer l'acces a l'annuaire.</p>
       <p>Aucune donnee n'est vendue ou utilisee a des fins commerciales. Conservation maximale : 12 mois.</p>
       <p>Vous pouvez demander l'acces, la modification ou la suppression de vos donnees a tout moment : <a href="mailto:jaysolution07@gmail.com">jaysolution07@gmail.com</a>.</p>
       <p>Cookies : ce site n'utilise pas de cookies a des fins de suivi ou d'analyse.</p>
@@ -429,7 +446,7 @@ overflow:hidden;
       APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbybnYNyf0fZJ2TaP6ybjlObKSdtF42VX8PfS822pkY7ixroDmBFqHzi_KPAZirNu8_i/exec",
       SITE_URL: "https://jaysolution07.github.io/Vinedra-Artisans-produits-locaux/"
     };
-    const VINEDRA_DEPARTMENTS = [["01","Ain","Auvergne-Rhone-Alpes"],["02","Aisne","Hauts-de-France"],["03","Allier","Auvergne-Rhone-Alpes"],["04","Alpes-de-Haute-Provence","Provence-Alpes-Cote d'Azur"],["05","Hautes-Alpes","Provence-Alpes-Cote d'Azur"],["06","Alpes-Maritimes","Provence-Alpes-Cote d'Azur"],["07","Ardeche","Auvergne-Rhone-Alpes"],["08","Ardennes","Grand Est"],["09","Ariege","Occitanie"],["10","Aube","Grand Est"],["11","Aude","Occitanie"],["12","Aveyron","Occitanie"],["13","Bouches-du-Rhone","Provence-Alpes-Cote d'Azur"],["14","Calvados","Normandie"],["15","Cantal","Auvergne-Rhone-Alpes"],["16","Charente","Nouvelle-Aquitaine"],["17","Charente-Maritime","Nouvelle-Aquitaine"],["18","Cher","Centre-Val de Loire"],["19","Correze","Nouvelle-Aquitaine"],["2A","Corse-du-Sud","Corse"],["2B","Haute-Corse","Corse"],["21","Cote-d'Or","Bourgogne-Franche-Comte"],["22","Cotes-d'Armor","Bretagne"],["23","Creuse","Nouvelle-Aquitaine"],["24","Dordogne","Nouvelle-Aquitaine"],["25","Doubs","Bourgogne-Franche-Comte"],["26","Drome","Auvergne-Rhone-Alpes"],["27","Eure","Normandie"],["28","Eure-et-Loir","Centre-Val de Loire"],["29","Finistere","Bretagne"],["30","Gard","Occitanie"],["31","Haute-Garonne","Occitanie"],["32","Gers","Occitanie"],["33","Gironde","Nouvelle-Aquitaine"],["34","Herault","Occitanie"],["35","Ille-et-Vilaine","Bretagne"],["36","Indre","Centre-Val de Loire"],["37","Indre-et-Loire","Centre-Val de Loire"],["38","Isere","Auvergne-Rhone-Alpes"],["39","Jura","Bourgogne-Franche-Comte"],["40","Landes","Nouvelle-Aquitaine"],["41","Loir-et-Cher","Centre-Val de Loire"],["42","Loire","Auvergne-Rhone-Alpes"],["43","Haute-Loire","Auvergne-Rhone-Alpes"],["44","Loire-Atlantique","Pays de la Loire"],["45","Loiret","Centre-Val de Loire"],["46","Lot","Occitanie"],["47","Lot-et-Garonne","Nouvelle-Aquitaine"],["48","Lozere","Occitanie"],["49","Maine-et-Loire","Pays de la Loire"],["50","Manche","Normandie"],["51","Marne","Grand Est"],["52","Haute-Marne","Grand Est"],["53","Mayenne","Pays de la Loire"],["54","Meurthe-et-Moselle","Grand Est"],["55","Meuse","Grand Est"],["56","Morbihan","Bretagne"],["57","Moselle","Grand Est"],["58","Nievre","Bourgogne-Franche-Comte"],["59","Nord","Hauts-de-France"],["60","Oise","Hauts-de-France"],["61","Orne","Normandie"],["62","Pas-de-Calais","Hauts-de-France"],["63","Puy-de-Dome","Auvergne-Rhone-Alpes"],["64","Pyrenees-Atlantiques","Nouvelle-Aquitaine"],["65","Hautes-Pyrenees","Occitanie"],["66","Pyrenees-Orientales","Occitanie"],["67","Bas-Rhin","Grand Est"],["68","Haut-Rhin","Grand Est"],["69","Rhone","Auvergne-Rhone-Alpes"],["70","Haute-Saone","Bourgogne-Franche-Comte"],["71","Saone-et-Loire","Bourgogne-Franche-Comte"],["72","Sarthe","Pays de la Loire"],["73","Savoie","Auvergne-Rhone-Alpes"],["74","Haute-Savoie","Auvergne-Rhone-Alpes"],["75","Paris","Ile-de-France"],["76","Seine-Maritime","Normandie"],["77","Seine-et-Marne","Ile-de-France"],["78","Yvelines","Ile-de-France"],["79","Deux-Sevres","Nouvelle-Aquitaine"],["80","Somme","Hauts-de-France"],["81","Tarn","Occitanie"],["82","Tarn-et-Garonne","Occitanie"],["83","Var","Provence-Alpes-Cote d'Azur"],["84","Vaucluse","Provence-Alpes-Cote d'Azur"],["85","Vendee","Pays de la Loire"],["86","Vienne","Nouvelle-Aquitaine"],["87","Haute-Vienne","Nouvelle-Aquitaine"],["88","Vosges","Grand Est"],["89","Yonne","Bourgogne-Franche-Comte"],["90","Territoire de Belfort","Bourgogne-Franche-Comte"],["91","Essonne","Ile-de-France"],["92","Hauts-de-Seine","Ile-de-France"],["93","Seine-Saint-Denis","Ile-de-France"],["94","Val-de-Marne","Ile-de-France"],["95","Val-d'Oise","Ile-de-France"],["971","Guadeloupe","Guadeloupe"],["972","Martinique","Martinique"],["973","Guyane","Guyane"],["974","La Reunion","La Reunion"],["976","Mayotte","Mayotte"]].map(([code,name,region])=>({code,name,region}));
+    const VINEDRA_DEPARTMENTS = [["01","Ain","Auvergne-Rhone-Alpes"],["02","Aisne","Hauts-de-France"],["03","Allier","Auvergne-Rhone-Alpes"],["04","Alpes-de-Haute-Provence","Provence-Alpes-Côte d'Azur"],["05","Hautes-Alpes","Provence-Alpes-Côte d'Azur"],["06","Alpes-Maritimes","Provence-Alpes-Côte d'Azur"],["07","Ardeche","Auvergne-Rhone-Alpes"],["08","Ardennes","Grand Est"],["09","Ariege","Occitanie"],["10","Aube","Grand Est"],["11","Aude","Occitanie"],["12","Aveyron","Occitanie"],["13","Bouches-du-Rhone","Provence-Alpes-Côte d'Azur"],["14","Calvados","Normandie"],["15","Cantal","Auvergne-Rhone-Alpes"],["16","Charente","Nouvelle-Aquitaine"],["17","Charente-Maritime","Nouvelle-Aquitaine"],["18","Cher","Centre-Val de Loire"],["19","Correze","Nouvelle-Aquitaine"],["2A","Corse-du-Sud","Corse"],["2B","Haute-Corse","Corse"],["21","Côte-d'Or","Bourgogne-Franche-Comte"],["22","Côtes-d'Armor","Bretagne"],["23","Creuse","Nouvelle-Aquitaine"],["24","Dordogne","Nouvelle-Aquitaine"],["25","Doubs","Bourgogne-Franche-Comte"],["26","Drome","Auvergne-Rhone-Alpes"],["27","Eure","Normandie"],["28","Eure-et-Loir","Centre-Val de Loire"],["29","Finistere","Bretagne"],["30","Gard","Occitanie"],["31","Haute-Garonne","Occitanie"],["32","Gers","Occitanie"],["33","Gironde","Nouvelle-Aquitaine"],["34","Herault","Occitanie"],["35","Ille-et-Vilaine","Bretagne"],["36","Indre","Centre-Val de Loire"],["37","Indre-et-Loire","Centre-Val de Loire"],["38","Isere","Auvergne-Rhone-Alpes"],["39","Jura","Bourgogne-Franche-Comte"],["40","Landes","Nouvelle-Aquitaine"],["41","Loir-et-Cher","Centre-Val de Loire"],["42","Loire","Auvergne-Rhone-Alpes"],["43","Haute-Loire","Auvergne-Rhone-Alpes"],["44","Loire-Atlantique","Pays de la Loire"],["45","Loiret","Centre-Val de Loire"],["46","Lot","Occitanie"],["47","Lot-et-Garonne","Nouvelle-Aquitaine"],["48","Lozere","Occitanie"],["49","Maine-et-Loire","Pays de la Loire"],["50","Manche","Normandie"],["51","Marne","Grand Est"],["52","Haute-Marne","Grand Est"],["53","Mayenne","Pays de la Loire"],["54","Meurthe-et-Moselle","Grand Est"],["55","Meuse","Grand Est"],["56","Morbihan","Bretagne"],["57","Moselle","Grand Est"],["58","Nievre","Bourgogne-Franche-Comte"],["59","Nord","Hauts-de-France"],["60","Oise","Hauts-de-France"],["61","Orne","Normandie"],["62","Pas-de-Calais","Hauts-de-France"],["63","Puy-de-Dome","Auvergne-Rhone-Alpes"],["64","Pyrenees-Atlantiques","Nouvelle-Aquitaine"],["65","Hautes-Pyrenees","Occitanie"],["66","Pyrenees-Orientales","Occitanie"],["67","Bas-Rhin","Grand Est"],["68","Haut-Rhin","Grand Est"],["69","Rhone","Auvergne-Rhone-Alpes"],["70","Haute-Saone","Bourgogne-Franche-Comte"],["71","Saone-et-Loire","Bourgogne-Franche-Comte"],["72","Sarthe","Pays de la Loire"],["73","Savoie","Auvergne-Rhone-Alpes"],["74","Haute-Savoie","Auvergne-Rhone-Alpes"],["75","Paris","Ile-de-France"],["76","Seine-Maritime","Normandie"],["77","Seine-et-Marne","Ile-de-France"],["78","Yvelines","Ile-de-France"],["79","Deux-Sevres","Nouvelle-Aquitaine"],["80","Somme","Hauts-de-France"],["81","Tarn","Occitanie"],["82","Tarn-et-Garonne","Occitanie"],["83","Var","Provence-Alpes-Côte d'Azur"],["84","Vaucluse","Provence-Alpes-Côte d'Azur"],["85","Vendee","Pays de la Loire"],["86","Vienne","Nouvelle-Aquitaine"],["87","Haute-Vienne","Nouvelle-Aquitaine"],["88","Vosges","Grand Est"],["89","Yonne","Bourgogne-Franche-Comte"],["90","Territoire de Belfort","Bourgogne-Franche-Comte"],["91","Essonne","Ile-de-France"],["92","Hauts-de-Seine","Ile-de-France"],["93","Seine-Saint-Denis","Ile-de-France"],["94","Val-de-Marne","Ile-de-France"],["95","Val-d'Oise","Ile-de-France"],["971","Guadeloupe","Guadeloupe"],["972","Martinique","Martinique"],["973","Guyane","Guyane"],["974","La Reunion","La Reunion"],["976","Mayotte","Mayotte"]].map(([code,name,region])=>({code,name,region}));
     const VINEDRA_REGIONS = [...new Set(VINEDRA_DEPARTMENTS.map((item)=>item.region))].sort();
     const DEPARTMENT_MAP_POSITIONS = Object.fromEntries([["59",10,1],["62",9,1],["80",8,2],["02",10,2],["08",12,2],["76",5,3],["60",8,3],["50",3,5],["14",4,5],["27",6,4],["95",7,4],["75",8,4],["93",9,4],["51",12,4],["55",14,4],["57",16,4],["61",5,6],["28",7,6],["78",8,6],["91",9,7],["92",8,5],["94",9,5],["77",10,5],["10",12,6],["52",14,6],["54",15,5],["67",18,5],["29",1,7],["22",2,7],["35",3,7],["53",4,8],["72",5,8],["45",8,8],["89",11,8],["88",16,7],["68",18,7],["56",2,9],["49",5,10],["37",7,10],["41",7,9],["18",10,10],["58",12,10],["21",14,10],["70",15,8],["90",17,8],["44",3,10],["85",4,12],["79",6,13],["86",7,12],["36",8,11],["03",11,12],["71",13,12],["25",16,10],["39",15,12],["17",5,14],["16",6,15],["87",8,14],["23",9,13],["63",11,14],["42",12,15],["69",13,15],["01",14,14],["74",16,14],["33",5,18],["24",7,17],["19",9,15],["15",10,17],["43",11,16],["07",12,17],["26",13,18],["38",14,17],["73",15,16],["40",4,20],["47",7,19],["46",9,18],["12",10,19],["48",12,18],["05",15,18],["32",6,21],["82",8,20],["81",8,21],["30",11,21],["84",13,20],["04",14,20],["06",16,21],["64",4,23],["65",6,23],["31",7,22],["34",10,22],["13",12,22],["83",14,22],["09",8,24],["11",10,24],["66",11,25],["2B",16,23],["2A",16,25],["971",1,28],["972",3,28],["973",5,28],["974",7,28],["976",9,28]].map(([code,col,row])=>[code,[col,row]]));
     function normalizeDepartmentCode(code){const value=String(code??"").trim().toUpperCase();if(!value)return"";if(value==="2A"||value==="2B")return value;if(/^\d$/.test(value))return `0${value}`;return value}
@@ -441,7 +458,7 @@ overflow:hidden;
     let token = params.get("token") || "";
     let profile = null;
 
-    const fallbackArtisans = [{id:"demo-1",businessName:"Maison Ardechoise",proName:"Claire Martin",trade:"Boulanger",departmentCode:"07",region:"Auvergne-Rhone-Alpes",address:"07400 Saint-Martin-sur-Lavezon",description:"Pains au levain, farines regionales et viennoiseries maison.",appRating:0,appReviewCount:0,googleRating:4.8,googleUrl:"",shopPhotos:["https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80"],products:[{name:"Pain de campagne",price:"4,20 EUR",description:"Farine locale et levain naturel.",photos:[]}],reviews:[]}];
+    const fallbackArtisans = [{id:"demo-1",businessName:"Maison Ardechoise",proName:"Claire Martin",trade:"Boulanger",departmentCode:"07",region:"Auvergne-Rhone-Alpes",address:"07400 Saint-Martin-sur-Lavezon",description:"Pains au levain, farines régionales et viennoiseries maison.",appRating:0,appReviewCount:0,googleRating:4.8,googleUrl:"",shopPhotos:["https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80"],products:[{name:"Pain de campagne",price:"4,20 EUR",description:"Farine locale et levain naturel.",photos:[]}],reviews:[]}];
     const state = {artisans:[],filters:{region:"",departmentCode:"",trade:"",search:""},lead:null};
     const ARTISAN_TRADES = ["Patissier","Boulanger","Boucher/charcutier"];
 
@@ -461,10 +478,10 @@ overflow:hidden;
     function phoneUrl(phone){return`tel:${String(phone||"").replace(/[^\d+]/g,"")}`}
     function contactBlock(artisan){const lines=[];if(artisan.address)lines.push(`<p>Adresse : <a href="${mapsUrl(artisan.address)}" target="_blank" rel="noopener">${escapeHtml(artisan.address)}</a></p>`);if(artisan.phone)lines.push(`<p>Telephone : <a href="${phoneUrl(artisan.phone)}">${escapeHtml(artisan.phone)}</a></p>`);if(artisan.email)lines.push(`<p>Email : <a href="mailto:${escapeHtml(artisan.email)}">${escapeHtml(artisan.email)}</a></p>`);return lines.length?`<div class="contact-list">${lines.join("")}</div>`:""}
     function normalizeText(text){return String(text||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
-    function fillDepartments(select,includeAll=false){if(!select)return;select.innerHTML=includeAll?'<option value="">Tous les departements</option>':'<option value="">Choisir...</option>';VINEDRA_DEPARTMENTS.forEach((department)=>{const option=document.createElement("option");option.value=department.code;option.textContent=`${department.code} - ${department.name}`;select.appendChild(option)})}
-    function fillRegions(select){if(!select)return;select.innerHTML='<option value="">Toutes les regions</option>';VINEDRA_REGIONS.forEach((region)=>{const option=document.createElement("option");option.value=region;option.textContent=region;select.appendChild(option)})}
+    function fillDepartments(select,includeAll=false){if(!select)return;select.innerHTML=includeAll?'<option value="">Tous les départements</option>':'<option value="">Choisir...</option>';VINEDRA_DEPARTMENTS.forEach((department)=>{const option=document.createElement("option");option.value=department.code;option.textContent=`${department.code} - ${department.name}`;select.appendChild(option)})}
+    function fillRegions(select){if(!select)return;select.innerHTML='<option value="">Toutes les régions</option>';VINEDRA_REGIONS.forEach((region)=>{const option=document.createElement("option");option.value=region;option.textContent=region;select.appendChild(option)})}
     function departmentCounts(){return state.artisans.reduce((counts,artisan)=>{const code=normalizeDepartmentCode(artisan.departmentCode);if(code)counts[code]=(counts[code]||0)+1;return counts},{})}
-    function renderDepartmentMap(){const map=$("#departmentMap");if(!map)return;const source=window.ADN_FRANCE_DEPARTMENTS_MAP;if(!source){map.innerHTML="<p class='map-hint'>Chargement de la carte...</p>";return}const counts=departmentCounts();if(map.dataset.ready!=="svg"){map.innerHTML=`<svg viewBox="${source.viewBox}" role="img" aria-label="Carte des departements de France metropolitaine et Corse">${source.locations.map((location)=>{
+    function renderDepartmentMap(){const map=$("#departmentMap");if(!map)return;const source=window.ADN_FRANCE_DEPARTMENTS_MAP;if(!source){map.innerHTML="<p class='map-hint'>Chargement de la carte...</p>";return}const counts=departmentCounts();if(map.dataset.ready!=="svg"){map.innerHTML=`<svg viewBox="${source.viewBox}" role="img" aria-label="Carte des départements de France metropolitaine et Corse">${source.locations.map((location)=>{
 
 return `
   <path
@@ -505,8 +522,8 @@ return `
       $("#logoutBtn").addEventListener("click",logoutLead);
       $("#departmentMap").addEventListener("click",(event)=>{const target=event.target.closest("[data-dept]");if(target)selectDepartment(target.dataset.dept,true)});
       $("#departmentMap").addEventListener("keydown",(event)=>{if(event.key!=="Enter"&&event.key!==" ")return;const target=event.target.closest("[data-dept]");if(!target)return;event.preventDefault();selectDepartment(target.dataset.dept,true)});
-      $("#regionFilter").addEventListener("change",()=>{state.filters.region=$("#regionFilter").value;state.filters.departmentCode="";$("#departmentFilter").value="";$("#brandDepartment").textContent="Selectionnez un departement";$("#territoryLabel").textContent=state.filters.region?`Region ${state.filters.region}`:"Toutes les regions";renderArtisans()});
-      $("#departmentFilter").addEventListener("change",()=>{if($("#departmentFilter").value){selectDepartment($("#departmentFilter").value);return}state.filters.departmentCode="";$("#brandDepartment").textContent="Selectionnez un departement";$("#territoryLabel").textContent=state.filters.region?`Region ${state.filters.region}`:"Toutes les regions";renderArtisans()});
+      $("#regionFilter").addEventListener("change",()=>{state.filters.region=$("#regionFilter").value;state.filters.departmentCode="";$("#departmentFilter").value="";$("#brandDepartment").textContent="Selectionnez un département";$("#territoryLabel").textContent=state.filters.region?`Region ${state.filters.region}`:"Toutes les regions";renderArtisans()});
+      $("#departmentFilter").addEventListener("change",()=>{if($("#departmentFilter").value){selectDepartment($("#departmentFilter").value);return}state.filters.departmentCode="";$("#brandDepartment").textContent="Selectionnez un département";$("#territoryLabel").textContent=state.filters.region?`Region ${state.filters.region}`:"Toutes les regions";renderArtisans()});
       document.querySelectorAll(".category-card").forEach((card)=>{
 
   card.addEventListener("click",()=>{
@@ -532,7 +549,7 @@ return `
     async function loadArtisans(){$("#status").textContent="Chargement des artisans...";try{const data=await api("listPublic",{leadEmail:state.lead?.email||""});state.artisans=(data.artisans||[]).map((artisan)=>({...artisan,departmentCode:normalizeDepartmentCode(artisan.departmentCode),shopPhotos:toArray(artisan.shopPhotos),products:artisan.products||[],reviews:artisan.reviews||[]}));renderArtisans()}catch(error){$("#status").textContent=`Impossible de charger les artisans : ${error.message}`}}
     function filteredArtisans(){const needle=normalizeText(state.filters.search);const regionNeedle=normalizeText(state.filters.region);const selectedDepartment=normalizeDepartmentCode(state.filters.departmentCode);return state.artisans.filter((artisan)=>!regionNeedle||normalizeText(artisan.region)===regionNeedle).filter((artisan)=>!selectedDepartment||normalizeDepartmentCode(artisan.departmentCode)===selectedDepartment).filter((artisan)=>artisanMatchesTrade(artisan,state.filters.trade)).filter((artisan)=>{if(!needle)return true;const haystack=normalizeText([artisan.businessName,artisan.proName,tradeValues(artisan.trade).join(" "),artisan.address,artisan.description,...(artisan.products||[]).map((product)=>product.name)].join(" "));return haystack.includes(needle)}).sort((a,b)=>Number(b.appRating||0)-Number(a.appRating||0)||Number(b.appReviewCount||0)-Number(a.appReviewCount||0))}
     function firstPhoto(artisan){return artisan.shopPhotos?.[0]||"https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80"}
-    function renderArtisans(){const items=filteredArtisans();$("#status").textContent=items.length?`${items.length} artisan(s) trouve(s), classes par note ADN.`:"Aucun artisan ne correspond aux filtres.";$("#artisanGrid").innerHTML="";items.forEach((artisan)=>{const department=getDepartment(artisan.departmentCode);const card=document.createElement("article");card.className="artisan-card";const addressLink=artisan.address?`<p><a href="${mapsUrl(artisan.address)}" target="_blank" rel="noopener">${escapeHtml(artisan.address)}</a></p>`:"";card.innerHTML=`<img src="${firstPhoto(artisan)}" alt="Photo de ${escapeHtml(artisan.businessName)}" loading="lazy"><div class="artisan-body"><div class="meta-row">${tradePills(artisan.trade)}<span class="pill">${escapeHtml(department?.name||artisan.departmentCode||"")}</span></div><h3>${escapeHtml(artisan.businessName)}</h3><p>${escapeHtml(artisan.description||"")}</p>${addressLink}<div class="rating-row">${appRatingLabel(artisan)}</div><button data-open="${escapeHtml(artisan.id)}">Voir la fiche</button></div>`;$("#artisanGrid").appendChild(card)});renderDepartmentMap()}
+    function renderArtisans(){const items=filteredArtisans();$("#status").textContent=items.length?`${items.length} artisan(s) trouve(s), classés par note ADN.`:"Aucun artisan ne correspond aux filtres.";$("#artisanGrid").innerHTML="";items.forEach((artisan)=>{const department=getDepartment(artisan.departmentCode);const card=document.createElement("article");card.className="artisan-card";const addressLink=artisan.address?`<p><a href="${mapsUrl(artisan.address)}" target="_blank" rel="noopener">${escapeHtml(artisan.address)}</a></p>`:"";card.innerHTML=`<img src="${firstPhoto(artisan)}" alt="Photo de ${escapeHtml(artisan.businessName)}" loading="lazy"><div class="artisan-body"><div class="meta-row">${tradePills(artisan.trade)}<span class="pill">${escapeHtml(department?.name||artisan.departmentCode||"")}</span></div><h3>${escapeHtml(artisan.businessName)}</h3><p>${escapeHtml(artisan.description||"")}</p>${addressLink}<div class="rating-row">${appRatingLabel(artisan)}</div><button data-open="${escapeHtml(artisan.id)}">Voir la fiche</button></div>`;$("#artisanGrid").appendChild(card)});renderDepartmentMap()}
     function renderProducts(products=[]){if(!products.length)return"<p>Aucun produit publie pour le moment.</p>";return products.map((product)=>{const photos=toArray(product.photos);return`<article class="product-card"><img src="${escapeHtml(photos[0]||firstPhoto({}))}" alt=""><div>${productField("Article",product.name,"h4")}${productField("Prix",formatPrice(product.price),"strong")}${productField("Description",product.description||"")}</div></article>`}).join("")}
     function renderReviews(reviews=[]){if(!reviews.length)return"<p>Aucun avis public pour le moment.</p>";return reviews.map((review)=>`<article class="review-item"><strong>${escapeHtml(review.author)}</strong> <span class="stars">${stars(review.rating)}</span><p>${escapeHtml(review.comment)}</p></article>`).join("")}
     function reviewForm(artisan){const mine=(artisan.reviews||[]).find((review)=>review.canEdit);const author=mine?.author||[state.lead?.firstName,state.lead?.lastName].filter(Boolean).join(" ");const rating=mine?.rating||5;return`<form class="review-form" data-review="${escapeHtml(artisan.id)}"><h3>${mine?"Modifier mon avis":"Laisser mon avis"}</h3><div class="field-grid"><label>Votre nom<input name="author" value="${escapeHtml(author)}" required></label><label>Note<select name="rating" required>${[5,4,3,2,1].map((value)=>`<option value="${value}" ${Number(rating)===value?"selected":""}>${value} etoile${value>1?"s":""}</option>`).join("")}</select></label></div><label>Commentaire<textarea name="comment" rows="3" required>${escapeHtml(mine?.comment||"")}</textarea></label><div class="meta-row"><button type="submit">${mine?"Modifier mon avis":"Publier mon avis"}</button>${mine?`<button type="button" data-delete-review="${escapeHtml(artisan.id)}">Supprimer mon avis</button>`:""}</div><p class="form-note"></p></form>`}
@@ -541,7 +558,7 @@ return `
     async function loginLead(){const email=$("#loginEmail").value.trim();if(!email){$("#accessNote").textContent="Entrez votre email de connexion.";return}$("#accessNote").textContent="Connexion...";try{const data=await api("loginLead",{email});const lead={...data.lead,departmentCode:normalizeDepartmentCode(data.lead.departmentCode)};localStorage.setItem("vinedraLead",JSON.stringify(lead));state.lead=lead;await loadArtisans();$("#accessNote").textContent="Connexion reussie.";unlockDirectory(lead.departmentCode)}catch(error){$("#accessNote").textContent=`Connexion impossible : ${error.message}`}}
     function hydrateLead(){const saved=localStorage.getItem("vinedraLead");if(!saved)return;state.lead=JSON.parse(saved);state.lead.departmentCode=normalizeDepartmentCode(state.lead.departmentCode);unlockDirectory(state.lead.departmentCode,false)}
     function unlockDirectory(departmentCode,scroll=true){const normalizedDepartment=normalizeDepartmentCode(departmentCode);const department=getDepartment(normalizedDepartment);state.filters.departmentCode=normalizedDepartment;state.filters.region=department?.region||"";$("#accessForm").classList.add("hidden");$("#annuaire").classList.remove("hidden");$("#departmentFilter").value=normalizedDepartment;$("#regionFilter").value=department?.region||"";$("#territoryLabel").textContent=department?`${department.name} - ${department.region}`:"Tous les territoires";$("#brandDepartment").textContent=department?.name||"Tous les territoires";renderArtisans();if(scroll)$("#annuaire").scrollIntoView({behavior:"smooth",block:"start"})}
-    function logoutLead(){localStorage.removeItem("vinedraLead");state.lead=null;state.filters={region:"",departmentCode:"",trade:"",search:""};$("#accessForm").classList.remove("hidden");$("#annuaire").classList.add("hidden");$("#accessForm").reset();$("#departmentFilter").value="";$("#regionFilter").value="";document.querySelectorAll(".category-card").forEach((card)=>card.classList.remove("active"));$("#searchInput").value="";$("#territoryLabel").textContent="Selectionnez un departement pour commencer.";$("#brandDepartment").textContent="Selectionnez un departement";$("#accessNote").textContent="Vous etes deconnecte.";window.scrollTo({top:0,behavior:"smooth"})}
+    function logoutLead(){localStorage.removeItem("vinedraLead");state.lead=null;state.filters={region:"",departmentCode:"",trade:"",search:""};$("#accessForm").classList.remove("hidden");$("#annuaire").classList.add("hidden");$("#accessForm").reset();$("#departmentFilter").value="";$("#regionFilter").value="";document.querySelectorAll(".category-card").forEach((card)=>card.classList.remove("active"));$("#searchInput").value="";$("#territoryLabel").textContent="Selectionnez un département pour commencer.";$("#brandDepartment").textContent="Selectionnez un département";$("#accessNote").textContent="Vous etes deconnecte.";window.scrollTo({top:0,behavior:"smooth"})}
     async function submitReview(event){const form=event.target.closest("[data-review]");if(!form)return;event.preventDefault();const note=form.querySelector(".form-note");const payload={artisanId:form.dataset.review,email:state.lead?.email||"",author:form.author.value.trim(),rating:Number(form.rating.value),comment:form.comment.value.trim()};note.textContent="Enregistrement...";try{await api("addReview",payload);note.textContent="Avis enregistre.";await loadArtisans();openArtisan(payload.artisanId)}catch(error){note.textContent=`Erreur : ${error.message}`}}
     async function deleteReview(event){const button=event.target.closest("[data-delete-review]");if(!button)return;const form=button.closest("[data-review]");const note=form.querySelector(".form-note");const artisanId=button.dataset.deleteReview;note.textContent="Suppression...";try{await api("deleteReview",{artisanId,email:state.lead?.email||""});note.textContent="Avis supprime.";await loadArtisans();openArtisan(artisanId)}catch(error){note.textContent=`Erreur : ${error.message}`}}
 
@@ -552,10 +569,10 @@ return `
     function readFileAsDataUrl(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error("Lecture du fichier impossible."));reader.readAsDataURL(file)})}
     function appendPhotoUrl(textareaId,url){const textarea=$("#"+textareaId);const urls=toArray(textarea.value);urls.push(url);textarea.value=urls.join(", ")}
     function renderPhotoPreview(textareaId,previewId){const preview=$("#"+previewId);if(!preview)return;preview.innerHTML=toArray($("#"+textareaId).value).map((url)=>`<img src="${escapeHtml(url)}" alt="">`).join("")}
-    function openEditor(data){profile=data;$("#loginPanel").classList.add("hidden");$("#editorPanel").classList.remove("hidden");$("#proTitle").textContent=data.pro.businessName||data.pro.proName||"Mon entreprise";$("#proStatus").textContent=data.pro.active?"Adherent actif":"Adherent inactif";const artisan=data.artisan||{};setValue("proName",artisan.proName||data.pro.proName);setValue("businessName",artisan.businessName||data.pro.businessName);setValue("proEmail",artisan.email||data.pro.email);setValue("proPhone",artisan.phone);setValue("address",artisan.address);setValue("department",normalizeDepartmentCode(artisan.departmentCode));setTradeChoices(artisan.trade||"Patissier");setValue("googleRating",artisan.googleRating);setValue("googleUrl",artisan.googleUrl);setValue("shopPhotos",Array.isArray(artisan.shopPhotos)?artisan.shopPhotos.join(", "):artisan.shopPhotos);renderPhotoPreview("shopPhotos","shopPhotosPreview");setValue("description",artisan.description);renderProProducts(data.products||[])}
+    function openEditor(data){profile=data;$("#loginPanel").classList.add("hidden");$("#editorPanel").classList.remove("hidden");$("#proTitle").textContent=data.pro.businessName||data.pro.proName||"Mon entreprise";$("#proStatus").textContent=data.pro.active?"Adhérent actif":"Adhérent inactif";const artisan=data.artisan||{};setValue("proName",artisan.proName||data.pro.proName);setValue("businessName",artisan.businessName||data.pro.businessName);setValue("proEmail",artisan.email||data.pro.email);setValue("proPhone",artisan.phone);setValue("address",artisan.address);setValue("department",normalizeDepartmentCode(artisan.departmentCode));setTradeChoices(artisan.trade||"Patissier");setValue("googleRating",artisan.googleRating);setValue("googleUrl",artisan.googleUrl);setValue("shopPhotos",Array.isArray(artisan.shopPhotos)?artisan.shopPhotos.join(", "):artisan.shopPhotos);renderPhotoPreview("shopPhotos","shopPhotosPreview");setValue("description",artisan.description);renderProProducts(data.products||[])}
     function renderProProducts(products){$("#productList").innerHTML=products.length?products.map((product)=>{const photos=toArray(product.photos);return`<article class="product-card"><img src="${escapeHtml(photos[0]||firstPhoto({}))}" alt="Photo de ${escapeHtml(product.name)}"><div>${productField("Article",product.name,"h3")}${productField("Prix",formatPrice(product.price),"strong")}${productField("Description",product.description||"")}<div class="meta-row"><button type="button" data-edit-product="${escapeHtml(product.id)}">Modifier</button><button type="button" data-delete-product="${escapeHtml(product.id)}">Supprimer</button></div></div></article>`}).join(""):"<p>Aucun produit ajoute pour le moment.</p>"}
     async function loadProfile(){token=$("#tokenInput").value.trim();if(!token){$("#loginNote").textContent="Renseignez votre token.";return}$("#loginNote").textContent="Chargement...";try{const data=await api("getProProfile");openEditor(data)}catch(error){$("#loginNote").textContent=`Connexion impossible : ${error.message}`}}
-    async function saveArtisan(event,silent=false){if(event)event.preventDefault();const department=getDepartment($("#department").value);if(!department){$("#artisanNote").textContent="Choisissez un departement.";return}const trades=getTradeChoices();if(!trades.length){$("#artisanNote").textContent="Choisissez au moins un metier.";return}const payload={artisan:{proName:$("#proName").value.trim(),businessName:$("#businessName").value.trim(),email:$("#proEmail").value.trim(),phone:$("#proPhone").value.trim(),address:$("#address").value.trim(),departmentCode:department.code,region:department.region,trade:trades.join(", "),googleRating:$("#googleRating").value,googleUrl:$("#googleUrl").value.trim(),shopPhotos:$("#shopPhotos").value.trim(),description:$("#description").value.trim()}};if(!silent)$("#artisanNote").textContent="Enregistrement...";try{await api("saveArtisan",payload);if(!silent)$("#artisanNote").textContent="Fiche enregistree.";openEditor(await api("getProProfile"))}catch(error){$("#artisanNote").textContent=`Erreur : ${error.message}`}}
+    async function saveArtisan(event,silent=false){if(event)event.preventDefault();const department=getDepartment($("#department").value);if(!department){$("#artisanNote").textContent="Choisissez un département.";return}const trades=getTradeChoices();if(!trades.length){$("#artisanNote").textContent="Choisissez au moins un métier.";return}const payload={artisan:{proName:$("#proName").value.trim(),businessName:$("#businessName").value.trim(),email:$("#proEmail").value.trim(),phone:$("#proPhone").value.trim(),address:$("#address").value.trim(),departmentCode:department.code,region:department.region,trade:trades.join(", "),googleRating:$("#googleRating").value,googleUrl:$("#googleUrl").value.trim(),shopPhotos:$("#shopPhotos").value.trim(),description:$("#description").value.trim()}};if(!silent)$("#artisanNote").textContent="Enregistrement...";try{await api("saveArtisan",payload);if(!silent)$("#artisanNote").textContent="Fiche enregistree.";openEditor(await api("getProProfile"))}catch(error){$("#artisanNote").textContent=`Erreur : ${error.message}`}}
     async function saveProduct(event){event.preventDefault();const productId=$("#productId").value.trim();const payload={product:{id:productId,name:$("#productName").value.trim(),price:formatPrice($("#price").value),description:$("#productDescription").value.trim(),photos:$("#productPhotos").value.trim()}};$("#productNote").textContent=productId?"Modification...":"Ajout...";try{await api(productId?"updateProduct":"addProduct",payload);resetProductForm();$("#productNote").textContent=productId?"Produit modifie.":"Produit ajoute.";openEditor(await api("getProProfile"))}catch(error){$("#productNote").textContent=`Erreur : ${error.message}`}}
     function editProduct(productId){const product=(profile?.products||[]).find((item)=>item.id===productId);if(!product)return;$("#productId").value=product.id;$("#productName").value=product.name||"";$("#price").value=product.price||"";$("#productDescription").value=product.description||"";$("#productPhotos").value=Array.isArray(product.photos)?product.photos.join(", "):(product.photos||"");renderPhotoPreview("productPhotos","productPhotosPreview");$("#productFormTitle").textContent="Modifier le produit";$("#productSubmitBtn").textContent="Modifier le produit";$("#cancelProductEditBtn").classList.remove("hidden");$("#productForm").scrollIntoView({behavior:"smooth",block:"start"})}
     async function deleteProduct(productId){$("#productNote").textContent="Suppression...";try{await api("deleteProduct",{productId});resetProductForm();$("#productNote").textContent="Produit supprime.";openEditor(await api("getProProfile"))}catch(error){$("#productNote").textContent=`Erreur : ${error.message}`}}
