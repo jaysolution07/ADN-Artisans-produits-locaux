@@ -82,7 +82,7 @@ url("FOND.png") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;fo
   border-radius:22px;
   border:1px solid rgba(0,0,0,.08);
 
-  height:220px;
+  height:180px;
 
   background:#fff;
   cursor:pointer;
@@ -241,22 +241,33 @@ url("FOND.png") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;fo
 @media(max-width:560px){
 
   .category-cards{
-    grid-template-columns:1fr 1fr;
-    gap:.55rem;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
   }
 
   .category-card{
-    padding:.6rem;
-    border-radius:14px;
+    height:105px;
+    border-radius:12px;
   }
 
-  .category-card strong{
-    font-size:.9rem;
+  .category-icon img{
+    object-fit:contain;
+    padding:4px;
   }
 
-  .category-card small{
+  .category-content{
+    padding:4px 6px;
+    background:rgba(0,0,0,.75);
+  }
+
+  .category-content strong{
     font-size:.72rem;
-    line-height:1.2;
+    margin:0;
+    text-align:center;
+  }
+
+  .category-content small{
+    display:none;
   }
 
 }
