@@ -727,15 +727,35 @@ map.dataset.ready="svg";
 
 });
       $("#searchInput").addEventListener("input",()=>{state.filters.search=$("#searchInput").value;renderArtisans()});
+$("#nearMeBtn").addEventListener("click", findNearbyArtisans);
       $("#artisanGrid").addEventListener("click",(event)=>{const button=event.target.closest("[data-open]");if(button)openArtisan(button.dataset.open)});
       $("#dialogClose").addEventListener("click",()=>$("#artisanDialog").close());
       $("#dialogContent").addEventListener("submit",submitReview);
       $("#dialogContent").addEventListener("click",deleteReview);
     }
-    async function loadArtisans(){$("#status").textContent="Chargement des artisans...";try{const data=await api("listPublic",{leadEmail:state.lead?.email||""});state.artisans=(data.artisans||[]).map((artisan)=>({...artisan,departmentCode:normalizeDepartmentCode(artisan.departmentCode),shopPhotos:toArray(artisan.shopPhotos),products:artisan.products||[],reviews:artisan.reviews||[]}));renderArtisans()}catch(error){$("#status").textContent=`Impossible de charger les artisans : ${error.message}`}}
-    function filteredArtisans(){const needle=normalizeText(state.filters.search);const regionNeedle=normalizeText(state.filters.region);const selectedDepartment=normalizeDepartmentCode(state.filters.departmentCode);return state.artisans.filter((artisan)=>!regionNeedle||normalizeText(artisan.region)===regionNeedle).filter((artisan)=>!selectedDepartment||normalizeDepartmentCode(artisan.departmentCode)===selectedDepartment).filter((artisan)=>artisanMatchesTrade(artisan,state.filters.trade)).filter((artisan)=>{if(!needle)return true;const haystack=normalizeText([artisan.businessName,artisan.proName,tradeValues(artisan.trade).join(" "),artisan.address,artisan.description,...(artisan.products||[]).map((product)=>product.name)].join(" "));return haystack.includes(needle)}).sort((a,b)=>Number(b.appRating||0)-Number(a.appRating||0)||Number(b.appReviewCount||0)-Number(a.appReviewCount||0))}
+    async function loadArtisans(){$("#status").textContent="Chargement des artisans...";try{const data=await api("listPublic",{leadEmail:state.lead?.email||""});state.artisans=(data.artisans||[]).map((artisan)=>({...artisan,departmentCode:normalizeDepartmentCode(artisan.departmentCode),shopPhotos:toArray(artisan.shopPhotos),products:artisan.products||[],reviews:artisan.reviews||[]}));console.log("Premier artisan :", state.artisans[0]);renderArtisans()}catch(error){$("#status").textContent=`Impossible de charger les artisans : ${error.message}`}}
+    function filteredArtisans(){const needle=normalizeText(state.filters.search);const regionNeedle=normalizeText(state.filters.region);const selectedDepartment=normalizeDepartmentCode(state.filters.departmentCode);return state.artisans.filter((artisan)=>!regionNeedle||normalizeText(artisan.region)===regionNeedle).filter((artisan)=>!selectedDepartment||normalizeDepartmentCode(artisan.departmentCode)===selectedDepartment).filter((artisan)=>artisanMatchesTrade(artisan,state.filters.trade)).filter((artisan)=>{if(!needle)return true;const haystack=normalizeText([artisan.businessName,artisan.proName,tradeValues(artisan.trade).join(" "),artisan.address,artisan.description,...(artisan.products||[]).map((product)=>product.name)].join(" "));return haystack.includes(needle)}).sort((a,b)=>{
+
+  if(a.distance!=null && b.distance!=null){
+    return a.distance-b.distance;
+  }
+
+  return (
+    Number(b.appRating||0)-Number(a.appRating||0)
+    ||
+    Number(b.appReviewCount||0)-Number(a.appReviewCount||0)
+  );
+
+})}
     function firstPhoto(artisan){return artisan.shopPhotos?.[0]||"https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80"}
-    function renderArtisans(){const items=filteredArtisans();$("#status").textContent=items.length?`${items.length} artisan(s) trouve(s), classés par note ADN.`:"Aucun artisan ne correspond aux filtres.";$("#artisanGrid").innerHTML="";items.forEach((artisan)=>{const department=getDepartment(artisan.departmentCode);const card=document.createElement("article");card.className="artisan-card";const addressLink=artisan.address?`<p><a href="${mapsUrl(artisan.address)}" target="_blank" rel="noopener">${escapeHtml(artisan.address)}</a></p>`:"";card.innerHTML=`<img src="${firstPhoto(artisan)}" alt="Photo de ${escapeHtml(artisan.businessName)}" loading="lazy"><div class="artisan-body"><div class="meta-row">${tradePills(artisan.trade)}<span class="pill">${escapeHtml(department?.name||artisan.departmentCode||"")}</span></div><h3>${escapeHtml(artisan.businessName)}</h3><p>${escapeHtml(artisan.description||"")}</p>${addressLink}<div class="rating-row">${appRatingLabel(artisan)}</div><button data-open="${escapeHtml(artisan.id)}">Voir la fiche</button></div>`;$("#artisanGrid").appendChild(card)});renderDepartmentMap()}
+    function renderArtisans(){const items=filteredArtisans();$("#status").textContent=items.length?`${items.length} artisan(s) trouve(s), classés par note ADN.`:"Aucun artisan ne correspond aux filtres.";$("#artisanGrid").innerHTML="";items.forEach((artisan)=>{const department=getDepartment(artisan.departmentCode);const card=document.createElement("article");card.className="artisan-card";const addressLink=artisan.address?`<p><a href="${mapsUrl(artisan.address)}" target="_blank" rel="noopener">${escapeHtml(artisan.address)}</a></p>`:"";card.innerHTML=`<img src="${firstPhoto(artisan)}" alt="Photo de ${escapeHtml(artisan.businessName)}" loading="lazy"><div class="artisan-body"><div class="meta-row">${tradePills(artisan.trade)}<span class="pill">${escapeHtml(department?.name||artisan.departmentCode||"")}</span></div><h3>${escapeHtml(artisan.businessName)}</h3><p>${escapeHtml(artisan.description||"")}</p>${addressLink}${artisan.distance ? `
+<div class="pill distance-pill">
+📍 ${artisan.distance.toFixed(1).replace('.',',')} km de vous
+</div>
+` : ''}
+
+<div class="rating-row">${appRatingLabel(artisan)}</div>
+<button data-open="${escapeHtml(artisan.id)}">Voir la fiche</button></div>`;$("#artisanGrid").appendChild(card)});renderDepartmentMap()}
     function renderProducts(products=[]){if(!products.length)return"<p>Aucun produit publie pour le moment.</p>";return products.map((product)=>{const photos=toArray(product.photos);return`<article class="product-card"><img src="${escapeHtml(photos[0]||firstPhoto({}))}" alt=""><div>${productField("Article",product.name,"h4")}${productField("Prix",formatPrice(product.price),"strong")}${productField("Description",product.description||"")}</div></article>`}).join("")}
     function renderReviews(reviews=[]){if(!reviews.length)return"<p>Aucun avis public pour le moment.</p>";return reviews.map((review)=>`<article class="review-item"><strong>${escapeHtml(review.author)}</strong> <span class="stars">${stars(review.rating)}</span><p>${escapeHtml(review.comment)}</p></article>`).join("")}
     function reviewForm(artisan){const mine=(artisan.reviews||[]).find((review)=>review.canEdit);const author=mine?.author||[state.lead?.firstName,state.lead?.lastName].filter(Boolean).join(" ");const rating=mine?.rating||5;return`<form class="review-form" data-review="${escapeHtml(artisan.id)}"><h3>${mine?"Modifier mon avis":"Laisser mon avis"}</h3><div class="field-grid"><label>Votre nom<input name="author" value="${escapeHtml(author)}" required></label><label>Note<select name="rating" required>${[5,4,3,2,1].map((value)=>`<option value="${value}" ${Number(rating)===value?"selected":""}>${value} etoile${value>1?"s":""}</option>`).join("")}</select></label></div><label>Commentaire<textarea name="comment" rows="3" required>${escapeHtml(mine?.comment||"")}</textarea></label><div class="meta-row"><button type="submit">${mine?"Modifier mon avis":"Publier mon avis"}</button>${mine?`<button type="button" data-delete-review="${escapeHtml(artisan.id)}">Supprimer mon avis</button>`:""}</div><p class="form-note"></p></form>`}
@@ -764,7 +784,57 @@ map.dataset.ready="svg";
     async function deleteProduct(productId){$("#productNote").textContent="Suppression...";try{await api("deleteProduct",{productId});resetProductForm();$("#productNote").textContent="Produit supprime.";openEditor(await api("getProProfile"))}catch(error){$("#productNote").textContent=`Erreur : ${error.message}`}}
     function handleProductListClick(event){const editButton=event.target.closest("[data-edit-product]");if(editButton){editProduct(editButton.dataset.editProduct);return}const deleteButton=event.target.closest("[data-delete-product]");if(deleteButton)deleteProduct(deleteButton.dataset.deleteProduct)}
     function resetProductForm(){$("#productForm").reset();$("#productId").value="";$("#productPhotosPreview").innerHTML="";$("#productFormTitle").textContent="Ajouter un produit";$("#productSubmitBtn").textContent="Ajouter le produit";$("#cancelProductEditBtn").classList.add("hidden")}
+async function findNearbyArtisans(){
 
+  if(!navigator.geolocation){
+    alert("La géolocalisation n'est pas disponible.");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition((position)=>{
+
+    const userLat = position.coords.latitude;
+    const userLng = position.coords.longitude;
+
+    state.artisans.forEach(artisan=>{
+
+      const distance = calculateDistance(
+        userLat,
+        userLng,
+        artisan.latitude,
+        artisan.longitude
+      );
+
+      artisan.distance = distance;
+
+    });
+
+    state.artisans.sort((a,b)=>a.distance-b.distance);
+
+    renderArtisans();
+
+  });
+
+}
+function calculateDistance(lat1, lon1, lat2, lon2){
+
+  const R = 6371;
+
+  const dLat = (lat2-lat1) * Math.PI/180;
+  const dLon = (lon2-lon1) * Math.PI/180;
+
+  const a =
+    Math.sin(dLat/2)*Math.sin(dLat/2) +
+    Math.cos(lat1*Math.PI/180) *
+    Math.cos(lat2*Math.PI/180) *
+    Math.sin(dLon/2) *
+    Math.sin(dLon/2);
+
+  const c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+
+  return R*c;
+
+}
     initMode();
   </script>
   <script>
