@@ -145,6 +145,9 @@ background-position:
 .category-card[data-trade="Boutique"]{
   background:#eef3ff;
 }
+.category-card[data-trade="Traiteur"]{
+  background:#f4eefc;
+}
 .category-card::before{
   content:"";
   position:absolute;
@@ -555,7 +558,16 @@ background-position:
   </div>
 
 </div>
+<div class="category-card" data-trade="Traiteur">
+  <div class="category-icon">
+    <img src="TRAIT.png" alt="Traiteurs">
+  </div>
 
+  <div class="category-content">
+    <strong>Traiteurs</strong>
+    <small>Buffets, repas, réceptions...</small>
+  </div>
+</div>
 </div>
 
 <div id="status" class="status"></div>
@@ -593,6 +605,10 @@ background-position:
           <label class="checkbox-option"><input type="checkbox" name="trade" value="Boucher/charcutier">Boucher/charcutier</label>
           <label class="checkbox-option"><input type="checkbox" name="trade" value="Boulanger">Boulanger</label>
           <label class="checkbox-option"><input type="checkbox" name="trade" value="Restaurant">Restaurant</label>
+<label class="checkbox-option">
+  <input type="checkbox" name="trade" value="Traiteur">
+  Traiteur
+</label>
         </div></div></div>
         <input class="hidden" id="googleRating" type="hidden" value="0">
         <input class="hidden" id="googleUrl" type="hidden" value="">
@@ -685,7 +701,11 @@ svg-maps/france.departments – licence CC BY 4.0.
     function toArray(value){return Array.isArray(value)?value.filter(Boolean):String(value||"").split(",").map((item)=>item.trim()).filter(Boolean)}
     function tradeValues(value){return toArray(value)}
     function tradePills(value){const trades=tradeValues(value);return trades.length?trades.map((trade)=>`<span class="pill">${escapeHtml(trade)}</span>`).join(""):`<span class="pill">Artisan</span>`}
-    function artisanMatchesTrade(artisan,filter){const trades=tradeValues(artisan.trade);if(!filter)return true;if(filter==="Artisan")return trades.some((trade)=>ARTISAN_TRADES.includes(trade));return trades.includes(filter)}
+    function artisanMatchesTrade(artisan,filter){const trades=tradeValues(artisan.trade);if(!filter)return true;if(filter==="Artisan")
+  return trades.some((trade)=>ARTISAN_TRADES.includes(trade));
+
+if(filter==="Traiteur")
+  return trades.includes("Traiteur");return trades.includes(filter)}
     function setTradeChoices(value){const selected=new Set(tradeValues(value));document.querySelectorAll('input[name="trade"]').forEach((input)=>{input.checked=selected.has(input.value)})}
     function getTradeChoices(){return [...document.querySelectorAll('input[name="trade"]:checked')].map((input)=>input.value)}
     function stars(value){const rating=Number(value||0);const full=Math.round(rating);return `${"★".repeat(Math.min(5,full))}${"☆".repeat(Math.max(0,5-full))}`}
