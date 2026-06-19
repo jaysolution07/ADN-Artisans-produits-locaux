@@ -265,7 +265,32 @@ background-position:
 }
 .artisan-body h3{margin:0}.meta-row,.rating-row{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.pill{display:inline-flex;align-items:center;border-radius:999px;background:var(--sky);color:var(--olive-dark);padding:.24rem .55rem;font-size:.8rem;font-weight:800}.stars{color:var(--gold);font-weight:900}
     .artisan-dialog{width:min(920px,calc(100vw - 2rem));border:1px solid var(--line);border-radius:8px;padding:0}.artisan-dialog::backdrop{background:rgba(32,34,31,.55)}.dialog-close{position:absolute;right:.75rem;top:.75rem;width:36px;height:36px;padding:0}.dialog-inner{padding:1.25rem}.contact-list{display:grid;gap:.35rem;margin:1rem 0}.contact-list p{margin:0}.contact-list a{color:var(--olive-dark);font-weight:700}.dialog-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}.dialog-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:var(--sky)}.product-grid,.review-list,.product-list{display:grid;gap:.8rem}.product-card,.review-item{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}.product-card{display:grid;grid-template-columns:110px 1fr;gap:.9rem}.review-form{display:grid;gap:.75rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
-    .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}.pro-tabs,.social-tabs{display:flex;flex-wrap:wrap;gap:.5rem}.pro-tabs button,.social-tabs button{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.pro-tabs button.active,.social-tabs button.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}.social-shell .social-intro{padding:1.5rem 0 1rem;border-bottom:1px solid var(--line)}.social-shell .social-intro h2{margin:.2rem 0 0;font-size:clamp(1.8rem,5vw,2.6rem)}.social-shell .social-intro p{margin:.35rem 0 0;color:var(--muted)}
+    .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}.pro-tabs,.social-tabs{display:flex;flex-wrap:wrap;gap:.5rem}.pro-tabs button,.social-tabs button{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.pro-tabs button.active,.social-tabs button.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}.social-shell .social-intro{
+  padding:2rem;
+
+  min-height:280px;
+  display:flex;
+  align-items:center;
+
+  border-bottom:1px solid var(--line);
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,.80),
+      rgba(255,255,255,.80)
+    ),
+    url("BAN.png") center center / 100% auto no-repeat;
+
+  border-radius:18px;
+  margin-bottom:1rem;
+}
+.social-shell .social-intro h2,
+.social-shell .social-intro p,
+.social-shell .social-intro .eyebrow{
+  text-shadow:
+    0 1px 2px rgba(255,255,255,.9);
+}
+.social-shell .social-intro h2{margin:.2rem 0 0;font-size:clamp(1.8rem,5vw,2.6rem)}.social-shell .social-intro p{margin:.35rem 0 0;color:var(--muted)}
 #networkBadge{
   display:inline-flex;
   align-items:center;
@@ -475,6 +500,44 @@ background-position:
 
   box-shadow:
     0 14px 30px rgba(185,78,53,.20);
+}
+.adn-social-btn.loading{
+  pointer-events:none;
+}
+
+.adn-social-btn.loading img{
+  display:none;
+}
+
+.adn-social-btn.loading::after{
+  content:"";
+
+  width:30px;
+  height:30px;
+
+  border-radius:50%;
+
+  border:4px solid #ddd;
+  border-top-color:#b94e35;
+
+  animation:adnSpin .8s linear infinite;
+}
+
+@keyframes adnSpin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+.social-actions button,
+.social-comment-form button{
+  font-size:1.3rem;
+  min-width:44px;
+  height:44px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
 }
   </style>
 </head>
@@ -984,7 +1047,51 @@ $("#nearMeBtn").addEventListener("click", findNearbyArtisans);
     function setValue(id,value){const input=$("#"+id);if(input)input.value=value||""}
     function showProTab(tab){document.querySelectorAll("[data-pro-tab]").forEach((button)=>button.classList.toggle("active",button.dataset.proTab===tab));document.querySelectorAll("[data-pro-tab-panel]").forEach((panel)=>panel.classList.toggle("hidden",panel.dataset.proTabPanel!==tab))}
     function showSocialTab(tab){document.querySelectorAll("[data-social-tab]").forEach((button)=>button.classList.toggle("active",button.dataset.socialTab===tab));document.querySelectorAll("[data-social-tab-panel]").forEach((panel)=>panel.classList.toggle("hidden",panel.dataset.socialTabPanel!==tab));if(tab==="feed")loadSocialFeed(false);if(tab==="profile"){socialProfile.fromFeed=false;$("#socialProfileBack").classList.add("hidden");if(profile?.artisan?.id)loadSocialProfile(profile.artisan.id,false)}}
-    function openSocialApp(){if(!profile){$("#loginNote").textContent="Connectez-vous d'abord pour accéder au réseau social.";return}if(!profile.artisan){alert("Enregistrez d'abord votre fiche artisan depuis le portail pro.");return}$("#proApp").classList.add("hidden");$("#socialApp").classList.remove("hidden");$("#brandDepartment").textContent="Réseau ADN";const name=profile.pro?.businessName||profile.pro?.proName||"Artisan";$("#socialTitle").textContent=name;showSocialTab("feed");preloadSocialData()}
+    async function openSocialApp(){
+
+  if(!profile){
+    $("#loginNote").textContent="Connectez-vous d'abord pour accéder au réseau social.";
+    return;
+  }
+
+  if(!profile.artisan){
+    alert("Enregistrez d'abord votre fiche artisan depuis le portail pro.");
+    return;
+  }
+
+  const btn = $("#openSocialBtn");
+
+  btn.classList.add("loading");
+  btn.disabled = true;
+
+  try{
+
+    socialCache.feeds = {};
+    socialCache.profiles = {};
+
+    await refreshSocialFeed();
+
+    $("#proApp").classList.add("hidden");
+    $("#socialApp").classList.remove("hidden");
+    $("#brandDepartment").textContent="Réseau ADN";
+
+    const name =
+      profile.pro?.businessName ||
+      profile.pro?.proName ||
+      "Artisan";
+
+    $("#socialTitle").textContent = name;
+
+    showSocialTab("feed");
+    preloadSocialData();
+
+  }finally{
+
+    btn.classList.remove("loading");
+    btn.disabled = false;
+
+  }
+}
     function backToProPortal(){$("#socialApp").classList.add("hidden");$("#proApp").classList.remove("hidden");$("#brandDepartment").textContent="Portail professionnel";showProTab("profile")}
     function setupPhotoDrop(textareaId,inputId,previewId,noteId){const drop=$(`[data-photo-drop="${textareaId}"]`);const input=$("#"+inputId);if(!drop||!input)return;drop.addEventListener("click",(event)=>{event.preventDefault();event.stopPropagation();input.click()});input.addEventListener("click",(event)=>event.stopPropagation());input.addEventListener("change",async()=>{await uploadFiles(input.files,textareaId,previewId,noteId);input.value=""});["dragenter","dragover"].forEach((eventName)=>drop.addEventListener(eventName,(event)=>{event.preventDefault();drop.classList.add("is-dragover")}));["dragleave","drop"].forEach((eventName)=>drop.addEventListener(eventName,(event)=>{event.preventDefault();drop.classList.remove("is-dragover")}));drop.addEventListener("drop",(event)=>uploadFiles(event.dataTransfer.files,textareaId,previewId,noteId))}
     async function uploadFiles(files,textareaId,previewId,noteId){const images=[...files].filter((file)=>file.type.startsWith("image/"));if(!images.length)return;const note=$("#"+noteId);note.textContent=`Upload de ${images.length} photo(s)...`;try{let warning="";for(const file of images){const dataUrl=await readFileAsDataUrl(file);const result=await api("uploadPhoto",{fileName:file.name,mimeType:file.type,data:dataUrl.split(",")[1]});appendPhotoUrl(textareaId,result.url);if(result.warning)warning=result.warning;renderPhotoPreview(textareaId,previewId)}if(textareaId==="shopPhotos"){await saveArtisan(null,true);note.textContent=warning?`${warning} Fiche enregistree.`:"Photo(s) ajoutee(s), fiche enregistree."}else if(textareaId==="postPhotos"){note.textContent=warning?`${warning} Photo(s) prete(s) pour publication.`:"Photo(s) ajoutee(s)."}else{note.textContent=warning?`${warning} Pensez a ajouter le produit.`:"Photo(s) ajoutee(s). Pensez a ajouter le produit."}}catch(error){note.textContent=`Upload impossible : ${error.message}`}}
@@ -1170,10 +1277,64 @@ async function deletePartnership(partnershipId){
     async function preloadSocialData(){if(!profile?.artisan)return;try{if(!socialCache.feeds.following&&!readSocialCache("feed","following")){const data=await api("getSocialFeed",{offset:0,limit:20,mode:"following"});socialCache.feeds.following={posts:data.posts||[],offset:(data.posts||[]).length,hasMore:!!data.hasMore,followingIds:data.followingIds||[],discoverArtisans:data.discoverArtisans||[]};writeSocialCache("feed","following",socialCache.feeds.following)}if(!socialCache.profiles[profile.artisan.id]&&!readSocialCache("profile",profile.artisan.id)){const data=await api("getSocialProfile",{artisanId:profile.artisan.id,offset:0,limit:20});socialCache.profiles[profile.artisan.id]={data,posts:data.posts||[],offset:(data.posts||[]).length,hasMore:!!data.hasMore};writeSocialCache("profile",profile.artisan.id,socialCache.profiles[profile.artisan.id])}}catch(error){}}
     function setSocialFeedMode(mode){socialFeed.mode=mode==="following"?"following":"all";document.querySelectorAll("[data-feed-mode]").forEach((button)=>button.classList.toggle("active",button.dataset.feedMode===socialFeed.mode));loadSocialFeed(false)}
     async function loadSocialFeed(reset=false){if(!profile?.artisan){$("#socialFeed").innerHTML="<p>Enregistrez votre fiche artisan avant d'accéder au fil communautaire.</p>";$("#loadMoreWrap").classList.add("hidden");$("#socialDiscover").classList.add("hidden");return}if(socialFeed.loading)return;socialFeed.loading=true;if(reset){socialFeed.offset=0;socialFeed.posts=[];$("#socialFeed").innerHTML="<p class=\"form-note\">Chargement du fil...</p>"}try{const data=await api("getSocialFeed",{offset:socialFeed.offset,limit:20,mode:socialFeed.mode});socialFeed.posts=reset?data.posts||[]:socialFeed.posts.concat(data.posts||[]);socialFeed.offset=socialFeed.posts.length;socialFeed.hasMore=!!data.hasMore;profile.followingIds=data.followingIds||profile.followingIds||[];renderSocialFeed(data.discoverArtisans||[])}catch(error){$("#socialFeed").innerHTML=`<p class="form-note">Impossible de charger le fil : ${escapeHtml(error.message)}</p>`}finally{socialFeed.loading=false}}
-    async function refreshSocialFeed(){if(!profile?.artisan||socialFeed.loading)return;socialFeed.loading=true;const limit=Math.max(20,socialFeed.posts.length||20);try{const data=await api("getSocialFeed",{offset:0,limit,mode:socialFeed.mode});socialFeed.posts=data.posts||[];socialFeed.offset=socialFeed.posts.length;socialFeed.hasMore=!!data.hasMore;profile.followingIds=data.followingIds||profile.followingIds||[];renderSocialFeed(data.discoverArtisans||[])}catch(error){$("#socialFeed").innerHTML=`<p class="form-note">Impossible de rafraîchir le fil : ${escapeHtml(error.message)}</p>`}finally{socialFeed.loading=false}}
+    async function refreshSocialFeed(){
+
+  socialFeed.offset = 0;
+  socialFeed.posts = [];
+
+  if(!profile?.artisan || socialFeed.loading) return;
+
+  socialFeed.loading = true;
+
+  try{
+
+    const data = await api("getSocialFeed",{
+      offset:0,
+      limit:20,
+      mode:socialFeed.mode
+    });
+
+    socialFeed.posts = data.posts || [];
+    socialFeed.offset = socialFeed.posts.length;
+    socialFeed.hasMore = !!data.hasMore;
+
+    profile.followingIds =
+      data.followingIds ||
+      profile.followingIds ||
+      [];
+
+    renderSocialFeed(
+      data.discoverArtisans || []
+    );
+
+  }catch(error){
+
+    $("#socialFeed").innerHTML =
+      `<p class="form-note">
+        Impossible de rafraîchir le fil :
+        ${escapeHtml(error.message)}
+      </p>`;
+
+  }finally{
+
+    socialFeed.loading = false;
+
+  }
+}
     async function refreshSocialViews(){if(!$("#socialApp").classList.contains("hidden"))await refreshSocialFeed();if(!$("#socialApp").classList.contains("hidden")&&!$("#mysocialPanel").classList.contains("hidden")&&socialProfile.artisanId)await refreshSocialProfile()}
     function renderSocialFeed(discoverArtisans=[]){const feed=$("#socialFeed");if(!feed)return;if(!socialFeed.posts.length){feed.innerHTML=`<p>${socialFeed.mode==="following"?"Aucune publication de vos abonnements pour le moment.":"Aucune publication pour le moment. Soyez le premier à publier !"}</p>`}else{feed.innerHTML=socialFeed.posts.map(renderSocialPost).join("")}$("#loadMoreWrap").classList.toggle("hidden",!socialFeed.hasMore);renderSocialDiscover(discoverArtisans)}
-    function renderSocialPost(post,options={}){const author=post.author||{};const avatar=author.avatar||firstPhoto({});const photos=toArray(post.photos);const hideAuthor=!!options.hideAuthor;const comments=(post.comments||[]).map((comment)=>`<article class="social-comment"><strong>${socialAuthorLabel(comment.author)}</strong><small>${escapeHtml(formatSocialDate(comment.createdAt))}</small><p>${escapeHtml(comment.content||"")}</p>${comment.isMine?`<button type="button" data-delete-comment="${escapeHtml(comment.id)}" data-post-id="${escapeHtml(post.id)}">Supprimer</button>`:""}</article>`).join("");const head=hideAuthor?"":`<div class="social-post-head"><button type="button" class="social-profile-link" data-open-profile="${escapeHtml(author.id)}"><img class="social-avatar" src="${escapeHtml(avatar)}" alt=""><div class="social-post-meta"><strong>${socialAuthorLabel(author)}</strong><small>${escapeHtml(tradeValues(author.trade).join(", ")||"Artisan")} · ${escapeHtml(formatSocialDate(post.createdAt))}</small></div></button>${post.isMine?"":`<button type="button" data-follow-author="${escapeHtml(author.id)}" class="${(profile?.followingIds||[]).includes(author.id)?"liked":""}">${(profile?.followingIds||[]).includes(author.id)?"Abonné":"Suivre"}</button>`}</div>`;return`<article class="social-post" data-post-id="${escapeHtml(post.id)}">${head}${hideAuthor?`<small class="pill">${escapeHtml(formatSocialDate(post.createdAt))}</small>`:""}${post.content?`<p class="social-post-content">${escapeHtml(post.content)}</p>`:""}${photos.length?`<div class="social-gallery">${photos.map((url)=>`<img src="${escapeHtml(url)}" alt="">`).join("")}</div>`:""}<div class="social-actions"><button type="button" class="${post.likedByMe?"liked":""}" data-like-post="${escapeHtml(post.id)}">${post.likedByMe?"Aimé":"J'aime"} (${Number(post.likeCount||0)})</button>${post.isMine?`<button type="button" data-delete-post="${escapeHtml(post.id)}">Supprimer</button>`:""}</div><div class="social-comments">${comments}<form class="social-comment-form" data-comment-post="${escapeHtml(post.id)}"><textarea rows="2" placeholder="Écrire un commentaire..." required></textarea><button type="submit">Envoyer</button></form></div></article>`}
+    function renderSocialPost(post,options={}){const author=post.author||{};const avatar=author.avatar||firstPhoto({});const photos=toArray(post.photos);const hideAuthor=!!options.hideAuthor;const comments=(post.comments||[]).map((comment)=>`<article class="social-comment"><strong>${socialAuthorLabel(comment.author)}</strong><small>${escapeHtml(formatSocialDate(comment.createdAt))}</small><p>${escapeHtml(comment.content||"")}</p>${comment.isMine?`<button type="button"
+data-delete-comment="${escapeHtml(comment.id)}"
+data-post-id="${escapeHtml(post.id)}">
+🗑️
+</button>`:""}</article>`).join("");const head=hideAuthor?"":`<div class="social-post-head"><button type="button" class="social-profile-link" data-open-profile="${escapeHtml(author.id)}"><img class="social-avatar" src="${escapeHtml(avatar)}" alt=""><div class="social-post-meta"><strong>${socialAuthorLabel(author)}</strong><small>${escapeHtml(tradeValues(author.trade).join(", ")||"Artisan")} · ${escapeHtml(formatSocialDate(post.createdAt))}</small></div></button>${post.isMine?"":`<button type="button" data-follow-author="${escapeHtml(author.id)}" class="${(profile?.followingIds||[]).includes(author.id)?"liked":""}">${(profile?.followingIds||[]).includes(author.id)?"Abonné":"Suivre"}</button>`}</div>`;return`<article class="social-post" data-post-id="${escapeHtml(post.id)}">${head}${hideAuthor?`<small class="pill">${escapeHtml(formatSocialDate(post.createdAt))}</small>`:""}${post.content?`<p class="social-post-content">${escapeHtml(post.content)}</p>`:""}${photos.length?`<div class="social-gallery">${photos.map((url)=>`<img src="${escapeHtml(url)}" alt="">`).join("")}</div>`:""}<div class="social-actions"><button type="button"
+class="${post.likedByMe?"liked":""}"
+data-like-post="${escapeHtml(post.id)}">
+❤️ ${Number(post.likeCount||0)}
+</button>${post.isMine?`
+<button type="button" data-edit-post="${escapeHtml(post.id)}">✏️</button>
+<button type="button" data-delete-post="${escapeHtml(post.id)}">🗑️</button>
+`:""}</div><div class="social-comments">${comments}<form class="social-comment-form" data-comment-post="${escapeHtml(post.id)}"><textarea rows="2" placeholder="Écrire un commentaire..." required></textarea><button type="submit">➤</button></form></div></article>`}
     function renderSocialDiscover(artisans=[]){const panel=$("#socialDiscover");const list=$("#socialDiscoverList");if(!panel||!list)return;if(!artisans.length){panel.classList.add("hidden");return}panel.classList.remove("hidden");list.innerHTML=artisans.slice(0,12).map((artisan)=>`<article class="social-discover-item"><button type="button" class="social-profile-link" data-open-profile="${escapeHtml(artisan.id)}"><div><strong>${socialAuthorLabel(artisan)}</strong><p>${escapeHtml(tradeValues(artisan.trade).join(", ")||"Artisan")}${artisan.departmentCode?` · ${escapeHtml(artisan.departmentCode)}`:""}</p></div></button><button type="button" data-follow-discover="${escapeHtml(artisan.id)}">Suivre</button></article>`).join("")}
     async function publishPost(event){event.preventDefault();if(!profile?.artisan){$("#postNote").textContent="Enregistrez votre fiche artisan avant de publier.";return}const content=$("#postContent").value.trim();const photos=$("#postPhotos").value.trim();if(!content&&!photos){$("#postNote").textContent="Ajoutez du texte ou au moins une photo.";return}$("#postNote").textContent="Publication...";try{await api("createPost",{post:{content,photos}});$("#postForm").reset();$("#postPhotosPreview").innerHTML="";$("#postNote").textContent="Publication envoyée.";await refreshSocialViews()}catch(error){$("#postNote").textContent=`Erreur : ${error.message}`}}
     async function togglePostLike(postId){try{await api("toggleLike",{postId});await refreshSocialViews()}catch(error){alert(`Like impossible : ${error.message}`)}}
@@ -1195,7 +1356,18 @@ async function deletePartnership(partnershipId){
     async function refreshSocialFeed(showSkeleton=false){if(!profile?.artisan||socialFeed.loading)return;socialFeed.loading=true;const limit=Math.max(20,socialFeed.posts.length||20);if(showSkeleton)renderSocialSkeleton("#socialFeed");try{const data=await api("getSocialFeed",{offset:0,limit,mode:socialFeed.mode});socialFeed.posts=data.posts||[];socialFeed.offset=socialFeed.posts.length;socialFeed.hasMore=!!data.hasMore;profile.followingIds=data.followingIds||profile.followingIds||[];renderSocialFeed(data.discoverArtisans||[]);cacheFeed(data.discoverArtisans||[])}catch(error){$("#socialFeed").innerHTML=`<p class="form-note">Impossible de rafraîchir le fil : ${escapeHtml(error.message)}</p>`}finally{socialFeed.loading=false}}
     async function loadSocialProfile(artisanId,reset=false){if(!profile?.artisan){$("#socialProfileContent").innerHTML="<p>Enregistrez votre fiche artisan pour accéder aux profils.</p>";$("#socialProfileHero").innerHTML="";$("#socialProfileStats").innerHTML="";$("#profileLoadMoreWrap").classList.add("hidden");return}if(!artisanId)artisanId=profile.artisan.id;if(socialProfile.loading)return;if(!reset&&socialProfile.artisanId===artisanId&&socialProfile.data){renderSocialProfile();return}socialProfile.artisanId=artisanId;if(!reset&&applyCachedProfile(artisanId))return;socialProfile.loading=true;if(reset){socialProfile.offset=0;socialProfile.posts=[];socialProfile.section="posts";document.querySelectorAll("[data-profile-section]").forEach((button)=>button.classList.toggle("active",button.dataset.profileSection==="posts"))}renderSocialSkeleton("#socialProfileContent",2);try{const data=await api("getSocialProfile",{artisanId,offset:socialProfile.offset,limit:20});socialProfile.data=data;socialProfile.posts=reset?data.posts||[]:socialProfile.posts.concat(data.posts||[]);socialProfile.offset=socialProfile.posts.length;socialProfile.hasMore=!!data.hasMore;profile.followingIds=data.followingIds||profile.followingIds||[];renderSocialProfile();cacheProfile()}catch(error){$("#socialProfileContent").innerHTML=`<p class="form-note">Impossible de charger le profil : ${escapeHtml(error.message)}</p>`}finally{socialProfile.loading=false}}
     async function refreshSocialProfile(showSkeleton=false){if(!socialProfile.artisanId||socialProfile.loading)return;socialProfile.loading=true;const limit=Math.max(20,socialProfile.posts.length||20);if(showSkeleton)renderSocialSkeleton("#socialProfileContent",2);try{const data=await api("getSocialProfile",{artisanId:socialProfile.artisanId,offset:0,limit});socialProfile.data=data;socialProfile.posts=data.posts||[];socialProfile.offset=socialProfile.posts.length;socialProfile.hasMore=!!data.hasMore;profile.followingIds=data.followingIds||profile.followingIds||[];renderSocialProfile();cacheProfile()}catch(error){$("#socialProfileContent").innerHTML=`<p class="form-note">Impossible de rafraîchir le profil : ${escapeHtml(error.message)}</p>`}finally{socialProfile.loading=false}}
-    function renderSocialPost(post,options={}){const author=post.author||{};const avatar=author.avatar||firstPhoto({});const photos=toArray(post.photos);const hideAuthor=!!options.hideAuthor;const allComments=post.comments||[];const commentById=Object.fromEntries(allComments.map((comment)=>[comment.id,comment]));const visible=!!post.showComments;const comments=allComments.map((comment)=>{const parent=comment.parentCommentId?commentById[comment.parentCommentId]:null;return`<article class="social-comment ${comment.parentCommentId?"is-reply":""}"><strong>${socialAuthorLabel(comment.author)}</strong><small>${escapeHtml(formatSocialDate(comment.createdAt))}</small>${parent?`<small>Réponse à ${socialAuthorLabel(parent.author)}</small>`:""}<p>${escapeHtml(comment.content||"")}</p><div class="social-actions"><button type="button" class="secondary" data-reply-comment="${escapeHtml(comment.id)}" data-post-id="${escapeHtml(post.id)}">Répondre</button>${comment.isMine?`<button type="button" data-delete-comment="${escapeHtml(comment.id)}" data-post-id="${escapeHtml(post.id)}">Supprimer</button>`:""}</div></article>`}).join("");const head=hideAuthor?"":`<div class="social-post-head"><button type="button" class="social-profile-link" data-open-profile="${escapeHtml(author.id)}"><img class="social-avatar" src="${escapeHtml(avatar)}" alt=""><div class="social-post-meta"><strong>${socialAuthorLabel(author)}</strong><small>${escapeHtml(tradeValues(author.trade).join(", ")||"Artisan")} · ${escapeHtml(formatSocialDate(post.createdAt))}</small></div></button>${post.isMine?"":`<button type="button" data-follow-author="${escapeHtml(author.id)}" class="${(profile?.followingIds||[]).includes(author.id)?"liked":""}">${(profile?.followingIds||[]).includes(author.id)?"Abonné":"Suivre"}</button>`}</div>`;const body=post.editing?`<form class="social-edit-form" data-edit-post-form="${escapeHtml(post.id)}"><textarea rows="4" required>${escapeHtml(post.content||"")}</textarea><div class="meta-row"><button type="submit">Enregistrer</button><button type="button" data-cancel-edit-post="${escapeHtml(post.id)}">Annuler</button></div></form>`:(post.content?`<p class="social-post-content">${escapeHtml(post.content)}</p>`:"");return`<article class="social-post" data-post-id="${escapeHtml(post.id)}">${head}${hideAuthor?`<small class="pill">${escapeHtml(formatSocialDate(post.createdAt))}</small>`:""}${body}${photos.length?`<div class="social-gallery">${photos.map((url)=>`<img src="${escapeHtml(url)}" alt="">`).join("")}</div>`:""}<div class="social-actions"><button type="button" class="${post.likedByMe?"liked":""}" data-like-post="${escapeHtml(post.id)}">${post.likedByMe?"Aimé":"J'aime"} (${Number(post.likeCount||0)})</button>${post.isMine?`<button type="button" data-edit-post="${escapeHtml(post.id)}">Modifier</button><button type="button" data-delete-post="${escapeHtml(post.id)}">Supprimer</button>`:""}${allComments.length?`<button type="button" class="secondary" data-toggle-comments="${escapeHtml(post.id)}">${visible?"Masquer":"Voir"} les commentaires (${allComments.length})</button>`:""}</div><div class="social-comments"><div class="social-comment-list ${visible?"":"hidden"}">${comments}</div><form class="social-comment-form" data-comment-post="${escapeHtml(post.id)}"><textarea rows="2" placeholder="Écrire un commentaire..." required></textarea><input type="hidden" name="parentCommentId" value=""><button type="submit">Envoyer</button></form></div></article>`}
+    function renderSocialPost(post,options={}){const author=post.author||{};const avatar=author.avatar||firstPhoto({});const photos=toArray(post.photos);const hideAuthor=!!options.hideAuthor;const allComments=post.comments||[];const commentById=Object.fromEntries(allComments.map((comment)=>[comment.id,comment]));const visible=!!post.showComments;const comments=allComments.map((comment)=>{const parent=comment.parentCommentId?commentById[comment.parentCommentId]:null;return`<article class="social-comment ${comment.parentCommentId?"is-reply":""}"><strong>${socialAuthorLabel(comment.author)}</strong><small>${escapeHtml(formatSocialDate(comment.createdAt))}</small>${parent?`<small>Réponse à ${socialAuthorLabel(parent.author)}</small>`:""}<p>${escapeHtml(comment.content||"")}</p><div class="social-actions"><button type="button" class="secondary" data-reply-comment="${escapeHtml(comment.id)}" data-post-id="${escapeHtml(post.id)}">↩️</button>${comment.isMine?`<button type="button"
+data-delete-comment="${escapeHtml(comment.id)}"
+data-post-id="${escapeHtml(post.id)}">
+🗑️
+</button>`:""}</div></article>`}).join("");const head=hideAuthor?"":`<div class="social-post-head"><button type="button" class="social-profile-link" data-open-profile="${escapeHtml(author.id)}"><img class="social-avatar" src="${escapeHtml(avatar)}" alt=""><div class="social-post-meta"><strong>${socialAuthorLabel(author)}</strong><small>${escapeHtml(tradeValues(author.trade).join(", ")||"Artisan")} · ${escapeHtml(formatSocialDate(post.createdAt))}</small></div></button>${post.isMine?"":`<button type="button" data-follow-author="${escapeHtml(author.id)}" class="${(profile?.followingIds||[]).includes(author.id)?"liked":""}">${(profile?.followingIds||[]).includes(author.id)?"Abonné":"Suivre"}</button>`}</div>`;const body=post.editing?`<form class="social-edit-form" data-edit-post-form="${escapeHtml(post.id)}"><textarea rows="4" required>${escapeHtml(post.content||"")}</textarea><div class="meta-row"><button type="submit">Enregistrer</button><button type="button" data-cancel-edit-post="${escapeHtml(post.id)}">Annuler</button></div></form>`:(post.content?`<p class="social-post-content">${escapeHtml(post.content)}</p>`:"");return`<article class="social-post" data-post-id="${escapeHtml(post.id)}">${head}${hideAuthor?`<small class="pill">${escapeHtml(formatSocialDate(post.createdAt))}</small>`:""}${body}${photos.length?`<div class="social-gallery">${photos.map((url)=>`<img src="${escapeHtml(url)}" alt="">`).join("")}</div>`:""}<div class="social-actions"><button type="button"
+class="${post.likedByMe?"liked":""}"
+data-like-post="${escapeHtml(post.id)}">
+❤️ ${Number(post.likeCount||0)}
+</button>${post.isMine?`
+<button type="button" data-edit-post="${escapeHtml(post.id)}">✏️</button>
+<button type="button" data-delete-post="${escapeHtml(post.id)}">🗑️</button>
+`:""}${allComments.length?`<button type="button" class="secondary" data-toggle-comments="${escapeHtml(post.id)}">💬 ${allComments.length}</button>`:""}</div><div class="social-comments"><div class="social-comment-list ${visible?"":"hidden"}">${comments}</div><form class="social-comment-form" data-comment-post="${escapeHtml(post.id)}"><textarea rows="2" placeholder="Écrire un commentaire..." required></textarea><input type="hidden" name="parentCommentId" value=""><button type="submit">➤</button></form></div></article>`}
     function allSocialPostCollections(){return [socialFeed.posts,socialProfile.posts].filter(Boolean)}
     function findSocialPost(postId){for(const posts of allSocialPostCollections()){const post=posts.find((item)=>item.id===postId);if(post)return post}return null}
     function rerenderSocialSurfaces(){if(!$("#communityPanel").classList.contains("hidden"))renderSocialFeed((socialCache.feeds[socialFeed.mode]||{}).discoverArtisans||[]);if(!$("#mysocialPanel").classList.contains("hidden"))renderSocialProfileSection();cacheFeed((socialCache.feeds[socialFeed.mode]||{}).discoverArtisans||[]);cacheProfile()}
