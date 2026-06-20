@@ -268,7 +268,7 @@ background-position:
     .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}.pro-tabs,.social-tabs{display:flex;flex-wrap:wrap;gap:.5rem}.pro-tabs button,.social-tabs button{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.pro-tabs button.active,.social-tabs button.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}
 
 .social-shell .social-intro{
-  padding:1.5rem 0 1rem;
+  padding:.25rem 0 1rem;
   border-bottom:1px solid var(--line);
 }.social-shell .social-intro h2,
 .social-shell .social-intro p,
@@ -527,15 +527,17 @@ background-position:
 .social-banner{
   display:flex;
   justify-content:center;
-  margin:0 0 20px;
+  align-items:center;
+  margin:0;
+  padding:10px 0 0;
 }
 
 .social-banner img{
-  width:min(1300px,92vw);
-  max-height:280px;
-  object-fit:contain;
+  width:95%;
+  max-width:1600px;
+  height:auto;
+
   display:block;
-}
 
   border-radius:20px;
 
@@ -808,6 +810,7 @@ background-position:
   <section class="social-intro">
       <div class="section-heading">
         <div>
+          <p class="eyebrow">Réseau ADN</p>
           <h2 id="socialTitle">Communauté des artisans</h2>
           <p id="socialSubtitle">Fil d'actualité, publications et profils entre adhérents.</p>
         </div>
