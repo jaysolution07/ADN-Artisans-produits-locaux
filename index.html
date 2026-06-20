@@ -265,26 +265,12 @@ background-position:
 }
 .artisan-body h3{margin:0}.meta-row,.rating-row{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.pill{display:inline-flex;align-items:center;border-radius:999px;background:var(--sky);color:var(--olive-dark);padding:.24rem .55rem;font-size:.8rem;font-weight:800}.stars{color:var(--gold);font-weight:900}
     .artisan-dialog{width:min(920px,calc(100vw - 2rem));border:1px solid var(--line);border-radius:8px;padding:0}.artisan-dialog::backdrop{background:rgba(32,34,31,.55)}.dialog-close{position:absolute;right:.75rem;top:.75rem;width:36px;height:36px;padding:0}.dialog-inner{padding:1.25rem}.contact-list{display:grid;gap:.35rem;margin:1rem 0}.contact-list p{margin:0}.contact-list a{color:var(--olive-dark);font-weight:700}.dialog-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}.dialog-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:var(--sky)}.product-grid,.review-list,.product-list{display:grid;gap:.8rem}.product-card,.review-item{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}.product-card{display:grid;grid-template-columns:110px 1fr;gap:.9rem}.review-form{display:grid;gap:.75rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
-    .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}.pro-tabs,.social-tabs{display:flex;flex-wrap:wrap;gap:.5rem}.pro-tabs button,.social-tabs button{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.pro-tabs button.active,.social-tabs button.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}.social-shell .social-intro{
-  padding:2rem;
+    .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}.pro-tabs,.social-tabs{display:flex;flex-wrap:wrap;gap:.5rem}.pro-tabs button,.social-tabs button{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.pro-tabs button.active,.social-tabs button.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}
 
-  min-height:280px;
-  display:flex;
-  align-items:center;
-
+.social-shell .social-intro{
+  padding:1.5rem 0 1rem;
   border-bottom:1px solid var(--line);
-
-  background:
-    linear-gradient(
-      rgba(255,255,255,.80),
-      rgba(255,255,255,.80)
-    ),
-    url("BAN.png") center center / 100% auto no-repeat;
-
-  border-radius:18px;
-  margin-bottom:1rem;
-}
-.social-shell .social-intro h2,
+}.social-shell .social-intro h2,
 .social-shell .social-intro p,
 .social-shell .social-intro .eyebrow{
   text-shadow:
@@ -473,18 +459,24 @@ background-position:
 .adn-social-btn{
   margin-left:auto;
 
-  background:#fff;
-  border:1px solid #d8d8d8;
-  border-radius:18px;
+  background:linear-gradient(
+    180deg,
+    #3a3a3a,
+    #111
+  );
 
-  padding:8px 14px;
+  border:1px solid #555;
+  border-radius:20px;
+
+  padding:10px 18px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
   box-shadow:
-    0 8px 20px rgba(0,0,0,.08);
+    0 4px 0 #000,
+    0 12px 25px rgba(0,0,0,.35);
 
   transition:.25s ease;
 }
@@ -496,10 +488,11 @@ background-position:
 }
 
 .adn-social-btn:hover{
-  transform:translateY(-3px) scale(1.03);
+  transform:translateY(-4px) scale(1.04);
 
   box-shadow:
-    0 14px 30px rgba(185,78,53,.20);
+    0 8px 0 #000,
+    0 18px 35px rgba(0,0,0,.45);
 }
 .adn-social-btn.loading{
   pointer-events:none;
@@ -538,6 +531,19 @@ background-position:
   align-items:center;
   justify-content:center;
   border-radius:999px;
+}
+.social-banner{
+  margin-bottom:20px;
+}
+
+.social-banner img{
+  width:100%;
+  display:block;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.10);
 }
   </style>
 </head>
@@ -796,8 +802,13 @@ background-position:
     </section>
   </main>
 
-  <main id="socialApp" class="pro-shell social-shell hidden">
-    <section class="social-intro">
+ <main id="socialApp" class="pro-shell social-shell hidden">
+
+  <div class="social-banner">
+    <img src="BAN.png" alt="ADN Social">
+  </div>
+
+  <section class="social-intro">
       <div class="section-heading">
         <div>
           <p class="eyebrow">Réseau ADN</p>
@@ -1029,7 +1040,7 @@ $("#nearMeBtn").addEventListener("click", findNearbyArtisans);
 <div class="rating-row">${appRatingLabel(artisan)}</div>
 <button data-open="${escapeHtml(artisan.id)}">Voir la fiche</button></div>`;$("#artisanGrid").appendChild(card)});renderDepartmentMap()}
     function renderProducts(products=[]){if(!products.length)return"<p>Aucun produit publie pour le moment.</p>";return products.map((product)=>{const photos=toArray(product.photos);return`<article class="product-card"><img src="${escapeHtml(photos[0]||firstPhoto({}))}" alt=""><div>${productField("Article",product.name,"h4")}${productField("Prix",formatPrice(product.price),"strong")}${productField("Description",product.description||"")}</div></article>`}).join("")}
-    function renderPartners(artisan){const partners=(artisan.partnerIds||[]).map((id)=>state.artisans.find((item)=>item.id===id)).filter(Boolean);if(!partners.length)return"<p>Aucun partenaire ADN validé pour le moment.</p>";return partners.map((partner)=>{const department=getDepartment(partner.departmentCode);return`<article class="review-item"><div class="meta-row">${tradePills(partner.trade)}<span class="pill">${escapeHtml(department?.name||partner.departmentCode||"")}</span></div><h4>${escapeHtml(partner.businessName)}</h4><button type="button" data-open-partner="${escapeHtml(partner.id)}">Voir la fiche</button></article>`}).join("")}
+function renderPartners(artisan){const partners=(artisan.partnerIds||[]).map((id)=>state.artisans.find((item)=>item.id===id)).filter(Boolean);if(!partners.length)return"<p>Aucun partenaire ADN validé pour le moment.</p>";return partners.map((partner)=>{const department=getDepartment(partner.departmentCode);return`<article class="review-item"><h4>${escapeHtml(partner.businessName||"Artisan")}</h4><p>${escapeHtml(tradeValues(partner.trade).join(", ")||"Artisan")}${department?` - ${escapeHtml(department.name)}`:""}</p><button type="button" data-open-artisan="${escapeHtml(partner.id||"")}">Voir la fiche publique</button></article>`}).join("")}
     function renderReviews(reviews=[]){if(!reviews.length)return"<p>Aucun avis public pour le moment.</p>";return reviews.map((review)=>`<article class="review-item"><strong>${escapeHtml(review.author)}</strong> <span class="stars">${stars(review.rating)}</span><p>${escapeHtml(review.comment)}</p></article>`).join("")}
     function reviewForm(artisan){const mine=(artisan.reviews||[]).find((review)=>review.canEdit);const author=mine?.author||[state.lead?.firstName,state.lead?.lastName].filter(Boolean).join(" ");const rating=mine?.rating||5;return`<form class="review-form" data-review="${escapeHtml(artisan.id)}"><h3>${mine?"Modifier mon avis":"Laisser mon avis"}</h3><div class="field-grid"><label>Votre nom<input name="author" value="${escapeHtml(author)}" required></label><label>Note<select name="rating" required>${[5,4,3,2,1].map((value)=>`<option value="${value}" ${Number(rating)===value?"selected":""}>${value} etoile${value>1?"s":""}</option>`).join("")}</select></label></div><label>Commentaire<textarea name="comment" rows="3" required>${escapeHtml(mine?.comment||"")}</textarea></label><div class="meta-row"><button type="submit">${mine?"Modifier mon avis":"Publier mon avis"}</button>${mine?`<button type="button" data-delete-review="${escapeHtml(artisan.id)}">Supprimer mon avis</button>`:""}</div><p class="form-note"></p></form>`}
     function openArtisan(id){const artisan=state.artisans.find((item)=>item.id===id);if(!artisan)return;const dialog=$("#artisanDialog");if(dialog.open)dialog.close();const department=getDepartment(artisan.departmentCode);$("#dialogContent").innerHTML=`<div class="dialog-inner"><p class="eyebrow">${escapeHtml(tradeValues(artisan.trade).join(", ")||"Artisan")} - ${escapeHtml(department?.name||"")}</p><h2>${escapeHtml(artisan.businessName)}</h2>${contactBlock(artisan)}<p>${escapeHtml(artisan.description||"")}</p><div class="rating-row">${appRatingLabel(artisan)}</div><div class="dialog-gallery">${toArray(artisan.shopPhotos).map((url)=>`<img src="${escapeHtml(url)}" alt="">`).join("")}</div><h3>Produits</h3><div class="product-grid">${renderProducts(artisan.products)}</div><h3>Travaille avec</h3><div class="review-list">${renderPartners(artisan)}</div><h3>Avis des visiteurs</h3><div class="review-list">${renderReviews(artisan.reviews)}</div>${reviewForm(artisan)}</div>`;dialog.showModal()}
@@ -1127,7 +1138,7 @@ $("#nearMeBtn").addEventListener("click", findNearbyArtisans);
     function partnerSummary(artisan){const department=getDepartment(artisan.departmentCode);return`${artisan.businessName||"Artisan"} - ${tradeValues(artisan.trade).join(", ")||"Artisan"}${department?` - ${department.name}`:""}`}
     function blockedPartnerIds(){return new Set((profile?.partnerships||[]).filter((item)=>item.status==="pending"||item.status==="accepted").map((item)=>item.otherArtisan?.id).filter(Boolean))}
     function renderPartnerOptions(){const select=$("#partnerTarget");if(!select)return;const needle=normalizeText($("#partnerSearch")?.value||"");const blocked=blockedPartnerIds();const artisans=(profile?.artisans||[]).filter((artisan)=>artisan.id&&!blocked.has(artisan.id)).filter((artisan)=>!needle||normalizeText([artisan.businessName,artisan.trade,artisan.departmentCode,artisan.region].join(" ")).includes(needle));select.innerHTML=artisans.length?"":'<option value="">Aucun artisan disponible</option>';artisans.forEach((artisan)=>{const option=document.createElement("option");option.value=artisan.id;option.textContent=partnerSummary(artisan);select.appendChild(option)})}
-    function renderPartnerships(){const list=$("#partnershipList");if(!list)return;const partnerships=profile?.partnerships||[];if(!profile?.artisan){list.innerHTML="<p>Enregistrez votre fiche artisan avant de créer votre réseau.</p>";return}if(!partnerships.length){list.innerHTML="<p>Aucune demande de partenariat pour le moment.</p>";return}list.innerHTML=partnerships.map((item)=>{const other=item.otherArtisan||{};const statusLabel={pending:"En attente",accepted:"Validé",refused:"Refusé",cancelled:"Annulé"}[item.status]||item.status;const actions=item.status==="pending"&&item.direction==="received"
+    function renderPartnerships(){const list=$("#partnershipList");if(!list)return;const partnerships=profile?.partnerships||[];if(!profile?.artisan){list.innerHTML="<p>Enregistrez votre fiche artisan avant de créer votre réseau.</p>";return}if(!partnerships.length){list.innerHTML="<p>Aucune demande de partenariat pour le moment.</p>";return}list.innerHTML=partnerships.map((item)=>{const other=item.otherArtisan||{};const otherId=other.id||(item.direction==="received"?item.requesterArtisanId:item.targetArtisanId)||"";const statusLabel={pending:"En attente",accepted:"Validé",refused:"Refusé",cancelled:"Annulé"}[item.status]||item.status;const actions=item.status==="pending"&&item.direction==="received"
 ?`
 <button type="button"
         data-respond-partner="${escapeHtml(item.id)}"
@@ -1175,7 +1186,27 @@ $("#nearMeBtn").addEventListener("click", findNearbyArtisans);
 </button>
 `
 
-:"";return`<article class="review-item"><div class="meta-row"><span class="pill">${escapeHtml(statusLabel)}</span><span class="pill">${item.direction==="received"?"Demande reçue":"Demande envoyée"}</span></div><h3>${escapeHtml(other.businessName||"Artisan")}</h3><p>${escapeHtml(partnerSummary(other))}</p>${item.message?`<p>${escapeHtml(item.message)}</p>`:""}<div class="meta-row">${actions}</div></article>`}).join("");renderPartnerOptions()}
+:"";return`<article class="review-item">
+<div class="meta-row">
+  <span class="pill">${escapeHtml(statusLabel)}</span>
+  <span class="pill">${item.direction==="received"?"Demande reçue":"Demande envoyée"}</span>
+</div>
+
+<h3>${escapeHtml(other.businessName||"Artisan")}</h3>
+
+<p>${escapeHtml(partnerSummary(other))}</p>
+
+<button
+  type="button"
+  data-open-artisan="${escapeHtml(otherId)}"
+>
+  Voir la fiche publique
+</button>
+
+${item.message?`<p>${escapeHtml(item.message)}</p>`:""}
+
+<div class="meta-row">${actions}</div>
+</article>`}).join("");renderPartnerOptions()}
     async function requestPartnership(){if(!profile?.artisan){$("#partnerNote").textContent="Enregistrez votre fiche artisan avant de demander un partenariat.";return}const targetArtisanId=$("#partnerTarget").value;if(!targetArtisanId){$("#partnerNote").textContent="Choisissez un artisan partenaire.";return}$("#partnerNote").textContent="Envoi de la demande...";try{await api("requestPartnership",{targetArtisanId,message:$("#partnerMessage").value.trim()});$("#partnerMessage").value="";$("#partnerNote").textContent="Demande envoyée.";openEditor(await api("getProProfile"))}catch(error){$("#partnerNote").textContent=`Erreur : ${error.message}`}}
     async function respondPartnership(partnershipId,status){$("#partnerNote").textContent=status==="accepted"?"Acceptation...":"Refus...";try{await api("respondPartnership",{partnershipId,status});$("#partnerNote").textContent=status==="accepted"?"Partenariat accepté.":"Demande refusée.";openEditor(await api("getProProfile"))}catch(error){$("#partnerNote").textContent=`Erreur : ${error.message}`}}
     async function cancelPartnership(partnershipId){
@@ -1224,8 +1255,37 @@ async function deletePartnership(partnershipId){
   }
 
 }
+    async function openPartnerPublicArtisan(artisanId){
+  if(!artisanId)throw new Error("identifiant artisan manquant.");
+  if($("#partnerNote"))$("#partnerNote").textContent="Ouverture de la fiche publique...";
+  let artisan=state.artisans.find((item)=>item.id===artisanId);
+  if(!artisan){
+    const data=await api("listPublic");
+    state.artisans=(data.artisans||[]).map((item)=>({
+      ...item,
+      departmentCode:normalizeDepartmentCode(item.departmentCode),
+      shopPhotos:toArray(item.shopPhotos),
+      products:item.products||[],
+      reviews:item.reviews||[]
+    }));
+    artisan=state.artisans.find((item)=>item.id===artisanId);
+  }
+  if(!artisan)throw new Error("artisan absent de l'annuaire public.");
+  if($("#partnerNote"))$("#partnerNote").textContent="";
+  openArtisan(artisanId);
+}
     function handlePartnershipClick(event){
+const artisanButton =
+  event.target.closest("[data-open-artisan]");
 
+if(artisanButton){
+
+  const artisanId =
+    artisanButton.dataset.openArtisan;
+  openPartnerPublicArtisan(artisanId).catch(console.error);
+
+  return;
+}
   const responseButton=
     event.target.closest("[data-respond-partner]");
 
@@ -1414,6 +1474,7 @@ data-like-post="${escapeHtml(post.id)}">
     function relocateSocialDiscover(){const discover=$("#socialDiscover");const feed=$("#socialFeed");if(discover&&feed&&discover.nextElementSibling===feed)return;if(discover&&feed)feed.parentNode.insertBefore(discover,feed)}
     function renderSocialDiscover(artisans=[]){relocateSocialDiscover();const panel=$("#socialDiscover");const list=$("#socialDiscoverList");if(!panel||!list)return;const pool=Array.isArray(artisans)?artisans:[];const needle=normalizeText($("#socialDiscoverSearch")?.value||"");const filtered=pool.filter((artisan)=>!needle||normalizeText([artisan.businessName,artisan.proName,artisan.trade,artisan.departmentCode,artisan.region,artisan.address,artisan.description].join(" ")).includes(needle));panel.classList.remove("hidden");list.innerHTML=filtered.length?filtered.slice(0,24).map((artisan)=>`<article class="social-discover-item"><button type="button" class="social-profile-link" data-open-profile="${escapeHtml(artisan.id)}"><div><strong>${socialAuthorLabel(artisan)}</strong><p>${escapeHtml(tradeValues(artisan.trade).join(", ")||"Artisan")}${artisan.departmentCode?` · ${escapeHtml(artisan.departmentCode)}`:""}</p></div></button><button type="button" data-follow-discover="${escapeHtml(artisan.id)}" class="${(profile?.followingIds||[]).includes(artisan.id)?"liked":""}">${(profile?.followingIds||[]).includes(artisan.id)?"Abonné":"Suivre"}</button></article>`).join(""):`<p class="form-note">${needle?"Aucun artisan ne correspond à cette recherche.":"Aucune nouvelle suggestion pour le moment."}</p>`}
     relocateSocialDiscover()
+    document.addEventListener("click",(event)=>{const button=event.target.closest("[data-open-artisan]");if(!button)return;event.preventDefault();event.stopPropagation();openPartnerPublicArtisan(button.dataset.openArtisan).catch((error)=>{$("#partnerNote").textContent=`Fiche publique introuvable : ${error.message}`})})
 async function findNearbyArtisans(){
 
   if(!navigator.geolocation){
