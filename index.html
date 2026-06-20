@@ -459,13 +459,9 @@ background-position:
 .adn-social-btn{
   margin-left:auto;
 
-  background:linear-gradient(
-    180deg,
-    #3a3a3a,
-    #111
-  );
+ background:#000;
 
-  border:1px solid #555;
+border:2px solid #2f2f2f;
   border-radius:20px;
 
   padding:10px 18px;
@@ -482,11 +478,14 @@ background-position:
 }
 
 .adn-social-btn img{
-  height:52px;
+  height:58px;
   width:auto;
   display:block;
-}
 
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,.25))
+    drop-shadow(0 0 15px rgba(216,157,49,.25));
+}
 .adn-social-btn:hover{
   transform:translateY(-4px) scale(1.04);
 
@@ -1053,7 +1052,17 @@ function renderPartners(artisan){const partners=(artisan.partnerIds||[]).map((id
     async function deleteReview(event){const button=event.target.closest("[data-delete-review]");if(!button)return;const form=button.closest("[data-review]");const note=form.querySelector(".form-note");const artisanId=button.dataset.deleteReview;note.textContent="Suppression...";try{await api("deleteReview",{artisanId,email:state.lead?.email||""});note.textContent="Avis supprime.";await loadArtisans();openArtisan(artisanId)}catch(error){note.textContent=`Erreur : ${error.message}`}}
     function handleDialogClick(event){const partnerButton=event.target.closest("[data-open-partner]");if(partnerButton){openArtisan(partnerButton.dataset.openPartner);return}deleteReview(event)}
 
-    function initPro(){fillDepartments($("#department"));$("#tokenInput").value=token;$("#loadProfileBtn").addEventListener("click",loadProfile);document.querySelectorAll("[data-pro-tab]").forEach((button)=>button.addEventListener("click",()=>showProTab(button.dataset.proTab)));$("#openSocialBtn").addEventListener("click",openSocialApp);$("#artisanForm").addEventListener("submit",saveArtisan);$("#productForm").addEventListener("submit",saveProduct);$("#cancelProductEditBtn").addEventListener("click",resetProductForm);$("#productList").addEventListener("click",handleProductListClick);$("#partnerSearch").addEventListener("input",renderPartnerOptions);$("#requestPartnerBtn").addEventListener("click",requestPartnership);$("#partnershipList").addEventListener("click",handlePartnershipClick);initSocialApp();setupPhotoDrop("shopPhotos","shopPhotoInput","shopPhotosPreview","artisanNote");setupPhotoDrop("productPhotos","productPhotoInput","productPhotosPreview","productNote");showProTab("profile");if(token)loadProfile()}
+    function initPro(){fillDepartments($("#department"));$("#tokenInput").value=token;$("#loadProfileBtn").addEventListener("click",loadProfile);document.querySelectorAll("[data-pro-tab]").forEach((button)=>button.addEventListener("click",()=>showProTab(button.dataset.proTab)));$("#openSocialBtn").addEventListener("click",openSocialApp);$("#artisanForm").addEventListener("submit",saveArtisan);$("#productForm").addEventListener("submit",saveProduct);$("#cancelProductEditBtn").addEventListener("click",resetProductForm);$("#productList").addEventListener("click",handleProductListClick);$("#partnerSearch").addEventListener("input",renderPartnerOptions);$("#requestPartnerBtn").addEventListener("click",requestPartnership);$("#partnershipList").addEventListener(
+  "click",
+  handlePartnershipClick
+);
+
+$("#dialogClose").addEventListener(
+  "click",
+  ()=>$("#artisanDialog").close()
+);
+
+initSocialApp();setupPhotoDrop("shopPhotos","shopPhotoInput","shopPhotosPreview","artisanNote");setupPhotoDrop("productPhotos","productPhotoInput","productPhotosPreview","productNote");showProTab("profile");if(token)loadProfile()}
     function initSocialApp(){$("#backToProBtn").addEventListener("click",backToProPortal);document.querySelectorAll("[data-social-tab]").forEach((button)=>button.addEventListener("click",()=>showSocialTab(button.dataset.socialTab)));$("#postForm").addEventListener("submit",publishPost);$("#socialFeed").addEventListener("click",handleSocialFeedClick);$("#socialFeed").addEventListener("submit",handleSocialCommentSubmit);$("#socialFeed").addEventListener("submit",handleSocialEditSubmit);$("#socialDiscover").addEventListener("click",handleSocialFeedClick);$("#socialDiscoverSearch").addEventListener("input",()=>renderSocialDiscover((socialCache.feeds[socialFeed.mode]||{}).discoverArtisans||[]));$("#loadMorePostsBtn").addEventListener("click",()=>loadSocialFeed(false));$("#refreshFeedBtn").addEventListener("click",()=>refreshSocialFeed(true));$("#refreshProfileBtn").addEventListener("click",()=>refreshSocialProfile(true));document.querySelectorAll("[data-feed-mode]").forEach((button)=>button.addEventListener("click",()=>setSocialFeedMode(button.dataset.feedMode)));$("#loadMoreProfilePostsBtn").addEventListener("click",()=>loadSocialProfile(socialProfile.artisanId,false));$("#socialProfileBack").addEventListener("click",()=>showSocialTab("feed"));$("#mysocialPanel").addEventListener("click",handleSocialProfileClick);$("#socialProfileContent").addEventListener("submit",handleSocialCommentSubmit);$("#socialProfileContent").addEventListener("submit",handleSocialEditSubmit);document.querySelectorAll("[data-profile-section]").forEach((button)=>button.addEventListener("click",()=>setSocialProfileSection(button.dataset.profileSection)));setupPhotoDrop("postPhotos","postPhotoInput","postPhotosPreview","postNote")}
     function setValue(id,value){const input=$("#"+id);if(input)input.value=value||""}
     function showProTab(tab){document.querySelectorAll("[data-pro-tab]").forEach((button)=>button.classList.toggle("active",button.dataset.proTab===tab));document.querySelectorAll("[data-pro-tab-panel]").forEach((panel)=>panel.classList.toggle("hidden",panel.dataset.proTabPanel!==tab))}
@@ -1335,7 +1344,13 @@ if(artisanButton){
     function cacheProfile(){if(!socialProfile.artisanId||!socialProfile.data)return;const value={data:socialProfile.data,posts:socialProfile.posts,offset:socialProfile.offset,hasMore:socialProfile.hasMore};socialCache.profiles[socialProfile.artisanId]=value;writeSocialCache("profile",socialProfile.artisanId,value)}
     function applyCachedProfile(artisanId){const cached=socialCache.profiles[artisanId]||readSocialCache("profile",artisanId)?.value;if(!cached)return false;socialCache.profiles[artisanId]=cached;socialProfile.data=cached.data;socialProfile.posts=cached.posts||[];socialProfile.offset=Number(cached.offset||socialProfile.posts.length);socialProfile.hasMore=!!cached.hasMore;profile.followingIds=cached.data?.followingIds||profile.followingIds||[];renderSocialProfile();return true}
     async function preloadSocialData(){if(!profile?.artisan)return;try{if(!socialCache.feeds.following&&!readSocialCache("feed","following")){const data=await api("getSocialFeed",{offset:0,limit:20,mode:"following"});socialCache.feeds.following={posts:data.posts||[],offset:(data.posts||[]).length,hasMore:!!data.hasMore,followingIds:data.followingIds||[],discoverArtisans:data.discoverArtisans||[]};writeSocialCache("feed","following",socialCache.feeds.following)}if(!socialCache.profiles[profile.artisan.id]&&!readSocialCache("profile",profile.artisan.id)){const data=await api("getSocialProfile",{artisanId:profile.artisan.id,offset:0,limit:20});socialCache.profiles[profile.artisan.id]={data,posts:data.posts||[],offset:(data.posts||[]).length,hasMore:!!data.hasMore};writeSocialCache("profile",profile.artisan.id,socialCache.profiles[profile.artisan.id])}}catch(error){}}
-    function setSocialFeedMode(mode){socialFeed.mode=mode==="following"?"following":"all";document.querySelectorAll("[data-feed-mode]").forEach((button)=>button.classList.toggle("active",button.dataset.feedMode===socialFeed.mode));loadSocialFeed(false)}
+    function setSocialFeedMode(mode){
+  socialFeed.mode=mode==="following"?"following":"all";
+  document.querySelectorAll("[data-feed-mode]").forEach((button)=>
+    button.classList.toggle("active",button.dataset.feedMode===socialFeed.mode)
+  );
+  loadSocialFeed(true);
+}
     async function loadSocialFeed(reset=false){if(!profile?.artisan){$("#socialFeed").innerHTML="<p>Enregistrez votre fiche artisan avant d'accéder au fil communautaire.</p>";$("#loadMoreWrap").classList.add("hidden");$("#socialDiscover").classList.add("hidden");return}if(socialFeed.loading)return;socialFeed.loading=true;if(reset){socialFeed.offset=0;socialFeed.posts=[];$("#socialFeed").innerHTML="<p class=\"form-note\">Chargement du fil...</p>"}try{const data=await api("getSocialFeed",{offset:socialFeed.offset,limit:20,mode:socialFeed.mode});socialFeed.posts=reset?data.posts||[]:socialFeed.posts.concat(data.posts||[]);socialFeed.offset=socialFeed.posts.length;socialFeed.hasMore=!!data.hasMore;profile.followingIds=data.followingIds||profile.followingIds||[];renderSocialFeed(data.discoverArtisans||[])}catch(error){$("#socialFeed").innerHTML=`<p class="form-note">Impossible de charger le fil : ${escapeHtml(error.message)}</p>`}finally{socialFeed.loading=false}}
     async function refreshSocialFeed(){
 
