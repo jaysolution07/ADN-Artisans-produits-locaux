@@ -832,6 +832,39 @@ opacity:.9;
 }
 
 }
+#menuOverlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:9998;
+
+backdrop-filter:blur(3px);
+
+}
+
+#menuOverlay.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
 /* ===== MENU BURGER ===== */
 
 .burger-btn{
@@ -872,7 +905,8 @@ position:fixed;
 
 top:0;
 
-right:-320px;
+transform:translateX(100%);
+right:0;
 
 width:320px;
 
@@ -892,7 +926,7 @@ padding:90px 30px;
 
 gap:22px;
 
-transition:right .35s ease;
+transition:transform .35s ease;
 
 box-shadow:-12px 0 30px rgba(0,0,0,.18);
 
@@ -902,7 +936,7 @@ z-index:9999;
 
 .nav.open{
 
-right:0;
+transform:translateX(0);
 
 }
 
@@ -989,7 +1023,10 @@ overflow:hidden;
   </button>
 
 </nav>
-  </header>
+
+<div id="menuOverlay"></div>
+
+</header>
 
   <main id="publicApp">
     <section class="hero public-page is-current" data-public-page="home" id="accueil">
@@ -2373,26 +2410,33 @@ function calculateDistance(lat1, lon1, lat2, lon2){
 const burgerBtn=document.getElementById("burgerBtn");
 const closeMenu=document.getElementById("closeMenu");
 const mainNav=document.getElementById("mainNav");
+const menuOverlay=document.getElementById("menuOverlay");
 
-burgerBtn.onclick=()=>{
+function openMenu(){
 
 mainNav.classList.add("open");
+menuOverlay.classList.add("show");
+document.body.style.overflow="hidden";
 
-};
+}
 
-closeMenu.onclick=()=>{
+function closeBurger(){
 
 mainNav.classList.remove("open");
+menuOverlay.classList.remove("show");
+document.body.style.overflow="";
 
-};
+}
+
+burgerBtn.onclick=openMenu;
+
+closeMenu.onclick=closeBurger;
+
+menuOverlay.onclick=closeBurger;
 
 mainNav.querySelectorAll("a").forEach(link=>{
 
-link.onclick=()=>{
-
-mainNav.classList.remove("open");
-
-};
+link.onclick=closeBurger;
 
 });
   </script>
