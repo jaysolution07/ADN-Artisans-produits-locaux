@@ -68,6 +68,7 @@ url("FOND.png") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;fo
 }
     .access-panel,.pro-login,.editor-form{display:grid;gap:1rem;border:1px solid var(--line);border-radius:8px;padding:1.25rem;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}.access-panel h2,.pro-login h2,.editor-form h2{margin:0}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.check-row{grid-template-columns:auto 1fr;align-items:start;font-weight:400}.check-row input{width:auto;margin-top:.25rem}.form-note,.status{margin:0;min-height:1.4rem;color:var(--muted)}.upload-field{display:grid;gap:.45rem;color:var(--muted);font-size:.92rem}.upload-field strong{color:var(--muted)}.dropzone{display:grid;place-items:center;min-height:150px;border:2px dashed var(--line);border-radius:8px;background:#f7f8f3;color:var(--muted);padding:1rem;text-align:center;cursor:pointer}.dropzone.is-dragover{border-color:var(--tomato);background:#fff3ee}.photo-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:.6rem}.photo-preview img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
     .directory,.pro-shell{padding:clamp(1.25rem,4vw,3rem)}.is-locked{opacity:.55;pointer-events:none}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1rem}.section-heading h2{margin:0}
+.public-page:not(.is-current){display:none!important}.nav a.active{color:var(--tomato)}
     .social-compose{display:grid;gap:.85rem}.social-toolbar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}.social-toolbar button.secondary{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.social-toolbar button.secondary.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.social-feed{display:grid;gap:1rem;margin-top:1rem}.social-post{border:1px solid var(--line);border-radius:10px;padding:1rem;background:#fff;display:grid;gap:.75rem}.social-post-head{display:flex;gap:.75rem;align-items:center}.social-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--sky);border:1px solid var(--line);flex-shrink:0}.social-post-meta{display:grid;gap:.15rem;flex:1;min-width:0}.social-post-meta strong{font-size:1rem}.social-post-meta small{color:var(--muted)}.social-post-content{margin:0;white-space:pre-wrap;line-height:1.5}.social-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem}.social-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line)}.social-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}.social-actions button.liked{background:#fff3ee;color:var(--tomato);border-color:var(--tomato)}.social-comments{display:grid;gap:.55rem;padding-top:.55rem;border-top:1px solid var(--line)}.social-comment-list{display:grid;gap:.55rem}.social-comment{display:grid;gap:.2rem;padding:.55rem .7rem;border-radius:8px;background:#f7f8f3}.social-comment.is-reply{margin-left:1.25rem;border-left:3px solid var(--line)}.social-comment strong{font-size:.92rem}.social-comment p{margin:0;font-size:.92rem;white-space:pre-wrap}.social-comment-form{display:flex;gap:.5rem;align-items:start}.social-comment-form textarea{min-height:2.6rem;resize:vertical}.social-edit-form{display:grid;gap:.55rem}.social-discover{display:grid;gap:.6rem;margin-top:1rem}.social-discover-item{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.7rem;border:1px solid var(--line);border-radius:8px;background:#fff}.social-discover-item p{margin:0;font-size:.92rem;color:var(--muted)}.load-more-wrap{display:flex;justify-content:center;margin-top:.5rem}.social-profile-hero{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}.social-profile-hero img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--sky)}.social-profile-hero-main{display:grid;gap:.2rem;flex:1;min-width:0}.social-profile-hero-main p{margin:0;color:var(--muted)}.social-profile-link{display:flex;gap:.75rem;align-items:center;flex:1;min-width:0;padding:0;border:0;background:transparent;text-align:left;cursor:pointer;color:inherit;font:inherit}.social-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:.55rem;margin-bottom:1rem}.social-stat{border:1px solid var(--line);border-radius:8px;padding:.7rem .5rem;text-align:center;background:#fff}.social-stat strong{display:block;font-size:1.3rem;line-height:1.1}.social-stat span{display:block;margin-top:.2rem;font-size:.78rem;color:var(--muted)}.social-people-list{display:grid;gap:.6rem}.social-skeleton{position:relative;overflow:hidden;min-height:96px;border:1px solid var(--line);border-radius:10px;background:#eef2ea}.social-skeleton::after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);animation:skeletonSweep 1.1s infinite}@keyframes skeletonSweep{to{transform:translateX(100%)}}
 .social-discover{order:-1;padding:.9rem;border:1px solid var(--line);border-radius:10px;background:#f7f8f3}
 .social-discover h3{margin:0;font-size:1.05rem}
@@ -84,6 +85,18 @@ url("FOND.png") center/cover;color:#fff}.hero h1,.pro-intro h1{margin:.2rem 0;fo
 .story-media{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
 .story-media img,.story-media video,.story-media iframe{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:8px;background:#fff;object-fit:cover}
 .story-preview iframe,.story-preview video{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:6px;background:#fff}
+.editorial-page{padding:clamp(2rem,5vw,5rem) clamp(1rem,5vw,4rem);background:var(--paper)}
+.editorial-inner{width:min(920px,100%);margin:0 auto;display:grid;gap:1.25rem}
+.editorial-kicker{margin:0;color:var(--tomato);font-weight:900;text-transform:uppercase;font-size:.78rem;letter-spacing:.04em}
+.editorial-page h2{margin:0;font-size:clamp(2rem,5vw,4rem);line-height:1;color:var(--olive-dark)}
+.heritage-text{font-family:Georgia,"Times New Roman",serif;font-style:italic;color:#111;font-size:clamp(1.1rem,2.2vw,1.45rem);line-height:1.75;white-space:pre-line;background:#fff;border:1px solid var(--line);border-radius:8px;padding:clamp(1.25rem,4vw,3rem);box-shadow:var(--shadow)}
+.heritage-quote{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(1.25rem,3vw,2rem);line-height:1.45;color:#111;border-left:4px solid var(--tomato);padding:1rem 0 1rem 1.25rem;margin:0}
+.values-grid{display:grid;gap:1rem}
+.value-block{background:#fff;border:1px solid var(--line);border-radius:8px;padding:clamp(1rem,3vw,2rem);box-shadow:var(--shadow)}
+.value-block h3{margin:0 0 .8rem;color:var(--olive-dark);font-size:1.4rem}
+.value-block p{margin:.55rem 0}
+.value-block ul{margin:.7rem 0 0;padding-left:1.2rem;display:grid;gap:.35rem}
+.values-signature{font-weight:900;color:var(--olive-dark);font-size:1.25rem}
 .department-map-panel{
   display:grid;
   gap:.75rem;
@@ -586,6 +599,119 @@ body{
 .footer{
   margin-top:auto;
 }
+.home-dashboard{
+
+padding:70px 40px;
+
+background:#f8f7f2;
+
+}
+
+.dashboard-inner{
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+.dashboard-inner h2{
+
+font-size:42px;
+
+margin-bottom:10px;
+
+text-align:center;
+
+color:var(--olive-dark);
+
+}
+
+.dashboard-inner p{
+
+text-align:center;
+
+margin-bottom:40px;
+
+color:#666;
+
+}
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:28px;
+
+}
+
+.dashboard-card{
+
+position:relative;
+
+height:280px;
+
+border-radius:24px;
+
+overflow:hidden;
+
+cursor:pointer;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.dashboard-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.dashboard-overlay{
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+padding:25px;
+
+background:linear-gradient(to top,rgba(0,0,0,.72),transparent);
+
+color:white;
+
+}
+
+.dashboard-overlay h3{
+
+margin:0;
+
+font-size:30px;
+
+}
+
+.dashboard-overlay span{
+
+opacity:.9;
+
+}
   </style>
 </head>
 <body>
@@ -599,22 +725,18 @@ body{
       <span class="brand-text"><strong>ADN</strong><small id="brandDepartment">Selectionnez un département</small></span>
     </a>
     <nav class="nav">
-  <a href="#annuaire" id="navDirectory">Annuaire</a>
+  <a href="#accueil" data-public-tab="home">Accueil</a>
+  <a href="#heritage" data-public-tab="heritage">Héritage</a>
+  <a href="#valeurs" data-public-tab="values">Nos valeurs</a>
+  <a href="#annuaire" id="navDirectory" data-public-tab="directory">Annuaire</a>
   <a href="#contact">Contact</a>
   <a class="nav-pro" href="index.html?pro=1">Portail pro</a>
-
-  <button
-    type="button"
-    id="logoutBtn"
-    style="padding:.55rem .8rem;font-size:.9rem;"
-  >
-    Déconnexion
-  </button>
+  <button type="button" id="logoutBtn" style="padding:.55rem .8rem;font-size:.9rem;">Déconnexion</button>
 </nav>
   </header>
 
   <main id="publicApp">
-    <section class="hero">
+    <section class="hero public-page is-current" data-public-page="home" id="accueil">
       <div class="hero-copy">
         <p class="eyebrow">Annuaire regional des savoir-faire locaux</p>
         <h1>
@@ -625,7 +747,6 @@ body{
   alt="ADN Artisans">
         </h1>
         <p>Le réseau qui relie les producteurs, éleveurs, artisans et chefs engagés dans la valorisation du terroir régional.</p>
-      </div>
       <form id="accessForm" class="access-panel">
         <h2>Connexion au site</h2>
         <label>Deja inscrit ? Entrez votre email<input id="loginEmail" type="email" autocomplete="email"></label>
@@ -669,8 +790,225 @@ body{
 <p class="form-note" id="accessNote"></p>
       </form>
     </section>
+<section id="homeDashboard" class="home-dashboard hidden">
 
-    <section id="annuaire" class="directory hidden" aria-live="polite">
+    <div class="dashboard-inner">
+
+        <h2>Découvrir ADN</h2>
+
+        <p>
+            Accédez rapidement aux différentes rubriques.
+        </p>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card" onclick="showPublicPage('heritage')">
+
+                <img src="HER2.png" alt="Héritage">
+
+                <div class="dashboard-overlay">
+
+                    <h3>Héritage</h3>
+
+                    <span>Notre histoire</span>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-card" onclick="showPublicPage('directory')">
+
+                <img src="AN.png" alt="Annuaire">
+
+                <div class="dashboard-overlay">
+
+                    <h3>Annuaire</h3>
+
+                    <span>Explorer</span>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-card" onclick="showPublicPage('values')">
+
+                <img src="VAL.png" alt="Nos valeurs">
+
+                <div class="dashboard-overlay">
+
+                    <h3>Nos valeurs</h3>
+
+                    <span>Nos engagements</span>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <section id="heritage" class="editorial-page public-page" data-public-page="heritage">
+      <div class="editorial-inner">
+        <p class="editorial-kicker">Héritage</p>
+        <h2>ADN DOU PAÏS</h2>
+        <div class="heritage-text">Le jour se lève à peine sur les terres de Provence.
+Le silence est encore là, juste traversé par le vent qui descend du Mont Ventoux.
+Un vent sec, parfois dur…
+mais toujours juste.
+Comme la terre.
+
+Moi, je n’ai pas appris ce monde dans les livres.
+Je l’ai vécu.
+Je l’ai ressenti.
+Je l’ai hérité.
+
+Je pense souvent à mes grands-pères.
+André.
+Artisan pâtissier, chocolatier, glacier.
+Chez lui, le produit n’était jamais un simple ingrédient.
+C’était une matière vivante.
+Je me souviens de ses gestes précis.
+De son exigence presque silencieuse.
+De cette façon qu’il avait de choisir, de toucher, de sentir.
+Comme s’il cherchait à comprendre le produit…
+avant même de le travailler.
+
+Pour lui, sublimer, ce n’était pas transformer.
+C’était respecter, révéler, élever.
+
+Et puis il y avait Guy.
+Vigneron. Agriculteur.
+Un homme de la terre.
+Avec lui, tout commençait bien avant.
+Dans les rangs.
+Dans le froid du matin.
+Dans l’attente.
+Je me souviens de ses mains marquées.
+De son regard tourné vers le ciel.
+Toujours en train d’observer, de comprendre, d’anticiper.
+
+Avec lui, j’ai appris que rien n’était jamais acquis.
+Que la terre donne… mais seulement à ceux qui savent l’écouter.
+
+Ils ne faisaient pas le même métier.
+Mais au fond…
+Ils faisaient exactement la même chose.
+
+L’un cultivait.
+L’autre sublimait.
+Mais tous les deux respectaient profondément
+ce que la nature leur confiait.
+
+Entre eux, il y avait un lien invisible.
+Un fil.
+Celui qui relie la terre à l’assiette.
+Le produit brut au geste juste.
+
+Et c’est ça que j’ai compris.
+Un produit n’existe jamais seul.
+Il naît dans les mains d’un producteur.
+Mais il prend toute sa dimension
+dans les mains d’un artisan, d’un chef, d’un pâtissier.
+
+Quand un chef étoilé travaille un fruit,
+qu’un pâtissier le transforme,
+qu’un artisan le sublime…
+Il prolonge le travail de la terre.
+Il lui donne une voix.
+Une émotion.
+Une finalité.
+
+Mais aujourd’hui…
+Ce lien se perd.
+J’ai vu des produits incroyables devenir anonymes.
+J’ai vu des producteurs disparaître derrière des standards.
+J’ai vu des savoir-faire… ne plus être racontés.
+
+Et au fond, ça allait à l’encontre de tout ce qu’on m’avait transmis.
+De tout ce qu’étaient André et Guy.
+
+Alors j’ai voulu créer quelque chose.
+Pas pour inventer.
+Mais pour reconnecter.
+
+ADN DOU PAÏS est né de cette évidence.
+Créer du lien entre ceux qui cultivent
+et ceux qui subliment.
+Redonner une identité à ce qui est vivant.
+Remettre de la lumière sur ceux qui font, vraiment.
+
+ADN DOU PAÏS, c’est une signature.
+Celle d’un territoire.
+Celle d’un savoir-faire.
+Celle d’une exigence.
+
+Mais surtout…
+C’est une transmission.
+
+La transmission de ce que mes grands-pères m’ont laissé :
+Le respect du produit.
+L’amour de la terre.
+L’exigence du geste.
+
+Et cette conviction profonde :
+un grand produit mérite d’être reconnu
+un producteur mérite d’être visible
+et un savoir-faire mérite d’être transmis
+
+Parce qu’au fond…
+Ce que la terre nous donne
+n’est jamais anodin.
+
+ADN DOU PAÏS
+C’est ce lien entre la terre et l’excellence.
+C’est ce que mes grands-pères m’ont appris.
+Et c’est ce que je veux faire vivre.</div>
+        <blockquote class="heritage-quote">"Mon grand-père Guy m'a appris à aimer la terre. Mon grand-père André m'a appris à sublimer ce qu'elle nous offre. ADN DOU PAÏS est né de cette transmission."</blockquote>
+      </div>
+    </section>
+
+    <section id="valeurs" class="editorial-page public-page" data-public-page="values">
+      <div class="editorial-inner">
+        <p class="editorial-kicker">Nos valeurs</p>
+        <h2>Cultiver, transmettre, sublimer</h2>
+        <div class="values-grid">
+          <article class="value-block">
+            <h3>Notre mission</h3>
+            <p>Créer du lien entre les producteurs, les éleveurs, les artisans, les restaurateurs et les consommateurs afin de valoriser les savoir-faire de nos territoires.</p>
+            <p>Mettre en lumière celles et ceux qui cultivent, élèvent, transforment et subliment les produits de notre terroir.</p>
+            <p>Parce qu'un produit d'exception mérite d'être reconnu.</p>
+            <p>Et ceux qui le font vivre aussi.</p>
+          </article>
+          <article class="value-block">
+            <h3>Comment ?</h3>
+            <p>Grâce à un réseau, un label et une application qui réunissent les acteurs de nos territoires.</p>
+            <p>Vous pourrez :</p>
+            <ul>
+              <li>Découvrir des producteurs passionnés.</li>
+              <li>Rencontrer des artisans engagés.</li>
+              <li>Trouver des restaurateurs qui privilégient les produits locaux.</li>
+              <li>Lire leur histoire et comprendre leur savoir-faire.</li>
+              <li>Explorer les richesses de votre territoire grâce à une carte interactive.</li>
+              <li>Rejoindre une communauté qui partage les mêmes valeurs.</li>
+            </ul>
+          </article>
+          <article class="value-block">
+            <h3>Notre ambition</h3>
+            <p>Faire d'ADN DOU PAÏS le réseau de référence des savoir-faire locaux.</p>
+            <p>Créer un lien durable entre la terre, les femmes et les hommes qui la cultivent, et ceux qui la subliment.</p>
+            <p>Parce qu'un territoire ne se résume pas à ses paysages.</p>
+            <p>Il vit à travers celles et ceux qui le façonnent chaque jour.</p>
+            <p class="values-signature">ADN DOU PAÏS<br>Cultiver • Transmettre • Sublimer</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="annuaire" class="directory hidden public-page" data-public-page="directory" aria-live="polite">
       <div class="section-heading">
         </div>
      
@@ -1055,6 +1393,69 @@ map.dataset.ready="svg";
 
     function initMode(){if(isProMode){$("#publicApp").classList.add("hidden");$("#proApp").classList.remove("hidden");$("#brandDepartment").textContent="Portail professionnel";$("#navDirectory").href="index.html";$("#navDirectory").textContent="Site public";initPro()}else{initPublic()}}
 
+    function showPublicPage(page,options={}){
+
+    const requested = page || "home";
+
+    const target =
+        requested==="directory" && !state.lead
+            ? "home"
+            : requested;
+
+    document.querySelectorAll("[data-public-page]").forEach((section)=>{
+
+        section.classList.toggle(
+            "is-current",
+            section.dataset.publicPage===target
+        );
+
+    });
+
+    document.querySelectorAll("[data-public-tab]").forEach((link)=>{
+
+        link.classList.toggle(
+            "active",
+            link.dataset.publicTab===target
+        );
+
+    });
+
+    // ===== Dashboard uniquement sur l'accueil =====
+
+    const dashboard = $("#homeDashboard");
+
+    if(dashboard){
+
+        if(target==="home" && state.lead){
+
+            dashboard.classList.remove("hidden");
+
+        }else{
+
+            dashboard.classList.add("hidden");
+
+        }
+
+    }
+
+    if(requested==="directory" && !state.lead){
+
+        $("#accessNote").textContent =
+        "Connectez-vous pour accéder à l'annuaire.";
+
+    }
+
+    if(options.scroll!==false){
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
     function initPublic(){
       fillDepartments($("#entryDepartment"));
       fillDepartments($("#departmentFilter"),true);
@@ -1062,6 +1463,9 @@ map.dataset.ready="svg";
       renderDepartmentMap();
       hydrateLead();
       loadArtisans();
+      document.querySelectorAll("[data-public-tab]").forEach((link)=>link.addEventListener("click",(event)=>{event.preventDefault();showPublicPage(link.dataset.publicTab)}));
+      const initialPage={accueil:"home",heritage:"heritage",valeurs:"values",annuaire:"directory"}[location.hash.replace("#","")];
+      if(initialPage)showPublicPage(initialPage,{scroll:false});
       $("#accessForm").addEventListener("submit",submitLead);
       $("#loginLeadBtn").addEventListener("click",loginLead);
       $("#logoutBtn").addEventListener("click",logoutLead);
@@ -1174,8 +1578,39 @@ $("#nearMeBtn").addEventListener("click", findNearbyArtisans);
     async function submitLead(event){event.preventDefault();const departmentCode=normalizeDepartmentCode($("#entryDepartment").value);const payload={firstName:$("#leadFirstName").value.trim(),lastName:$("#leadLastName").value.trim(),email:$("#leadEmail").value.trim(),consent:$("#leadConsent").checked,departmentCode};$("#accessNote").textContent="Enregistrement du consentement...";try{await api("addLead",payload);localStorage.setItem("vinedraLead",JSON.stringify(payload));state.lead=payload;await loadArtisans();$("#accessNote").textContent="Merci, acces ouvert.";unlockDirectory(departmentCode)}catch(error){$("#accessNote").textContent=`Erreur : ${error.message}`}}
     async function loginLead(){const email=$("#loginEmail").value.trim();if(!email){$("#accessNote").textContent="Entrez votre email de connexion.";return}$("#accessNote").textContent="Connexion...";try{const data=await api("loginLead",{email});const lead={...data.lead,departmentCode:normalizeDepartmentCode(data.lead.departmentCode)};localStorage.setItem("vinedraLead",JSON.stringify(lead));state.lead=lead;await loadArtisans();$("#accessNote").textContent="Connexion reussie.";unlockDirectory(lead.departmentCode)}catch(error){$("#accessNote").textContent=`Connexion impossible : ${error.message}`}}
     function hydrateLead(){const saved=localStorage.getItem("vinedraLead");if(!saved)return;state.lead=JSON.parse(saved);state.lead.departmentCode=normalizeDepartmentCode(state.lead.departmentCode);unlockDirectory(state.lead.departmentCode,false)}
-    function unlockDirectory(departmentCode,scroll=true){const normalizedDepartment=normalizeDepartmentCode(departmentCode);const department=getDepartment(normalizedDepartment);state.filters.departmentCode=normalizedDepartment;state.filters.region=department?.region||"";$("#accessForm").classList.add("hidden");$("#annuaire").classList.remove("hidden");$("#departmentFilter").value=normalizedDepartment;$("#regionFilter").value=department?.region||"";$("#territoryLabel").textContent=department?`${department.name} - ${department.region}`:"Tous les territoires";$("#brandDepartment").textContent=department?.name||"Tous les territoires";renderArtisans();if(scroll)$("#annuaire").scrollIntoView({behavior:"smooth",block:"start"})}
-    function logoutLead(){localStorage.removeItem("vinedraLead");state.lead=null;state.filters={region:"",departmentCode:"",trade:"",search:""};$("#accessForm").classList.remove("hidden");$("#annuaire").classList.add("hidden");$("#accessForm").reset();$("#departmentFilter").value="";$("#regionFilter").value="";document.querySelectorAll(".category-card").forEach((card)=>card.classList.remove("active"));$("#searchInput").value="";$("#territoryLabel").textContent="Selectionnez un département pour commencer.";$("#brandDepartment").textContent="Selectionnez un département";$("#accessNote").textContent="Vous êtes deconnecté.";window.scrollTo({top:0,behavior:"smooth"})}
+   function unlockDirectory(departmentCode,scroll=true){
+
+  const normalizedDepartment = normalizeDepartmentCode(departmentCode);
+  const department = getDepartment(normalizedDepartment);
+
+  state.filters.departmentCode = normalizedDepartment;
+  state.filters.region = department?.region || "";
+
+  $("#accessForm").classList.add("hidden");
+
+  // IMPORTANT : on déverrouille l'annuaire
+  $("#annuaire").classList.remove("hidden");
+
+  $("#departmentFilter").value = normalizedDepartment;
+  $("#regionFilter").value = department?.region || "";
+
+  $("#territoryLabel").textContent =
+    department
+      ? `${department.name} - ${department.region}`
+      : "Tous les territoires";
+
+  $("#brandDepartment").textContent =
+    department?.name || "Tous les territoires";
+
+  renderArtisans();
+
+  // On reste sur l'accueil
+$("#homeDashboard").classList.remove("hidden");
+  showPublicPage("home",{scroll:false});
+
+}
+    function logoutLead(){localStorage.removeItem("vinedraLead");state.lead=null;state.filters={region:"",departmentCode:"",trade:"",search:""};$("#accessForm").classList.remove("hidden");
+$("#homeDashboard").classList.add("hidden");$("#annuaire").classList.add("hidden");$("#accessForm").reset();$("#departmentFilter").value="";$("#regionFilter").value="";document.querySelectorAll(".category-card").forEach((card)=>card.classList.remove("active"));$("#searchInput").value="";$("#territoryLabel").textContent="Selectionnez un département pour commencer.";$("#brandDepartment").textContent="Selectionnez un département";$("#accessNote").textContent="Vous êtes deconnecté.";showPublicPage("home")}
     async function submitReview(event){const form=event.target.closest("[data-review]");if(!form)return;event.preventDefault();const note=form.querySelector(".form-note");const payload={artisanId:form.dataset.review,email:state.lead?.email||"",author:form.author.value.trim(),rating:Number(form.rating.value),comment:form.comment.value.trim()};note.textContent="Enregistrement...";try{await api("addReview",payload);note.textContent="Avis enregistre.";await loadArtisans();openArtisan(payload.artisanId)}catch(error){note.textContent=`Erreur : ${error.message}`}}
     async function deleteReview(event){const button=event.target.closest("[data-delete-review]");if(!button)return;const form=button.closest("[data-review]");const note=form.querySelector(".form-note");const artisanId=button.dataset.deleteReview;note.textContent="Suppression...";try{await api("deleteReview",{artisanId,email:state.lead?.email||""});note.textContent="Avis supprime.";await loadArtisans();openArtisan(artisanId)}catch(error){note.textContent=`Erreur : ${error.message}`}}
     function handleDialogClick(event){const storyButton=event.target.closest("[data-toggle-story]");if(storyButton){const panel=$("#storyPanel-"+storyButton.dataset.toggleStory);if(panel){panel.classList.toggle("hidden");storyButton.textContent=panel.classList.contains("hidden")?"Voir plus":"Voir moins"}return}const partnerButton=event.target.closest("[data-open-partner]");if(partnerButton){openArtisan(partnerButton.dataset.openPartner);return}deleteReview(event)}
