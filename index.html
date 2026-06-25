@@ -646,71 +646,77 @@ color:#666;
 
 .dashboard-grid{
 
-display:grid;
+    display:flex;
 
-grid-template-columns:repeat(3,1fr);
+    justify-content:space-between;
 
-gap:28px;
+    gap:12px;
 
 }
 
 .dashboard-card{
 
-position:relative;
+    width:31%;
 
-height:280px;
+    aspect-ratio:1/1;
 
-border-radius:24px;
+    height:auto;
 
-overflow:hidden;
+    border-radius:20px;
 
-cursor:pointer;
+    background:white;
 
-box-shadow:0 15px 35px rgba(0,0,0,.12);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
 
-transition:.3s;
+    display:flex;
 
-}
+    flex-direction:column;
 
-.dashboard-card:hover{
+    justify-content:center;
 
-transform:translateY(-8px);
+    align-items:center;
+
+    overflow:hidden;
 
 }
 
 .dashboard-card img{
 
-width:100%;
+    width:68%;
 
-height:100%;
+    height:68%;
 
-object-fit:cover;
+    object-fit:contain;
+
+    margin:0;
 
 }
 
 .dashboard-overlay{
 
-position:absolute;
+    position:static;
 
-left:0;
+    background:none;
 
-right:0;
+    padding:10px 8px 14px;
 
-bottom:0;
+    text-align:center;
 
-padding:25px;
-
-background:linear-gradient(to top,rgba(0,0,0,.72),transparent);
-
-color:white;
+    color:var(--olive-dark);
 
 }
 
 .dashboard-overlay h3{
 
-margin:0;
+    font-size:14px;
 
-font-size:30px;
+    margin:0;
+
+}
+
+.dashboard-overlay span{
+
+    display:none;
 
 }
 
@@ -718,6 +724,89 @@ font-size:30px;
 
 opacity:.9;
 
+}
+.home-dashboard{
+  position:relative;
+  z-index:2;
+  margin-top:-170px;
+  padding:0 clamp(1rem,4vw,3rem) clamp(2rem,5vw,4rem);
+  background:transparent;
+}
+.dashboard-inner{
+  width:min(1180px,100%);
+  margin:0 auto;
+  padding:1rem;
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:24px;
+  background:rgba(251,251,247,.94);
+  box-shadow:0 24px 70px rgba(32,34,31,.24);
+  backdrop-filter:blur(16px);
+}
+.dashboard-inner h2{
+  margin:.15rem 0 .15rem;
+  color:var(--olive-dark);
+  font-size:clamp(1.45rem,3vw,2.35rem);
+  text-align:left;
+}
+.dashboard-inner p{
+  margin:0 0 1rem;
+  color:var(--muted);
+  text-align:left;
+}
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.85rem;
+}
+.dashboard-card{
+  width:auto;
+  min-height:168px;
+  aspect-ratio:auto;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:.75rem;
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff,#f7f8f3);
+  color:var(--olive-dark);
+  text-align:left;
+  box-shadow:0 10px 28px rgba(32,34,31,.12);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.dashboard-card:hover{
+  transform:translateY(-4px);
+  border-color:#b9c6ae;
+  background:#fff;
+  box-shadow:0 18px 42px rgba(32,34,31,.18);
+}
+.dashboard-card img{
+  width:62px;
+  height:62px;
+  object-fit:contain;
+  margin:0;
+}
+.dashboard-overlay{
+  display:grid;
+  gap:.25rem;
+  padding:0;
+  color:inherit;
+  text-align:left;
+}
+.dashboard-overlay h3{
+  margin:0;
+  font-size:1.2rem;
+  line-height:1.1;
+}
+.dashboard-overlay span{
+  display:block;
+  color:var(--muted);
+  font-size:.92rem;
+}
+body.is-pro-mode [data-public-tab]:not(#navDirectory),
+body.is-pro-mode .nav-pro,
+body.is-pro-mode #logoutBtn{
+  display:none!important;
 }
 /* =======================
    RESPONSIVE MOBILE
@@ -788,49 +877,55 @@ opacity:.9;
 }
 
 /* LES CARTES */
-
 .dashboard-grid{
 
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(3,1fr);
 
-    gap:18px;
+    gap:10px;
 
 }
 
 .dashboard-card{
 
-    height:140px;
+    height:130px;
+
+    border-radius:18px;
+
+}
+
+.dashboard-card img{
+
+    width:80%;
+
+    height:55%;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:8px auto 0;
+
+}
+
+.dashboard-overlay{
+
+    padding:8px;
 
 }
 
 .dashboard-overlay h3{
 
-    font-size:24px;
+    font-size:15px;
+
+    line-height:1.1;
 
 }
 
 .dashboard-overlay span{
 
-    font-size:15px;
+    font-size:11px;
 
 }
-
-/* IMAGE */
-
-.dashboard-card img{
-
-    width:60%;
-
-    height:60%;
-
-    object-fit:contain;
-
-    margin:auto;
-
-    display:block;
-
-}
-
 }
 #menuOverlay{
 
@@ -986,6 +1081,53 @@ overflow:hidden;
 }
 
 }
+#proTopBar{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:72px;
+
+background:#fff;
+
+border-bottom:1px solid #ddd;
+
+padding:0 25px;
+
+align-items:center;
+
+justify-content:space-between;
+
+z-index:9999;
+
+}
+
+#proTopBar.show{
+
+display:flex;
+
+}
+
+#proTopBar button{
+
+background:var(--olive-dark);
+
+color:#fff;
+
+padding:10px 18px;
+
+border-radius:8px;
+
+font-weight:700;
+
+}
   </style>
 </head>
 <body>
@@ -1023,6 +1165,17 @@ overflow:hidden;
   </button>
 
 </nav>
+<div id="proTopBar" class="hidden">
+
+    <button id="backToSiteBtn">
+        ← Site public
+    </button>
+
+    <button id="logoutBtnPro">
+        Déconnexion
+    </button>
+
+</div>
 
 <div id="menuOverlay"></div>
 
@@ -1095,53 +1248,50 @@ overflow:hidden;
 
         <div class="dashboard-grid">
 
-            <div class="dashboard-card" onclick="showPublicPage('heritage')">
+            <button type="button" class="dashboard-card" onclick="showPublicPage('heritage')">
 
                 <img src="HER2.png" alt="Héritage">
 
                 <div class="dashboard-overlay">
 
                     <h3>Héritage</h3>
+                    <span>L'histoire du projet et de la transmission.</span>
 
-                    <span>Notre histoire</span>
+                  
 
                 </div>
 
-            </div>
+            </button>
 
-            <div class="dashboard-card" onclick="showPublicPage('directory')">
+            <button type="button" class="dashboard-card" onclick="showPublicPage('directory')">
 
                 <img src="AN.png" alt="Annuaire">
 
                 <div class="dashboard-overlay">
 
                     <h3>Annuaire</h3>
-
-                    <span>Explorer</span>
+                    <span>Explorer les artisans de votre territoire.</span>
 
                 </div>
 
-            </div>
+            </button>
 
-            <div class="dashboard-card" onclick="showPublicPage('values')">
+            <button type="button" class="dashboard-card" onclick="showPublicPage('values')">
 
                 <img src="VAL.png" alt="Nos valeurs">
 
                 <div class="dashboard-overlay">
 
                     <h3>Nos valeurs</h3>
-
-                    <span>Nos engagements</span>
+                    <span>Comprendre la mission ADN DOU PAÏS.</span>
 
                 </div>
 
-            </div>
+            </button>
 
             </div>
 
         </div>
-
-    </div>
 
 </section>
     <section id="heritage" class="editorial-page public-page" data-public-page="heritage">
@@ -1407,13 +1557,13 @@ Et c’est ce que je veux faire vivre.</div>
   <main id="proApp" class="pro-shell hidden">
     <section class="pro-intro">
       <p class="eyebrow">Espace adhérent</p>
-      <h1>Gérer ma fiche artisan</h1>
-      <p>Ajoutez vos informations, produits, tarifs et photos.</p>
+      <h1>Mon espace artisan</h1>
+      
     </section>
     <section class="pro-login" id="loginPanel">
       <h2>Connexion</h2>
-      <p>Utilisez le lien personnel transmis par ADN. Il contient un token d'accès unique.</p>
-      <label>Token adhérent<input id="tokenInput" placeholder="ex: pro_abc123"></label>
+      
+      <label>MDP adhérent<input id="tokenInput" placeholder="ex: pro_abc123"></label>
       <button id="loadProfileBtn">Ouvrir mon portail</button>
       <p class="form-note" id="loginNote"></p>
     </section>
@@ -1684,7 +1834,20 @@ map.dataset.ready="svg";
     async function api(action,payload={}){if(!configured)return mockApi(action,payload);const response=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action,token,...payload})});const data=await response.json();if(!data.ok)throw new Error(data.error||"Erreur API");return data}
     async function mockApi(action,payload){await new Promise((resolve)=>setTimeout(resolve,160));if(action==="listPublic")return{ok:true,artisans:fallbackArtisans};if(action==="addLead")return{ok:true};if(action==="addReview"){const artisan=fallbackArtisans.find((item)=>item.id===payload.artisanId);artisan?.reviews.push({author:payload.author,rating:payload.rating,comment:payload.comment,createdAt:new Date().toISOString()});return{ok:true}}if(action==="getProProfile")return{ok:true,pro:{id:"demo-pro",token,proName:"Claire Martin",businessName:"Maison Ardechoise",email:"demo@vinedra.fr",portalUrl:location.href,active:true},artisan:{id:"demo-artisan",businessName:"Maison Ardechoise",proName:"Claire Martin",email:"demo@vinedra.fr",phone:"",address:"07400 Saint-Martin-sur-Lavezon",departmentCode:"07",trade:"Boulanger",googleRating:4.8,googleUrl:"",shopPhotos:"",description:""},products:[],followingIds:[],artisans:[{id:"demo-2",businessName:"Ferme des Collines",trade:"Producteur",departmentCode:"07",region:"Auvergne-Rhone-Alpes"}]};if(action==="getSocialFeed")return{ok:true,posts:[],offset:0,limit:20,total:0,hasMore:false,followingIds:[],discoverArtisans:[]};if(action==="getSocialProfile")return{ok:true,profile:{id:"demo-artisan",businessName:"Maison Ardechoise",proName:"Claire Martin",trade:"Boulanger",departmentCode:"07",region:"Auvergne-Rhone-Alpes",avatar:"",description:"Artisan boulanger ardechois."},stats:{posts:0,following:0,followers:0,likesReceived:0,commentsReceived:0},following:[],followers:[],posts:[],offset:0,limit:20,total:0,hasMore:false,isMine:true,followedByMe:false,followingIds:[]};return{ok:true}}
 
-    function initMode(){if(isProMode){$("#publicApp").classList.add("hidden");$("#proApp").classList.remove("hidden");$("#brandDepartment").textContent="Portail professionnel";$("#navDirectory").href="index.html";$("#navDirectory").textContent="Site public";initPro()}else{initPublic()}}
+    function initMode(){
+      document.body.classList.toggle("is-pro-mode",isProMode);
+      if(isProMode){
+        $("#publicApp").classList.add("hidden");
+        $("#proApp").classList.remove("hidden");
+        $("#brandDepartment").textContent="Portail professionnel";
+        $("#navDirectory").href="index.html";
+        $("#navDirectory").removeAttribute("data-public-tab");
+        $("#navDirectory").textContent="Site public";
+        initPro();
+      }else{
+        initPublic();
+      }
+    }
 
     function showPublicPage(page,options={}){
 
