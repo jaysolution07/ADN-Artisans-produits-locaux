@@ -1306,6 +1306,61 @@ font-weight:700;
   object-position:center;
   display:block;
 }
+
+.heritage-photo-caption{
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  padding:18px 20px;
+
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.35),
+    transparent
+  );
+
+  color:white;
+
+  text-align:center;
+
+}
+
+.heritage-photo-caption strong{
+
+  display:block;
+
+  margin-bottom:4px;
+
+  font-family:Georgia,"Times New Roman",serif;
+
+  font-style:italic;
+
+  font-size:1.35rem;
+
+  font-weight:400;
+
+  letter-spacing:.03em;
+
+}
+
+.heritage-photo-caption span{
+
+  display:block;
+
+  font-family:Georgia,"Times New Roman",serif;
+
+  font-style:italic;
+
+  font-size:1rem;
+
+  opacity:.92;
+
+}
 .heritage-quote-card{
   display:grid;
   grid-template-columns:1.2fr .9fr;
@@ -1402,14 +1457,26 @@ font-weight:700;
   white-space:pre-line;
 }
 @media(max-width:900px){
+
   .heritage-stage{
     min-height:auto;
     grid-template-columns:1fr;
   }
+
   .heritage-portrait{
-    min-height:320px;
-    order:-1;
+
+    min-height:220px;
+
+    max-width:320px;
+
+    width:100%;
+
+    margin:25px auto 0;
+
+    order:2;
+
   }
+
 }
 @media(max-width:640px){
   #heritage.heritage-page{
@@ -1428,9 +1495,18 @@ font-weight:700;
     padding:1rem 0 0;
   }
   .heritage-portrait{
-    min-height:260px;
-    border-radius:20px;
-  }
+
+    min-height:180px;
+
+    max-width:260px;
+
+    width:100%;
+
+    margin:25px auto 0;
+
+    border-radius:18px;
+
+}
 }
   </style>
 </head>
@@ -1735,9 +1811,16 @@ C’est ce que mes grands-pères m’ont appris.
 Et c’est ce que je veux faire vivre.</div>
           </details>
         </div>
-        <div class="heritage-portrait" aria-hidden="true">
-          <img src="AL.jpg" alt="">
-        </div>
+        <div class="heritage-portrait">
+
+  <img src="AL.jpg" alt="Alexandre Roussel">
+
+  <div class="heritage-photo-caption">
+    <strong>Alexandre Roussel</strong>
+    <span>Fondateur d'ADN DOU PAÏS</span>
+  </div>
+
+</div>
       </div>
     </section>
 
