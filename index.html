@@ -1234,6 +1234,204 @@ font-weight:700;
     display:none!important;
   }
 }
+/* Page Heritage façon manifeste */
+#heritage.heritage-page{
+  min-height:calc(100vh - 82px);
+  padding:clamp(1rem,2.8vw,2rem);
+  background:
+    linear-gradient(90deg,rgba(251,246,235,.95),rgba(251,246,235,.82),rgba(251,246,235,.18)),
+    url("HER.png") center/cover;
+}
+.heritage-stage{
+  width:min(1120px,100%);
+  min-height:calc(100vh - 130px);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(320px,.92fr) minmax(300px,.78fr);
+  gap:clamp(1rem,3vw,2rem);
+  align-items:stretch;
+}
+.heritage-main{
+  display:grid;
+  align-content:center;
+  gap:.9rem;
+  padding:clamp(1rem,3vw,2rem);
+}
+.heritage-logo-card{
+  display:grid;
+  justify-items:center;
+  gap:.45rem;
+  text-align:center;
+}
+.heritage-logo-card img{
+  width:min(210px,48vw);
+  max-height:130px;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 18px rgba(32,34,31,.16));
+}
+.heritage-logo-card h2{
+  margin:0;
+  color:var(--olive-dark);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,5vw,3.8rem);
+  line-height:.92;
+}
+.heritage-logo-card p{
+  margin:0;
+  color:#3f4937;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-size:clamp(1rem,2vw,1.25rem);
+}
+.heritage-intro{
+  max-width:560px;
+  margin:0 auto;
+  color:#293024;
+  text-align:center;
+  font-size:clamp(.92rem,1.5vw,1.05rem);
+}
+.heritage-portrait{
+  position:relative;
+  min-height:430px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(32,34,31,.22);
+  align-self:center;
+}
+.heritage-portrait img{
+  width:100%;
+  height:100%;
+  min-height:inherit;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.heritage-quote-card{
+  display:grid;
+  grid-template-columns:1.2fr .9fr;
+  gap:1rem;
+  align-items:center;
+  padding:1rem 1.15rem;
+  border-radius:16px;
+  background:var(--olive-dark);
+  color:#fff;
+  box-shadow:0 16px 42px rgba(32,34,31,.18);
+}
+.heritage-quote-card blockquote{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(.92rem,1.45vw,1.05rem);
+  line-height:1.45;
+}
+.heritage-signature{
+  border-left:1px solid rgba(255,255,255,.32);
+  padding-left:1rem;
+  text-align:center;
+}
+.heritage-signature strong{
+  display:block;
+  font-family:Georgia,"Times New Roman",serif;
+  letter-spacing:.03em;
+}
+.heritage-signature span{
+  display:block;
+  margin-top:.2rem;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  color:#f4e4c5;
+}
+.heritage-mini-values{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.75rem;
+}
+.heritage-mini-values article{
+  display:grid;
+  gap:.35rem;
+  padding:.85rem;
+  border:1px solid rgba(47,61,40,.13);
+  border-radius:14px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 12px 30px rgba(32,34,31,.09);
+  text-align:center;
+}
+.heritage-mini-values strong{
+  color:var(--olive-dark);
+  font-size:.88rem;
+  text-transform:uppercase;
+}
+.heritage-mini-values p{
+  margin:0;
+  color:#3f4937;
+  font-size:.78rem;
+  line-height:1.35;
+}
+.heritage-more{
+  border:1px solid rgba(47,61,40,.14);
+  border-radius:16px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 14px 36px rgba(32,34,31,.12);
+  overflow:hidden;
+}
+.heritage-more summary{
+  cursor:pointer;
+  padding:.9rem 1rem;
+  color:var(--olive-dark);
+  font-weight:900;
+  list-style:none;
+}
+.heritage-more summary::-webkit-details-marker{
+  display:none;
+}
+.heritage-more summary::after{
+  content:" +";
+  float:right;
+}
+.heritage-more[open] summary::after{
+  content:" -";
+}
+.heritage-full-text{
+  max-height:min(58vh,560px);
+  overflow:auto;
+  padding:0 1rem 1rem;
+  color:#111;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-size:1rem;
+  line-height:1.65;
+  white-space:pre-line;
+}
+@media(max-width:900px){
+  .heritage-stage{
+    min-height:auto;
+    grid-template-columns:1fr;
+  }
+  .heritage-portrait{
+    min-height:320px;
+    order:-1;
+  }
+}
+@media(max-width:640px){
+  #heritage.heritage-page{
+    padding:1rem;
+  }
+  .heritage-main{
+    padding:.25rem;
+  }
+  .heritage-quote-card,
+  .heritage-mini-values{
+    grid-template-columns:1fr;
+  }
+  .heritage-signature{
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.32);
+    padding:1rem 0 0;
+  }
+  .heritage-portrait{
+    min-height:260px;
+    border-radius:20px;
+  }
+}
   </style>
 </head>
 <body>
@@ -1400,11 +1598,30 @@ font-weight:700;
         </div>
 
 </section>
-    <section id="heritage" class="editorial-page public-page" data-public-page="heritage">
-      <div class="editorial-inner">
-        <p class="editorial-kicker">Héritage</p>
-        <h2>ADN DOU PAÏS</h2>
-        <div class="heritage-text">Le jour se lève à peine sur les terres de Provence.
+    <section id="heritage" class="heritage-page public-page" data-public-page="heritage">
+      <div class="heritage-stage">
+        <div class="heritage-main">
+          <div class="heritage-logo-card">
+            <img src="ADN.png" alt="ADN DOU PAÏS">
+            <h2>ADN DOU PAÏS</h2>
+            <p>Une histoire de transmission</p>
+          </div>
+          <p class="heritage-intro">Né de l'héritage de mes grands-pères et de mon amour pour nos terroirs, ADN DOU PAÏS relie celles et ceux qui cultivent, transforment et subliment les produits de notre terre.</p>
+          <div class="heritage-quote-card">
+            <blockquote>Mon grand-père Guy m'a appris à aimer la terre.<br><br>Mon grand-père André m'a appris à sublimer ce qu'elle nous offre.</blockquote>
+            <div class="heritage-signature">
+              <strong>ADN DOU PAÏS</strong>
+              <span>est né de cette transmission.</span>
+            </div>
+          </div>
+          <div class="heritage-mini-values">
+            <article><strong>Notre mission</strong><p>Créer du lien entre producteurs, artisans, restaurateurs et consommateurs.</p></article>
+            <article><strong>Comment ?</strong><p>Grâce à un réseau qui raconte les savoir-faire et les produits locaux.</p></article>
+            <article><strong>Notre ambition</strong><p>Faire d'ADN DOU PAÏS une référence des savoir-faire locaux.</p></article>
+          </div>
+          <details class="heritage-more">
+            <summary>Lire plus</summary>
+            <div class="heritage-full-text">Le jour se lève à peine sur les terres de Provence.
 Le silence est encore là, juste traversé par le vent qui descend du Mont Ventoux.
 Un vent sec, parfois dur…
 mais toujours juste.
@@ -1516,7 +1733,11 @@ ADN DOU PAÏS
 C’est ce lien entre la terre et l’excellence.
 C’est ce que mes grands-pères m’ont appris.
 Et c’est ce que je veux faire vivre.</div>
-        <blockquote class="heritage-quote">"Mon grand-père Guy m'a appris à aimer la terre. Mon grand-père André m'a appris à sublimer ce qu'elle nous offre. ADN DOU PAÏS est né de cette transmission."</blockquote>
+          </details>
+        </div>
+        <div class="heritage-portrait" aria-hidden="true">
+          <img src="AL.jpg" alt="">
+        </div>
       </div>
     </section>
 
