@@ -994,8 +994,24 @@ body.is-pro-mode #logoutBtn{
   }
 
   #logoutBtn{
-    display:none;
-  }
+    display:block;
+}
+@media(max-width:768px){
+
+    .topbar{
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+    }
+
+    #logoutBtn{
+        display:block !important;
+        padding:.45rem .7rem !important;
+        font-size:.75rem !important;
+        white-space:nowrap;
+    }
+
+}
 
   body{
     padding-bottom:85px;
@@ -1465,14 +1481,15 @@ font-weight:700;
   <a href="#contact">Contact</a>
   <a class="nav-pro" href="index.html?pro=1">Portail pro</a>
 
+
+
+</nav>
   <button
       type="button"
       id="logoutBtn"
       style="padding:.55rem .8rem;font-size:.9rem;">
       Déconnexion
   </button>
-
-</nav>
 <div id="proTopBar" class="hidden">
 
     <button id="backToSiteBtn">
