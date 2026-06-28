@@ -1566,15 +1566,11 @@ font-weight:700;
         font-weight:700;
     }
 
-    /* cache le burger */
-    .burger-btn{
-        display:none!important;
-    }
-
-    /* cache le menu du haut */
-    .nav{
-        display:none!important;
-    }
+   /* cache uniquement les liens du menu */
+.nav a,
+#logoutBtn{
+    display:none!important;
+}
 
     /* évite que la bottom bar cache le contenu */
     body{
@@ -3110,7 +3106,7 @@ window.renderDepartmentMap();
 </script>
 <div class="bottom-nav">
 
-    <button onclick="goMobileHome()">
+    <button onclick="goToHome()">
         <span>🏠</span>
         <small>Accueil</small>
     </button>
@@ -3130,11 +3126,12 @@ window.renderDepartmentMap();
         <small>Valeurs</small>
     </button>
 
-    <button onclick="goMobilePro()">
+    <button onclick="openProPortal()">
         <span>👤</span>
         <small>Pro</small>
     </button>
 
+</div>
 </div>
 </body>
 </html>
