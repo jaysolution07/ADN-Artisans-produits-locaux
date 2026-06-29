@@ -184,6 +184,13 @@ background-position:
 .category-card[data-trade="Traiteur"]{
   background:#f4eefc;
 }
+.category-card[data-trade="Brasseur"]{
+  background:#f9f1de;
+}
+
+.category-card[data-trade="Vigneron"]{
+  background:#f3e7ef;
+}
 .category-card::before{
   content:"";
   position:absolute;
@@ -2124,8 +2131,29 @@ Et c’est ce que je veux faire vivre.</div>
     <small>Buffets, repas, réceptions...</small>
   </div>
 </div>
+
+<div class="category-card" data-trade="Brasseur">
+  <div class="category-icon">
+    <img src="BRA.png" alt="Brasseurs">
+  </div>
+
+  <div class="category-content">
+    <strong>Brasseurs</strong>
+    <small>Bières artisanales et locales...</small>
+  </div>
 </div>
 
+<div class="category-card" data-trade="Vigneron">
+  <div class="category-icon">
+    <img src="VIN.png" alt="Vignerons">
+  </div>
+
+  <div class="category-content">
+    <strong>Vignerons</strong>
+    <small>Domaines viticoles et vins du terroir...</small>
+  </div>
+</div>
+</div>
 <div id="status" class="status"></div>
       <div id="artisanGrid" class="artisan-grid"></div>
     </section>
@@ -2182,6 +2210,15 @@ Et c’est ce que je veux faire vivre.</div>
 <label class="checkbox-option">
   <input type="checkbox" name="trade" value="Traiteur">
   Traiteur
+</label>
+<label class="checkbox-option">
+  <input type="checkbox" name="trade" value="Brasseur">
+  Brasseur
+</label>
+
+<label class="checkbox-option">
+  <input type="checkbox" name="trade" value="Vigneron">
+  Vigneron / Domaine viticole
 </label>
         </div></div></div>
         <input class="hidden" id="googleRating" type="hidden" value="0">
