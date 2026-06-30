@@ -1695,6 +1695,17 @@ font-weight:700;
 
 }
 }
+#openSocialBtn{
+    display:none !important;
+}
+#discordBtn{
+  background:#5865F2;
+  color:white;
+}
+
+#discordBtn:hover{
+  background:#4752c4;
+}
   </style>
 </head>
 <body>
@@ -2221,6 +2232,9 @@ Et c’est ce que je veux faire vivre.</div>
   title="ADN Social"
 >
   <img src="SOC.png" alt="ADN Social">
+</button>
+<button id="discordBtn" type="button">
+  💬 Communauté ADN
 </button>
       </div>
       
@@ -3326,6 +3340,15 @@ if(toggleFiltersBtn && categoryCards){
         : "🔎 Filtres";
   });
 }
+document.getElementById("discordBtn")
+?.addEventListener("click",()=>{
+
+  window.open(
+    "https://discord.gg/yURZTytcdH",
+    "_blank"
+  );
+
+});
 </script>
 </body>
 </html>
