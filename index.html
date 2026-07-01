@@ -3341,12 +3341,17 @@ if(toggleFiltersBtn && categoryCards){
   });
 }
 document.getElementById("discordBtn")
-?.addEventListener("click",()=>{
+?.addEventListener("click",async()=>{
 
-  window.open(
-    "https://discord.gg/yURZTytcdH",
-    "_blank"
-  );
+  const discordLink =
+    await api("getDiscordLink");
+
+  if(discordLink){
+    window.open(
+      discordLink,
+      "_blank"
+    );
+  }
 
 });
 </script>
