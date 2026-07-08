@@ -1724,6 +1724,43 @@ font-weight:700;
 #discordBtn:hover{
   background:#4752c4;
 }
+.calendar-loading{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+padding:40px;
+
+font-weight:700;
+color:#666;
+
+}
+
+.calendar-loading::before{
+
+content:"";
+
+width:22px;
+height:22px;
+
+border-radius:50%;
+
+border:3px solid #ddd;
+border-top-color:var(--olive-dark);
+
+animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+to{
+transform:rotate(360deg);
+}
+
+}
   </style>
 </head>
 <body>
@@ -2607,7 +2644,24 @@ map.dataset.ready="svg";
     function syncEventFiltersFromUi(){eventState.filters.search=$("#eventSearch")?.value||"";eventState.filters.region=$("#eventRegionFilter")?.value||"";eventState.filters.department=$("#eventDepartmentFilter")?.value||"";eventState.filters.category=$("#eventCategoryFilter")?.value||""}
     function filteredEvents(){const f=eventState.filters;return eventState.events.filter((event)=>{const hay=normalizeText([event.title,event.city,event.ownerBusiness,event.description,event.category].join(" "));return(!f.search||hay.includes(normalizeText(f.search)))&&(!f.region||event.region===f.region)&&(!f.department||normalizeDepartmentCode(event.department)===normalizeDepartmentCode(f.department))&&(!f.category||event.category===f.category)}).sort((a,b)=>String(a.date||"").localeCompare(String(b.date||""))||String(a.startTime||"").localeCompare(String(b.startTime||"")))}
     async function loadEvents(showSkeleton=false){if(eventState.loading)return;eventState.loading=true;if(showSkeleton)renderEventSkeletons();try{const data=await api("listEvents",{token});eventState.events=data.events||[];renderEvents()}catch(error){["publicEventList","eventCalendar","publicEventMap"].forEach((id)=>{const el=$("#"+id);if(el)el.innerHTML=`<p class="form-note">Chargement impossible : ${escapeHtml(error.message)}</p>`})}finally{eventState.loading=false}}
-    function renderEventSkeletons(){const calendar=$("#eventCalendar");if(calendar)calendar.innerHTML='<div class="event-skeleton" style="min-height:360px"></div>';["publicEventList","myEventList","allProEventList"].forEach((id)=>{const el=$("#"+id);if(el)el.innerHTML='<div class="event-skeleton"></div><div class="event-skeleton"></div>'})}
+    function renderEventSkeletons(){
+
+const loading = `
+<div class="calendar-loading">
+Chargement des événements...
+</div>
+`;
+
+["publicEventList","eventCalendar","publicEventMap","myEventList","allProEventList"]
+.forEach(id=>{
+
+    const el=$("#"+id);
+
+    if(el) el.innerHTML=loading;
+
+});
+
+}
     function renderEvents(){renderPublicEvents();renderProEvents()}
     function showEventView(view){eventState.publicView=view||"calendar";document.querySelectorAll("[data-event-view]").forEach((button)=>button.classList.toggle("active",button.dataset.eventView===eventState.publicView));document.querySelectorAll("[data-events-view-panel]").forEach((panel)=>panel.classList.toggle("hidden",panel.dataset.eventsViewPanel!==eventState.publicView));renderPublicEvents()}
     function renderPublicEvents(){const events=filteredEvents();if(eventState.publicView==="calendar"){renderEventCalendar(events);renderEventDayPanel(events)}else if(eventState.publicView==="map"){renderEventMap(events)}else{const list=$("#publicEventList");if(list)list.innerHTML=events.length?events.map((event)=>eventCard(event,"public")).join(""):"<p>Aucun événement ne correspond aux filtres.</p>"}}
@@ -2845,7 +2899,7 @@ else if(target==="events"){
       initEventsUi();
       hydrateLead();
       loadArtisans();
-      loadEvents();
+      loadEvents(true);
       document.querySelectorAll("[data-public-tab]").forEach((link)=>link.addEventListener("click",(event)=>{event.preventDefault();showPublicPage(link.dataset.publicTab)}));
       const initialPage={accueil:"home",heritage:"heritage",valeurs:"values",annuaire:"directory",agenda:"events"}[location.hash.replace("#","")];
       if(initialPage)showPublicPage(initialPage,{scroll:false});
