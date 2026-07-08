@@ -1227,12 +1227,33 @@ font-size:1.35rem;
 font-weight:400;
 line-height:1;
 }
-.bottom-nav a[data-icon="home"]::before{content:"⌂"}
-.bottom-nav a[data-icon="discover"]::before{content:"⌕"}
-.bottom-nav a[data-icon="values"]::before{content:"♡"}
-.bottom-nav a[data-icon="map"]::before{content:"⌖"}
-.bottom-nav a[data-icon="contact"]::before{content:"☎"}
-.bottom-nav a[data-icon="pro"]::before{content:"♙"}
+.bottom-nav a[data-icon="home"]::before{
+content:"🏠";
+}
+
+.bottom-nav a[data-icon="discover"]::before{
+content:"🌿";
+}
+
+.bottom-nav a[data-icon="values"]::before{
+content:"❤";
+}
+
+.bottom-nav a[data-icon="map"]::before{
+content:"🗺️";
+}
+
+.bottom-nav a[data-icon="calendar"]::before{
+content:"📅";
+}
+
+.bottom-nav a[data-icon="contact"]::before{
+content:"✉️";
+}
+
+.bottom-nav a[data-icon="pro"]::before{
+content:"👤";
+}
 .bottom-nav a.active{
 color:var(--olive-dark);
 background:#eef4ea;
@@ -1820,7 +1841,12 @@ transform:rotate(360deg);
   <a class="bottom-public-link" href="#heritage" data-public-tab="heritage" data-icon="discover">Héritage</a>
   <a class="bottom-public-link" href="#valeurs" data-public-tab="values" data-icon="values">Valeurs</a>
   <a class="bottom-public-link" href="#annuaire" data-public-tab="directory" data-icon="map">Carte</a>
-  <a class="bottom-public-link" href="#agenda" data-public-tab="events" data-icon="discover">Agenda</a>
+  <a class="bottom-public-link"
+href="#agenda"
+data-public-tab="events"
+data-icon="calendar">
+Agenda
+</a>
   <a class="bottom-public-link" href="#contact" data-icon="contact">Contact</a>
   <a class="bottom-public-link" href="index.html?pro=1" data-icon="pro">Pro</a>
   <a class="bottom-pro-link" href="index.html" data-icon="home">Accueil</a>
