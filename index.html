@@ -315,7 +315,99 @@ background-position:
 }
 .artisan-body h3{margin:0}.meta-row,.rating-row{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.pill{display:inline-flex;align-items:center;border-radius:999px;background:var(--sky);color:var(--olive-dark);padding:.24rem .55rem;font-size:.8rem;font-weight:800}.stars{color:var(--gold);font-weight:900}
     .artisan-dialog{width:min(920px,calc(100vw - 2rem));border:1px solid var(--line);border-radius:8px;padding:0}.artisan-dialog::backdrop{background:rgba(32,34,31,.55)}.dialog-close{position:absolute;right:.75rem;top:.75rem;width:36px;height:36px;padding:0}.dialog-inner{padding:1.25rem}.contact-list{display:grid;gap:.35rem;margin:1rem 0}.contact-list p{margin:0}.contact-list a{color:var(--olive-dark);font-weight:700}.dialog-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}.dialog-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:var(--sky)}.product-grid,.review-list,.product-list{display:grid;gap:.8rem}.product-card,.review-item{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}.product-card{display:grid;grid-template-columns:110px 1fr;gap:.9rem}.review-form{display:grid;gap:.75rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
-    .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}.pro-tabs,.social-tabs{display:flex;flex-wrap:wrap;gap:.5rem}.pro-tabs button,.social-tabs button{background:#fff;color:var(--olive-dark);border:1px solid var(--line)}.pro-tabs button.active,.social-tabs button.active{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}
+    .footer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:1rem clamp(1rem,4vw,3rem);color:#fff;background:var(--olive-dark)}.footer details{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:.65rem .8rem}.footer summary{cursor:pointer;font-weight:800;list-style-position:outside}.footer p{margin:.65rem 0 0;color:rgba(255,255,255,.82);font-size:.95rem}.pro-shell{display:grid;gap:1.2rem}.pro-intro{padding:2rem 0 1rem;border-bottom:1px solid var(--line)}.pro-intro h1{font-size:clamp(2.4rem,7vw,5rem)}.pro-editor{display:grid;gap:1rem}
+.pro-tabs{
+
+display:grid;
+
+grid-template-columns:repeat(5,minmax(0,1fr));
+
+gap:10px;
+
+margin-top:18px;
+
+align-items:stretch;
+
+}
+
+.pro-tabs button{
+
+height:48px;
+
+padding:0 10px;
+
+font-size:15px;
+
+font-weight:700;
+
+border-radius:12px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+white-space:nowrap;
+
+background:#fff;
+color:var(--olive-dark);
+border:1px solid var(--line);
+
+transition:.2s;
+
+}
+
+.pro-tabs button:hover{
+
+transform:translateY(-2px);
+
+}
+
+.pro-tabs button.active{
+
+background:var(--olive-dark);
+color:#fff;
+border-color:var(--olive-dark);
+
+}
+
+.pro-tabs button.active{
+
+background:var(--olive-dark);
+color:#fff;
+border-color:var(--olive-dark);
+
+}
+
+.social-tabs{
+display:flex;
+flex-wrap:wrap;
+gap:.5rem;
+}
+
+.social-tabs button{
+background:#fff;
+color:var(--olive-dark);
+border:1px solid var(--line);
+}
+
+.social-tabs button.active{
+background:var(--olive-dark);
+color:#fff;
+border-color:var(--olive-dark);
+}
+#discordBtn{
+
+background:#5865F2;
+color:#fff;
+
+}
+
+#discordBtn:hover{
+
+background:#4752c4;
+
+}
+.portal-bridge{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#f7f8f3}.portal-bridge p{margin:0;color:var(--muted);font-size:.92rem;max-width:36rem}
 
 .social-shell .social-intro{
   padding:.25rem 0 1rem;
@@ -1808,6 +1900,97 @@ transform:rotate(360deg);
 }
 
 }
+@media(max-width:768px){
+
+.pro-tabs{
+
+display:grid !important;
+grid-template-columns:repeat(5,1fr);
+gap:8px;
+
+}
+
+.pro-tabs button{
+
+height:52px;
+padding:0;
+justify-content:center;
+align-items:center;
+
+}
+
+.pro-tabs button span{
+
+display:none;
+
+}
+
+.pro-tabs button[data-pro-tab="profile"]{
+
+font-size:0;
+
+}
+
+.pro-tabs button[data-pro-tab="profile"]::before{
+
+content:"👤";
+font-size:22px;
+
+}
+
+.pro-tabs button[data-pro-tab="products"]{
+
+font-size:0;
+
+}
+
+.pro-tabs button[data-pro-tab="products"]::before{
+
+content:"📦";
+font-size:22px;
+
+}
+
+.pro-tabs button[data-pro-tab="events"]{
+
+font-size:0;
+
+}
+
+.pro-tabs button[data-pro-tab="events"]::before{
+
+content:"📅";
+font-size:22px;
+
+}
+
+.pro-tabs button[data-pro-tab="network"]{
+
+font-size:0;
+
+}
+
+.pro-tabs button[data-pro-tab="network"]::before{
+
+content:"🤝";
+font-size:22px;
+
+}
+
+#discordBtn{
+
+font-size:0;
+
+}
+
+#discordBtn::before{
+
+content:"💙";
+font-size:22px;
+
+}
+
+}
   </style>
 </head>
 <body>
@@ -2376,8 +2559,12 @@ Et c’est ce que je veux faire vivre.</div>
 >
   <img src="SOC.png" alt="ADN Social">
 </button>
-<button id="discordBtn" type="button">
-  💬 Communauté ADN
+<button
+    id="discordBtn"
+    type="button"
+    aria-label="Discord"
+    title="Communauté ADN">
+    <span>💬 Communauté ADN</span>
 </button>
       </div>
       
