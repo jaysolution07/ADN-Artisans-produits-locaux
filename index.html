@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -2076,11 +2076,11 @@ Agenda
         <p>Le réseau qui relie les producteurs, éleveurs, artisans et chefs engagés dans la valorisation du terroir régional.</p>
       <form id="accessForm" class="access-panel">
         <h2>Connexion au site</h2>
-        <label>Deja inscrit ? Entrez votre email<input id="loginEmail" type="email" autocomplete="email"></label>
+        <label>Deja inscrit  Entrez votre email<input id="loginEmail" type="email" autocomplete="email"></label>
         <button type="button" id="loginLeadBtn">Me connecter</button>
         <details id="registerDetails">
   <summary style="cursor:pointer;font-weight:700;">
-    Première visite ? Créer un compte
+    Première visite  Créer un compte
   </summary>
 
   <div style="margin-top:15px;display:grid;gap:12px;">
@@ -2639,7 +2639,7 @@ Et c’est ce que je veux faire vivre.</div>
         <div class="section-heading">
           <div>
             <p class="eyebrow">Événements ADN</p>
-            <h2>Mes événements</h2>
+            <h2 id="eventPanelTitle">Mes événements</h2>
           </div>
           <span id="eventProNote" class="pill"></span>
         </div>
@@ -2660,7 +2660,6 @@ Et c’est ce que je veux faire vivre.</div>
             <label>Département<select id="eventDepartment" required></select></label>
             <label>Ville<input id="eventCity" required></label>
             <label>Adresse<input id="eventAddress" required></label>
-            </label>
             <label>Image / affiche<input id="eventImage" placeholder="URL de l'image"></label>
             <label>Lien Facebook ou site<input id="eventExternalLink" placeholder="https://"></label>
             <label>Maximum participants<input id="eventMaxParticipants" type="number" min="0"></label>
@@ -2783,7 +2782,7 @@ Et c’est ce que je veux faire vivre.</div>
       <p>Hebergement : GitHub Pages, GitHub, Inc. 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.</p>
 <p>
 Crédits cartographiques : carte des départements de France issue du projet
-svg-maps/france.departments – licence CC BY 4.0.
+svg-maps/france.departments “ licence CC BY 4.0.
 </p>
     </details>
     <details>
@@ -2803,7 +2802,7 @@ svg-maps/france.departments – licence CC BY 4.0.
     const VINEDRA_DEPARTMENTS = [["01","Ain","Auvergne-Rhone-Alpes"],["02","Aisne","Hauts-de-France"],["03","Allier","Auvergne-Rhone-Alpes"],["04","Alpes-de-Haute-Provence","Provence-Alpes-Côte d'Azur"],["05","Hautes-Alpes","Provence-Alpes-Côte d'Azur"],["06","Alpes-Maritimes","Provence-Alpes-Côte d'Azur"],["07","Ardeche","Auvergne-Rhone-Alpes"],["08","Ardennes","Grand Est"],["09","Ariege","Occitanie"],["10","Aube","Grand Est"],["11","Aude","Occitanie"],["12","Aveyron","Occitanie"],["13","Bouches-du-Rhone","Provence-Alpes-Côte d'Azur"],["14","Calvados","Normandie"],["15","Cantal","Auvergne-Rhone-Alpes"],["16","Charente","Nouvelle-Aquitaine"],["17","Charente-Maritime","Nouvelle-Aquitaine"],["18","Cher","Centre-Val de Loire"],["19","Correze","Nouvelle-Aquitaine"],["2A","Corse-du-Sud","Corse"],["2B","Haute-Corse","Corse"],["21","Côte-d'Or","Bourgogne-Franche-Comte"],["22","Côtes-d'Armor","Bretagne"],["23","Creuse","Nouvelle-Aquitaine"],["24","Dordogne","Nouvelle-Aquitaine"],["25","Doubs","Bourgogne-Franche-Comte"],["26","Drome","Auvergne-Rhone-Alpes"],["27","Eure","Normandie"],["28","Eure-et-Loir","Centre-Val de Loire"],["29","Finistere","Bretagne"],["30","Gard","Occitanie"],["31","Haute-Garonne","Occitanie"],["32","Gers","Occitanie"],["33","Gironde","Nouvelle-Aquitaine"],["34","Herault","Occitanie"],["35","Ille-et-Vilaine","Bretagne"],["36","Indre","Centre-Val de Loire"],["37","Indre-et-Loire","Centre-Val de Loire"],["38","Isere","Auvergne-Rhone-Alpes"],["39","Jura","Bourgogne-Franche-Comte"],["40","Landes","Nouvelle-Aquitaine"],["41","Loir-et-Cher","Centre-Val de Loire"],["42","Loire","Auvergne-Rhone-Alpes"],["43","Haute-Loire","Auvergne-Rhone-Alpes"],["44","Loire-Atlantique","Pays de la Loire"],["45","Loiret","Centre-Val de Loire"],["46","Lot","Occitanie"],["47","Lot-et-Garonne","Nouvelle-Aquitaine"],["48","Lozere","Occitanie"],["49","Maine-et-Loire","Pays de la Loire"],["50","Manche","Normandie"],["51","Marne","Grand Est"],["52","Haute-Marne","Grand Est"],["53","Mayenne","Pays de la Loire"],["54","Meurthe-et-Moselle","Grand Est"],["55","Meuse","Grand Est"],["56","Morbihan","Bretagne"],["57","Moselle","Grand Est"],["58","Nievre","Bourgogne-Franche-Comte"],["59","Nord","Hauts-de-France"],["60","Oise","Hauts-de-France"],["61","Orne","Normandie"],["62","Pas-de-Calais","Hauts-de-France"],["63","Puy-de-Dome","Auvergne-Rhone-Alpes"],["64","Pyrenees-Atlantiques","Nouvelle-Aquitaine"],["65","Hautes-Pyrenees","Occitanie"],["66","Pyrenees-Orientales","Occitanie"],["67","Bas-Rhin","Grand Est"],["68","Haut-Rhin","Grand Est"],["69","Rhone","Auvergne-Rhone-Alpes"],["70","Haute-Saone","Bourgogne-Franche-Comte"],["71","Saone-et-Loire","Bourgogne-Franche-Comte"],["72","Sarthe","Pays de la Loire"],["73","Savoie","Auvergne-Rhone-Alpes"],["74","Haute-Savoie","Auvergne-Rhone-Alpes"],["75","Paris","Ile-de-France"],["76","Seine-Maritime","Normandie"],["77","Seine-et-Marne","Ile-de-France"],["78","Yvelines","Ile-de-France"],["79","Deux-Sevres","Nouvelle-Aquitaine"],["80","Somme","Hauts-de-France"],["81","Tarn","Occitanie"],["82","Tarn-et-Garonne","Occitanie"],["83","Var","Provence-Alpes-Côte d'Azur"],["84","Vaucluse","Provence-Alpes-Côte d'Azur"],["85","Vendee","Pays de la Loire"],["86","Vienne","Nouvelle-Aquitaine"],["87","Haute-Vienne","Nouvelle-Aquitaine"],["88","Vosges","Grand Est"],["89","Yonne","Bourgogne-Franche-Comte"],["90","Territoire de Belfort","Bourgogne-Franche-Comte"],["91","Essonne","Ile-de-France"],["92","Hauts-de-Seine","Ile-de-France"],["93","Seine-Saint-Denis","Ile-de-France"],["94","Val-de-Marne","Ile-de-France"],["95","Val-d'Oise","Ile-de-France"],["971","Guadeloupe","Guadeloupe"],["972","Martinique","Martinique"],["973","Guyane","Guyane"],["974","La Reunion","La Reunion"],["976","Mayotte","Mayotte"]].map(([code,name,region])=>({code,name,region}));
     const VINEDRA_REGIONS = [...new Set(VINEDRA_DEPARTMENTS.map((item)=>item.region))].sort();
     const DEPARTMENT_MAP_POSITIONS = Object.fromEntries([["59",10,1],["62",9,1],["80",8,2],["02",10,2],["08",12,2],["76",5,3],["60",8,3],["50",3,5],["14",4,5],["27",6,4],["95",7,4],["75",8,4],["93",9,4],["51",12,4],["55",14,4],["57",16,4],["61",5,6],["28",7,6],["78",8,6],["91",9,7],["92",8,5],["94",9,5],["77",10,5],["10",12,6],["52",14,6],["54",15,5],["67",18,5],["29",1,7],["22",2,7],["35",3,7],["53",4,8],["72",5,8],["45",8,8],["89",11,8],["88",16,7],["68",18,7],["56",2,9],["49",5,10],["37",7,10],["41",7,9],["18",10,10],["58",12,10],["21",14,10],["70",15,8],["90",17,8],["44",3,10],["85",4,12],["79",6,13],["86",7,12],["36",8,11],["03",11,12],["71",13,12],["25",16,10],["39",15,12],["17",5,14],["16",6,15],["87",8,14],["23",9,13],["63",11,14],["42",12,15],["69",13,15],["01",14,14],["74",16,14],["33",5,18],["24",7,17],["19",9,15],["15",10,17],["43",11,16],["07",12,17],["26",13,18],["38",14,17],["73",15,16],["40",4,20],["47",7,19],["46",9,18],["12",10,19],["48",12,18],["05",15,18],["32",6,21],["82",8,20],["81",8,21],["30",11,21],["84",13,20],["04",14,20],["06",16,21],["64",4,23],["65",6,23],["31",7,22],["34",10,22],["13",12,22],["83",14,22],["09",8,24],["11",10,24],["66",11,25],["2B",16,23],["2A",16,25],["971",1,28],["972",3,28],["973",5,28],["974",7,28],["976",9,28]].map(([code,col,row])=>[code,[col,row]]));
-    function normalizeDepartmentCode(code){const value=String(code??"").trim().toUpperCase();if(!value)return"";if(value==="2A"||value==="2B")return value;if(/^\d$/.test(value))return `0${value}`;return value}
+    function normalizeDepartmentCode(code){const value=String(code||"").trim().toUpperCase();if(!value)return"";if(value==="2A"||value==="2B")return value;if(/^\d$/.test(value))return `0${value}`;return value}
     const getDepartment = (code) => VINEDRA_DEPARTMENTS.find((item)=>item.code === normalizeDepartmentCode(code));
     const API_URL = VINEDRA_CONFIG.APPS_SCRIPT_URL;
     const configured = API_URL && !API_URL.includes("PASTE_YOUR");
@@ -2917,10 +2916,10 @@ Chargement des événements...
     function renderPublicEvents(){const events=filteredEvents();if(eventState.publicView==="calendar"){renderEventCalendar(events);renderEventDayPanel(events)}else if(eventState.publicView==="map"){renderEventMap(events)}else{const list=$("#publicEventList");if(list)list.innerHTML=events.length?events.map((event)=>eventCard(event,"public")).join(""):"<p>Aucun événement ne correspond aux filtres.</p>"}}
     function shiftCalendarMonth(delta){const current=eventState.calendarMonth||new Date();eventState.calendarMonth=new Date(current.getFullYear(),current.getMonth()+delta,1);renderPublicEvents()}
     function selectCalendarDay(iso){eventState.selectedDay=iso;renderPublicEvents()}
-    function renderEventCalendar(events){const target=$("#eventCalendar");if(!target)return;const month=eventState.calendarMonth||new Date();const year=month.getFullYear();const monthIndex=month.getMonth();const firstDay=new Date(year,monthIndex,1);const startOffset=(firstDay.getDay()+6)%7;const daysInMonth=new Date(year,monthIndex+1,0).getDate();const today=isoDateLocal(new Date());const eventsByDate={};events.forEach((event)=>{if(!event.date)return;(eventsByDate[event.date]=eventsByDate[event.date]||[]).push(event)});const weekdays=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];let cells="";for(let i=0;i<startOffset;i++)cells+=`<div class="calendar-day is-empty" aria-hidden="true"></div>`;for(let day=1;day<=daysInMonth;day++){const d=new Date(year,monthIndex,day);const iso=isoDateLocal(d);const dayEvents=eventsByDate[iso]||[];const isSelected=eventState.selectedDay===iso;const isToday=iso===today;const chips=dayEvents.slice(0,2).map((event)=>`<span class="calendar-event-chip" style="--chip-color:${eventCategoryColor(event.category)}" title="${escapeHtml(event.title)}">${escapeHtml(event.title)}</span>`).join("");const more=dayEvents.length>2?`<span class="calendar-more">+${dayEvents.length-2}</span>`:"";cells+=`<button type="button" class="calendar-day${dayEvents.length?" has-events":""}${isSelected?" is-selected":""}${isToday?" is-today":""}" data-event-date="${iso}"><span class="calendar-day-num">${day}</span>${dayEvents.length?`<div class="calendar-day-events">${chips}${more}</div>`:""}</button>`}target.innerHTML=`<div class="calendar-nav"><button type="button" class="secondary" data-cal-prev aria-label="Mois précédent">←</button><h3>${escapeHtml(formatCalendarMonth(month))}</h3><button type="button" class="secondary" data-cal-next aria-label="Mois suivant">→</button><button type="button" class="secondary" data-cal-today>Aujourd'hui</button></div><div class="calendar-weekdays">${weekdays.map((label)=>`<span>${label}</span>`).join("")}</div><div class="calendar-grid">${cells}</div>`}
+    function renderEventCalendar(events){const target=$("#eventCalendar");if(!target)return;const month=eventState.calendarMonth||new Date();const year=month.getFullYear();const monthIndex=month.getMonth();const firstDay=new Date(year,monthIndex,1);const startOffset=(firstDay.getDay()+6)%7;const daysInMonth=new Date(year,monthIndex+1,0).getDate();const today=isoDateLocal(new Date());const eventsByDate={};events.forEach((event)=>{if(!event.date)return;(eventsByDate[event.date]=eventsByDate[event.date]||[]).push(event)});const weekdays=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];let cells="";for(let i=0;i<startOffset;i++)cells+=`<div class="calendar-day is-empty" aria-hidden="true"></div>`;for(let day=1;day<=daysInMonth;day++){const d=new Date(year,monthIndex,day);const iso=isoDateLocal(d);const dayEvents=eventsByDate[iso]||[];const isSelected=eventState.selectedDay===iso;const isToday=iso===today;const chips=dayEvents.slice(0,2).map((event)=>`<span class="calendar-event-chip" style="--chip-color:${eventCategoryColor(event.category)}" title="${escapeHtml(event.title)} · ${Number(event.exhibitorsCount||0)} exposant(s)">${escapeHtml(event.title)}</span>`).join("");const more=dayEvents.length>2?`<span class="calendar-more">+${dayEvents.length-2}</span>`:"";cells+=`<button type="button" class="calendar-day${dayEvents.length?" has-events":""}${isSelected?" is-selected":""}${isToday?" is-today":""}" data-event-date="${iso}"><span class="calendar-day-num">${day}</span>${dayEvents.length?`<div class="calendar-day-events">${chips}${more}</div>`:""}</button>`}target.innerHTML=`<div class="calendar-nav"><button type="button" class="secondary" data-cal-prev aria-label="Mois précédent">←</button><h3>${escapeHtml(formatCalendarMonth(month))}</h3><button type="button" class="secondary" data-cal-next aria-label="Mois suivant">→</button><button type="button" class="secondary" data-cal-today>Aujourd'hui</button></div><div class="calendar-weekdays">${weekdays.map((label)=>`<span>${label}</span>`).join("")}</div><div class="calendar-grid">${cells}</div>`}
     function renderEventDayPanel(events){const panel=$("#eventDayPanel");if(!panel)return;if(!eventState.selectedDay||eventState.publicView!=="calendar"){panel.classList.add("hidden");panel.innerHTML="";return}const dayEvents=events.filter((event)=>event.date===eventState.selectedDay);const label=new Date(`${eventState.selectedDay}T12:00:00`).toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});panel.classList.remove("hidden");panel.innerHTML=`<div class="event-day-panel-head"><h3>${escapeHtml(label)}</h3><button type="button" class="secondary" data-clear-day>Fermer</button></div>${dayEvents.length?`<div class="event-grid">${dayEvents.map((event)=>eventCard(event,"public")).join("")}</div>`:"<p class=\"form-note\">Aucun événement ce jour-là avec les filtres actuels.</p>"}`}
-    function renderEventMap(events){const map=$("#publicEventMap");if(!map)return;const located=events.filter((event)=>Number(event.latitude)&&Number(event.longitude));map.innerHTML=located.length?located.map((event)=>`<article class="event-marker"><strong>${escapeHtml(event.title)}</strong><p>${escapeHtml(eventDateLabel(event))} · ${escapeHtml(event.city||"")}</p><p>${Number(event.participantsCount||0)} participant(s)</p><button type="button" data-view-event="${escapeHtml(event.id)}">Voir le détail</button></article>`).join(""):"<p class='form-note'>Aucun événement géolocalisé ne correspond aux filtres.</p>"}
-    function renderProEvents(){if(!$("#eventsPanel"))return;const mine=eventState.events.filter((event)=>event.isOwner);const others=eventState.events.filter((event)=>!event.isOwner);$("#myEventList").innerHTML=mine.length?mine.map((event)=>eventCard(event,"mine")).join(""):"<p>Vous n'avez pas encore publié d'événement.</p>";$("#allProEventList").innerHTML=others.length?others.map((event)=>eventCard(event,"pro")).join(""):"<p>Aucun autre événement pour le moment.</p>";const pendingRequests=mine.reduce((count,event)=>count+(event.requests||[]).length,0);$("#eventProNote").textContent=pendingRequests?`${mine.length} événement(s) · ${pendingRequests} demande(s)`: `${mine.length} événement(s)`;renderEventNotifications()}
+    function renderEventMap(events){const map=$("#publicEventMap");if(!map)return;const located=events.filter((event)=>Number(event.latitude)&&Number(event.longitude));map.innerHTML=located.length?located.map((event)=>`<article class="event-marker"><strong>${escapeHtml(event.title)}</strong><p>${escapeHtml(eventDateLabel(event))} · ${escapeHtml(event.city||"")}</p><p>🏪 ${Number(event.exhibitorsCount||0)} exposant(s)</p><button type="button" data-view-event="${escapeHtml(event.id)}">Voir le détail</button></article>`).join(""):"<p class='form-note'>Aucun événement géolocalisé ne correspond aux filtres.</p>"}
+    function renderProEvents(){if(!$("#eventsPanel"))return;const mine=eventState.events.filter((event)=>event.isOwner);const others=eventState.events.filter((event)=>!event.isOwner);$("#myEventList").innerHTML=mine.length?mine.map((event)=>eventCard(event,"mine")).join(""):"<p>Vous n'avez pas encore publié d'événement.</p>";$("#allProEventList").innerHTML=others.length?others.map((event)=>eventCard(event,"pro")).join(""):"<p>Aucun autre événement pour le moment.</p>";const pendingRequests=mine.reduce((count,event)=>count+(event.requests||[]).length,0);$("#eventProNote").textContent=pendingRequests?`${mine.length} événement(s) · ${pendingRequests} demande(s)`: `${mine.length} événement(s)`;renderEventNotifications();setProEventView(eventState.proView)}
     function formatNotifDate(value){if(!value)return"";const date=new Date(value);return Number.isNaN(date.getTime())?"":date.toLocaleString("fr-FR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}
     function exhibitorNotifications(){return(eventState.notifications||[]).filter((item)=>item.type==="exhibitor_request")}
     function renderEventNotifications(){const container=$("#eventNotifications");const badge=$("#eventsBadge");const notifications=exhibitorNotifications();const count=notifications.length;if(badge){
@@ -2942,10 +2941,22 @@ badge.style.display="none";
 }if(!container)return;if(!token||!count){container.classList.add("hidden");container.innerHTML="";return}container.classList.remove("hidden");container.innerHTML=`<div class="section-heading"><div><p class="eyebrow">Notifications</p><h3>Demandes d'exposition</h3></div><span class="pill">${count} nouvelle(s)</span></div><div class="event-notifications-list">${notifications.map((item)=>`<button type="button" class="event-notification-item" data-open-event-notif="${escapeHtml(item.eventId)}" data-notif-id="${escapeHtml(item.id)}"><strong>${escapeHtml(item.message)}</strong><span class="form-note">${escapeHtml(formatNotifDate(item.createdAt))}</span></button>`).join("")}</div>`}
     async function markExhibitorNotificationsReadForEvent(eventId){const ids=(eventState.notifications||[]).filter((item)=>item.type==="exhibitor_request"&&item.eventId===eventId).map((item)=>item.id);if(!ids.length)return;try{await api("markNotificationsRead",{notificationIds:ids});eventState.notifications=(eventState.notifications||[]).filter((item)=>!ids.includes(item.id));renderEventNotifications()}catch(error){}}
     async function openEventNotification(eventId,notificationId){showProTab("events");eventState.proView="mine";document.querySelectorAll("[data-event-pro-view]").forEach((button)=>button.classList.toggle("active",button.dataset.eventProView==="mine"));$("#myEventList")?.classList.remove("hidden");$("#allProEventList")?.classList.add("hidden");try{await api("markNotificationsRead",{notificationIds:[notificationId]});eventState.notifications=(eventState.notifications||[]).filter((item)=>item.id!==notificationId);renderEventNotifications()}catch(error){}renderEvents();document.querySelector(`#myEventList [data-view-event="${eventId}"]`)?.closest(".event-card")?.scrollIntoView({behavior:"smooth",block:"center"})}
-    function renderExposeAction(event,eventId){if(!event.lookingForExhibitors)return"";if(eventState.pendingActions[eventId]==="exhibitor")return `<button type="button" class="secondary" disabled aria-busy="true">Envoi en cours...</button>`;if(event.viewerStatus==="pending")return `<span class="pill is-pending">Demande envoyée — en attente</span>`;if(!event.viewerStatus)return `<button type="button" class="secondary" data-expose-event="${escapeHtml(eventId)}">Je souhaite exposer</button>`;return""}
-    function eventCard(event,context){const canJoin=context==="pro" && token && !event.isOwner;const joinLabel=event.viewerStatus?"Je ne participe plus":"Je participe";const expose=canJoin?renderExposeAction(event,event.id):"";const ownerActions=context==="mine"?`<button type="button" data-edit-event="${escapeHtml(event.id)}">Modifier</button><button type="button" class="secondary" data-close-event="${escapeHtml(event.id)}">Clôturer</button><button type="button" class="secondary" data-delete-event="${escapeHtml(event.id)}">Supprimer</button>`:"";return`<article class="event-card">${event.image ? `<img class="event-cover" src="${escapeHtml(event.image)}" alt="">` : ""}
+    function renderExposeAction(event,eventId){const exposeStatus=event.viewerExhibitorStatus||"";if(!event.lookingForExhibitors)return"";if(eventState.pendingActions[eventId]==="exhibitor")return `<button type="button" class="secondary" disabled aria-busy="true">Envoi en cours...</button>`;if(exposeStatus==="pending")return `<span class="pill is-pending">Demande exposant envoyée — en attente</span>`;if(exposeStatus==="accepted")return `<span class="pill">Exposant accepté</span>`;if(exposeStatus==="refused")return `<button type="button" class="secondary" data-expose-event="${escapeHtml(eventId)}">Redemander à exposer</button>`;return `<button type="button" class="secondary" data-expose-event="${escapeHtml(eventId)}">Je souhaite exposer</button>`}
+    function eventCard(event,context){const canExpose=context==="pro"&&token&&!event.isOwner;const expose=canExpose?renderExposeAction(event,event.id):"";const exhibitorPill=context==="public"?`<span class="pill">🏪 ${Number(event.exhibitorsCount||0)} exposant(s)</span>`:"";const ownerActions=context==="mine"?`<button type="button" data-edit-event="${escapeHtml(event.id)}">Modifier</button><button type="button" class="secondary" data-close-event="${escapeHtml(event.id)}">Clôturer</button><button type="button" class="secondary" data-delete-event="${escapeHtml(event.id)}">Supprimer</button>`:"";return`<article class="event-card">${event.image ? `<img class="event-cover" src="${escapeHtml(event.image)}" alt="">` : ""}
 
-<div class="event-meta"><span class="pill">${escapeHtml(event.category||"Événement")}</span><span class="pill">${escapeHtml(eventDateLabel(event))}</span><span class="pill">${Number(event.participantsCount||0)} participant(s)</span></div><h3>${escapeHtml(event.title||"Événement")}</h3><p>${escapeHtml(event.city||"")} ${event.department?`(${escapeHtml(event.department)})`:""}</p><p>${escapeHtml(event.description||"")}</p><p><strong>Organisateur :</strong> ${escapeHtml(event.ownerBusiness||event.ownerName||"ADN")}</p>${event.lookingForExhibitors?`<p class="form-note">Recherche exposants : ${escapeHtml((event.wantedCategories||[]).join(", "))}</p>`:""}<div class="event-actions"><button type="button" data-view-event="${escapeHtml(event.id)}">Voir</button>${canJoin?`<button type="button" class="secondary" data-join-event="${escapeHtml(event.id)}">${joinLabel}</button>${expose}`:""}${ownerActions}</div>${context==="mine"?renderEventRequests(event):""}</article>`}
+<div class="event-meta">
+
+    <span class="pill">
+        ${escapeHtml(event.category||"Événement")}
+    </span>
+
+    <span class="pill">
+        ${escapeHtml(eventDateLabel(event))}
+    </span>
+
+    ${exhibitorPill}
+
+</div><h3>${escapeHtml(event.title||"Événement")}</h3><p>${escapeHtml(event.city||"")} ${event.department?`(${escapeHtml(event.department)})`:""}</p><p>${escapeHtml(event.description||"")}</p><p><strong>Organisateur :</strong> ${escapeHtml(event.ownerBusiness||event.ownerName||"ADN")}</p>${event.lookingForExhibitors?`<p class="form-note">Recherche exposants : ${escapeHtml((event.wantedCategories||[]).join(", "))}</p>`:""}<div class="event-actions"><button type="button" data-view-event="${escapeHtml(event.id)}">Voir</button>${expose}${ownerActions}</div>${context==="mine"?renderEventRequests(event):""}</article>`}
     function renderEventRequests(event){return`<div class="participants-list">${(event.requests||[]).length?event.requests.map((request)=>`<div class="participant-chip"><span>${escapeHtml(request.businessName)}</span><span><button type="button" data-accept-event-request="${escapeHtml(event.id)}" data-request-id="${escapeHtml(request.id)}">Accepter</button> <button type="button" class="secondary" data-refuse-event-request="${escapeHtml(event.id)}" data-request-id="${escapeHtml(request.id)}">Refuser</button></span></div>`).join(""):"<p class='form-note'>Aucune demande exposant.</p>"}</div>`}
 function eventPayloadFromForm(){
     return{
@@ -2972,8 +2983,8 @@ function eventPayloadFromForm(){
     async function saveEvent(event){event.preventDefault();if(!profile?.artisan){toast("Enregistrez votre fiche avant de publier.");return}$("#eventSubmitBtn").textContent=$("#eventId").value?"Enregistrement...":"Création...";const payload=eventPayloadFromForm();const optimistic={...payload,id:payload.id||`tmp-event-${Date.now()}`,ownerId:profile.artisan.id,ownerBusiness:profile.pro?.businessName||profile.artisan.businessName,ownerName:profile.pro?.proName||profile.artisan.proName,participantsCount:0,participants:[],requests:[],isOwner:true,status:"published"};const previous=[...eventState.events];eventState.events=payload.id?eventState.events.map((item)=>item.id===payload.id?{...item,...optimistic}:item):[optimistic,...eventState.events];renderEvents();try{await api("saveEvent",{event:payload});toast(payload.id?"Événement modifié":"Événement créé");resetEventForm();await loadEvents()}catch(error){eventState.events=previous;renderEvents();toast(error.message)}finally{$("#eventSubmitBtn").textContent="Publier"}}
     function editEvent(eventId){const event=eventState.events.find((item)=>item.id===eventId);if(!event)return;$("#eventId").value=event.id;$("#eventTitle").value=event.title||"";$("#eventDescription").value=event.description||"";$("#eventCategory").value=event.category||"";$("#eventDate").value=event.date||"";$("#eventStartTime").value=event.startTime||"";$("#eventEndTime").value=event.endTime||"";$("#eventRegion").value=event.region||"";$("#eventDepartment").value=event.department||"";$("#eventCity").value=event.city||"";$("#eventAddress").value=event.address||"";$("#eventImage").value=event.image||"";$("#eventExternalLink").value=event.externalLink||"";$("#eventMaxParticipants").value=event.maxParticipants||"";$("#eventVisibility").value=event.visibility||"public";$("#eventLookingForExhibitors").checked=!!event.lookingForExhibitors;$("#eventWantedWrap").classList.toggle("hidden",!event.lookingForExhibitors);document.querySelectorAll("[name='eventWantedCategory']").forEach((input)=>input.checked=(event.wantedCategories||[]).includes(input.value));$("#eventSubmitBtn").textContent="Enregistrer";$("#eventCancelEditBtn").classList.remove("hidden");$("#eventForm").scrollIntoView({behavior:"smooth",block:"start"})}
     async function mutateEvent(action,eventId,message){const previous=[...eventState.events];if(action==="deleteEvent")eventState.events=eventState.events.filter((event)=>event.id!==eventId);if(action==="closeEvent")eventState.events=eventState.events.map((event)=>event.id===eventId?{...event,status:"closed"}:event);renderEvents();try{await api(action,{eventId});toast(message);await loadEvents()}catch(error){eventState.events=previous;renderEvents();toast(error.message)}}
-    async function toggleParticipation(eventId,mode="participant"){const previous=[...eventState.events];const target=eventState.events.find((event)=>event.id===eventId);if(!target)return;const wasActive=!!target.viewerStatus;const isExhibitor=mode==="exhibitor";if(isExhibitor&&wasActive&&target.viewerStatus==="pending")return;eventState.pendingActions[eventId]=mode;eventState.events=eventState.events.map((event)=>{if(event.id!==eventId)return event;if(event.viewerStatus){const dec=(event.viewerStatus==="participating"||event.viewerStatus==="accepted")?-1:0;return{...event,viewerStatus:"",participantsCount:Math.max(0,Number(event.participantsCount||0)+dec)}}if(isExhibitor)return{...event,viewerStatus:"pending"};return{...event,viewerStatus:"participating",participantsCount:Number(event.participantsCount||0)+1}});renderEvents();if(isExhibitor&&!wasActive)toast("Demande envoyée");try{await api("toggleEventParticipation",{eventId,mode});if(!isExhibitor)toast(wasActive?"Participation annulée":"Participation enregistrée");delete eventState.pendingActions[eventId];await loadEvents()}catch(error){eventState.events=previous;delete eventState.pendingActions[eventId];renderEvents();toast(error.message)}}
-    async function respondEventRequest(eventId,participantId,status){const previous=[...eventState.events];eventState.events=eventState.events.map((event)=>{if(event.id!==eventId)return event;const request=(event.requests||[]).find((item)=>item.id===participantId);const requests=(event.requests||[]).filter((item)=>item.id!==participantId);if(status!=="accepted"||!request)return{...event,requests};return{...event,requests,participants:[...(event.participants||[]),{id:participantId,artisanId:request.artisanId,businessName:request.businessName,status:"accepted"}],participantsCount:Number(event.participantsCount||0)+1}});renderEvents();markExhibitorNotificationsReadForEvent(eventId);toast(status==="accepted"?"Demande acceptée":"Demande refusée");try{await api("respondEventParticipation",{eventId,participantId,status});await loadEvents()}catch(error){eventState.events=previous;renderEvents();toast(error.message)}}
+    async function toggleParticipation(eventId,mode="exhibitor"){const previous=[...eventState.events];const target=eventState.events.find((event)=>event.id===eventId);if(!target)return;const exhibitorStatus=target.viewerExhibitorStatus||"";if(exhibitorStatus==="pending"||exhibitorStatus==="accepted")return;eventState.pendingActions[eventId]="exhibitor";eventState.events=eventState.events.map((event)=>event.id===eventId?{...event,viewerExhibitorStatus:"pending"}:event);renderEvents();toast("Demande exposant envoyée");try{await api("toggleEventParticipation",{eventId,mode:"exhibitor"});delete eventState.pendingActions[eventId];await loadEvents()}catch(error){eventState.events=previous;delete eventState.pendingActions[eventId];renderEvents();toast(error.message)}}
+    async function respondEventRequest(eventId,participantId,status){const previous=[...eventState.events];eventState.events=eventState.events.map((event)=>{if(event.id!==eventId)return event;const request=(event.requests||[]).find((item)=>item.id===participantId);const requests=(event.requests||[]).filter((item)=>item.id!==participantId);if(status!=="accepted"||!request)return{...event,requests};return{...event,requests,exhibitors:[...(event.exhibitors||[]),{id:participantId,artisanId:request.artisanId,businessName:request.businessName,status:"accepted"}],exhibitorsCount:Number(event.exhibitorsCount||0)+1}});renderEvents();markExhibitorNotificationsReadForEvent(eventId);toast(status==="accepted"?"Demande exposant acceptée":"Demande exposant refusée");try{await api("respondEventParticipation",{eventId,participantId,status});await loadEvents()}catch(error){eventState.events=previous;renderEvents();toast(error.message)}}
     function viewEvent(eventId){const event=eventState.events.find((item)=>item.id===eventId);if(!event)return;$("#dialogContent").innerHTML=`<div class="dialog-inner event-detail"><p class="eyebrow">${escapeHtml(event.category||"Événement ADN")}</p><h2>${escapeHtml(event.title)}</h2>
 
 ${event.image ? `<img class="event-cover" src="${escapeHtml(event.image)}" alt="">` : ""}
@@ -2997,41 +3008,46 @@ src="https://www.google.com/maps?q=${event.latitude},${event.longitude}&output=e
 }
 </div>
 
-<h3>Participants</h3>
+<h3>🏪 Exposants (${Number(event.exhibitorsCount||0)})</h3>
 
 <div class="participants-list">
-${(event.participants||[]).length
-    ? event.participants.map((participant)=>`
-        <button type="button"
-            class="participant-chip"
-            data-open-participant="${escapeHtml(participant.artisanId)}">
-            ${escapeHtml(participant.businessName)}
-        </button>
-      `).join("")
-    : "<p>Aucun participant pour le moment.</p>"
-}
+
+${(event.exhibitors||[]).length ?
+
+event.exhibitors.map((participant)=>`
+
+<button
+type="button"
+class="participant-chip"
+data-open-participant="${escapeHtml(participant.artisanId)}">
+
+${escapeHtml(participant.businessName)}
+
+</button>
+
+`).join("")
+
+:
+
+"<p>Aucun exposant.</p>"}
+
 </div>
 
-${token ? `
+${token && !event.isOwner ? `
 <div class="event-actions">
-    <button type="button"
-        data-join-event="${escapeHtml(event.id)}">
-        ${event.viewerStatus ? "Je ne participe plus" : "Je participe"}
-    </button>
-
     ${
-    event.lookingForExhibitors
-    ? renderExposeAction(event, event.id)
+    event.lookingForExhibitors ? renderExposeAction(event, event.id)
     : ""
     }
 </div>
 ` : ""}
 
 </div>`;$("#artisanDialog").showModal()}
-    function handleEventClick(event){const target=event.target.closest("[data-view-event],[data-join-event],[data-expose-event],[data-edit-event],[data-close-event],[data-delete-event],[data-accept-event-request],[data-refuse-event-request],[data-open-participant]");if(!target)return;if(target.dataset.viewEvent)viewEvent(target.dataset.viewEvent);if(target.dataset.joinEvent)toggleParticipation(target.dataset.joinEvent);if(target.dataset.exposeEvent)toggleParticipation(target.dataset.exposeEvent,"exhibitor");if(target.dataset.editEvent)editEvent(target.dataset.editEvent);if(target.dataset.closeEvent)mutateEvent("closeEvent",target.dataset.closeEvent,"Événement clôturé");if(target.dataset.deleteEvent)mutateEvent("deleteEvent",target.dataset.deleteEvent,"Événement supprimé");if(target.dataset.acceptEventRequest)respondEventRequest(target.dataset.acceptEventRequest,target.dataset.requestId,"accepted");if(target.dataset.refuseEventRequest)respondEventRequest(target.dataset.refuseEventRequest,target.dataset.requestId,"refused");if(target.dataset.openParticipant)openArtisan(target.dataset.openParticipant)}
+    function handleEventClick(event){const target=event.target.closest("[data-view-event],[data-expose-event],[data-edit-event],[data-close-event],[data-delete-event],[data-accept-event-request],[data-refuse-event-request],[data-open-participant]");if(!target)return;if(target.dataset.viewEvent)viewEvent(target.dataset.viewEvent);if(target.dataset.exposeEvent)toggleParticipation(target.dataset.exposeEvent,"exhibitor");if(target.dataset.editEvent)editEvent(target.dataset.editEvent);if(target.dataset.closeEvent)mutateEvent("closeEvent",target.dataset.closeEvent,"Événement clôturé");if(target.dataset.deleteEvent)mutateEvent("deleteEvent",target.dataset.deleteEvent,"Événement supprimé");if(target.dataset.acceptEventRequest)respondEventRequest(target.dataset.acceptEventRequest,target.dataset.requestId,"accepted");if(target.dataset.refuseEventRequest)respondEventRequest(target.dataset.refuseEventRequest,target.dataset.requestId,"refused");if(target.dataset.openParticipant)openArtisan(target.dataset.openParticipant)}
     function handleEventNotificationClick(event){const target=event.target.closest("[data-open-event-notif]");if(!target)return;openEventNotification(target.dataset.openEventNotif,target.dataset.notifId)}
-    function renderArtisanEvents(artisanId){const events=eventState.events.filter((event)=>(event.participants||[]).some((participant)=>participant.artisanId===artisanId)||event.ownerId===artisanId).slice(0,6);return`<h3>Prochains événements</h3><div class="product-grid">${events.length?events.map((event)=>`<article class="product-card">${event.image ? `<img class="event-cover" src="${escapeHtml(event.image)}" alt="">` : ""}<div><strong>${escapeHtml(event.title)}</strong><p>${escapeHtml(eventDateLabel(event))} · ${escapeHtml(event.city||"")}</p><button type="button" data-view-event="${escapeHtml(event.id)}">Voir l'événement</button></div></article>`).join(""):"<p>Aucun événement annoncé pour le moment.</p>"}</div>`}
-    function initEventsUi(){if(document.body.dataset.eventsReady)return;document.body.dataset.eventsReady="1";fillEventFilters();["eventSearch","eventRegionFilter","eventDepartmentFilter","eventCategoryFilter"].forEach((id)=>{const el=$("#"+id);if(!el)return;const applyFilters=()=>{syncEventFiltersFromUi();renderPublicEvents()};el.addEventListener("input",applyFilters);el.addEventListener("change",applyFilters)});document.querySelectorAll("[data-event-view]").forEach((button)=>button.addEventListener("click",()=>showEventView(button.dataset.eventView)));$("#eventsCalendarView")?.addEventListener("click",(event)=>{if(event.target.closest("[data-cal-prev]")){shiftCalendarMonth(-1);return}if(event.target.closest("[data-cal-next]")){shiftCalendarMonth(1);return}if(event.target.closest("[data-cal-today]")){eventState.calendarMonth=new Date();eventState.selectedDay=isoDateLocal(new Date());renderPublicEvents();return}if(event.target.closest("[data-clear-day]")){eventState.selectedDay=null;renderPublicEvents();return}const dayButton=event.target.closest("[data-event-date]");if(dayButton){selectCalendarDay(dayButton.dataset.eventDate)}});document.querySelectorAll("[data-event-pro-view]").forEach((button)=>button.addEventListener("click",()=>{eventState.proView=button.dataset.eventProView;document.querySelectorAll("[data-event-pro-view]").forEach((item)=>item.classList.toggle("active",item===button));$("#myEventList").classList.toggle("hidden",eventState.proView!=="mine");$("#allProEventList").classList.toggle("hidden",eventState.proView!=="all")}));$("#eventForm")?.addEventListener("submit",saveEvent);$("#eventCancelEditBtn")?.addEventListener("click",resetEventForm);$("#eventLookingForExhibitors")?.addEventListener("change",()=>$("#eventWantedWrap").classList.toggle("hidden",!$("#eventLookingForExhibitors").checked));["publicEventList","publicEventMap","eventsCalendarView","eventDayPanel","myEventList","allProEventList","dialogContent"].forEach((id)=>$("#"+id)?.addEventListener("click",handleEventClick));$("#eventNotifications")?.addEventListener("click",handleEventNotificationClick)}
+    function renderArtisanEvents(artisanId){const events=eventState.events.filter((event)=>(event.exhibitors||[]).some((exhibitor)=>exhibitor.artisanId===artisanId)||event.ownerId===artisanId).slice(0,6);return`<h3>Prochains événements</h3><div class="product-grid">${events.length?events.map((event)=>`<article class="product-card">${event.image ? `<img class="event-cover" src="${escapeHtml(event.image)}" alt="">` : ""}<div><strong>${escapeHtml(event.title)}</strong><p>${escapeHtml(eventDateLabel(event))} · ${escapeHtml(event.city||"")}</p><button type="button" data-view-event="${escapeHtml(event.id)}">Voir l'événement</button></div></article>`).join(""):"<p>Aucun événement annoncé pour le moment.</p>"}</div>`}
+    function setProEventView(view){eventState.proView=view==="all"?"all":"mine";document.querySelectorAll("[data-event-pro-view]").forEach((button)=>button.classList.toggle("active",button.dataset.eventProView===eventState.proView));$("#myEventList")?.classList.toggle("hidden",eventState.proView!=="mine");$("#allProEventList")?.classList.toggle("hidden",eventState.proView!=="all");$("#eventForm")?.classList.toggle("hidden",eventState.proView!=="mine");$("#eventNotifications")?.classList.toggle("hidden",eventState.proView!=="mine"||!exhibitorNotifications().length);if($("#eventPanelTitle"))$("#eventPanelTitle").textContent=eventState.proView==="all"?"Tous les événements":"Mes événements"}
+    function initEventsUi(){if(document.body.dataset.eventsReady)return;document.body.dataset.eventsReady="1";fillEventFilters();["eventSearch","eventRegionFilter","eventDepartmentFilter","eventCategoryFilter"].forEach((id)=>{const el=$("#"+id);if(!el)return;const applyFilters=()=>{syncEventFiltersFromUi();renderPublicEvents()};el.addEventListener("input",applyFilters);el.addEventListener("change",applyFilters)});document.querySelectorAll("[data-event-view]").forEach((button)=>button.addEventListener("click",()=>showEventView(button.dataset.eventView)));$("#eventsCalendarView")?.addEventListener("click",(event)=>{if(event.target.closest("[data-cal-prev]")){shiftCalendarMonth(-1);return}if(event.target.closest("[data-cal-next]")){shiftCalendarMonth(1);return}if(event.target.closest("[data-cal-today]")){eventState.calendarMonth=new Date();eventState.selectedDay=isoDateLocal(new Date());renderPublicEvents();return}if(event.target.closest("[data-clear-day]")){eventState.selectedDay=null;renderPublicEvents();return}const dayButton=event.target.closest("[data-event-date]");if(dayButton){selectCalendarDay(dayButton.dataset.eventDate)}});document.querySelectorAll("[data-event-pro-view]").forEach((button)=>button.addEventListener("click",()=>setProEventView(button.dataset.eventProView)));$("#eventForm")?.addEventListener("submit",saveEvent);$("#eventCancelEditBtn")?.addEventListener("click",resetEventForm);$("#eventLookingForExhibitors")?.addEventListener("change",()=>$("#eventWantedWrap").classList.toggle("hidden",!$("#eventLookingForExhibitors").checked));["publicEventList","publicEventMap","eventsCalendarView","eventDayPanel","myEventList","allProEventList","dialogContent"].forEach((id)=>$("#"+id)?.addEventListener("click",handleEventClick));$("#eventNotifications")?.addEventListener("click",handleEventNotificationClick)}
 
     function initMode(){
       document.body.classList.toggle("is-pro-mode",isProMode);
@@ -3054,9 +3070,7 @@ ${token ? `
     const requested = page || "home";
 
     const target =
-        requested==="directory" && !state.lead
-            ? "home"
-            : requested;
+        requested==="directory" && !state.lead ? "home" : requested;
 // ===== Texte sous ADN =====
 
 if(target==="home"){
@@ -3299,9 +3313,7 @@ $("#nearMeBtn").addEventListener("click", findNearbyArtisans);
   $("#regionFilter").value = department?.region || "";
 
   $("#territoryLabel").textContent =
-    department
-      ? `${department.name} - ${department.region}`
-      : "Tous les territoires";
+    department ? `${department.name} - ${department.region}` : "Tous les territoires";
 
   $("#brandDepartment").textContent =
     department?.name || "Tous les territoires";
@@ -3410,9 +3422,7 @@ if(profile?.artisan?.id){
   if(badge){
     badge.textContent = pendingCount;
     badge.style.display =
-      pendingCount > 0
-        ? "inline-flex"
-        : "none";
+      pendingCount > 0 ? "inline-flex" : "none";
   }
 
   renderPartnerOptions();
@@ -3886,7 +3896,7 @@ if(toggleFiltersBtn && categoryCards){
 
     toggleFiltersBtn.textContent =
       categoryCards.classList.contains("show")
-        ? "✖ Fermer les filtres"
+         "? Fermer les filtres"
         : "🔎 Filtres";
   });
 }
@@ -3902,3 +3912,5 @@ document.getElementById("discordBtn")
 </script>
 </body>
 </html>
+
+
