@@ -3901,13 +3901,13 @@ window.renderDepartmentMap();
 const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
 const categoryCards = document.getElementById("categoryCards");
 
-if(toggleFiltersBtn && categoryCards){
-  toggleFiltersBtn.addEventListener("click",()=>{
+if (toggleFiltersBtn && categoryCards) {
+  toggleFiltersBtn.addEventListener("click", () => {
     categoryCards.classList.toggle("show");
 
     toggleFiltersBtn.textContent =
       categoryCards.classList.contains("show")
-         "? Fermer les filtres"
+        ? "Fermer les filtres"
         : "🔎 Filtres";
   });
 }
