@@ -922,7 +922,7 @@ opacity:.9;
 }
 .dashboard-grid{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:.85rem;
 }
 .dashboard-card{
@@ -1067,7 +1067,7 @@ body.is-pro-mode #logoutBtn{
 /* LES CARTES */
 .dashboard-grid{
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:10px;
 
@@ -1487,7 +1487,7 @@ font-weight:700;
 }
 .dashboard-grid{
   display:grid!important;
-  grid-template-columns:repeat(3,minmax(150px,1fr))!important;
+  grid-template-columns:repeat(4,minmax(150px,1fr))!important;
   gap:clamp(.85rem,2vw,1.25rem)!important;
   justify-content:center!important;
 }
@@ -1560,7 +1560,7 @@ font-weight:700;
 }
 @media(max-width:720px){
   .dashboard-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
     gap:.65rem!important;
   }
   .dashboard-card{
@@ -2165,6 +2165,19 @@ Agenda
 
                     <h3>Nos valeurs</h3>
                     <span>Comprendre la mission ADN DOU PAÏS.</span>
+
+                </div>
+
+            </button>
+
+            <button type="button" class="dashboard-card" onclick="showPublicPage('events')">
+
+                <img src="AG.png" alt="Agenda">
+
+                <div class="dashboard-overlay">
+
+                    <h3>Agenda</h3>
+                    <span>Consultez les événements du réseau.</span>
 
                 </div>
 
