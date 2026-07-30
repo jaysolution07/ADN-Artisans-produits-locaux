@@ -3094,7 +3094,7 @@ ${token && !event.isOwner ? `
     const requested = page || "home";
 
     const target =
-        requested==="directory" && !state.lead ? "home" : requested;
+        (requested==="directory" || requested==="events") && !state.lead ? "home" : requested;
 // ===== Texte sous ADN =====
 
 if(target==="home"){
@@ -3178,10 +3178,12 @@ else if(target==="events"){
 
     }
 
-    if(requested==="directory" && !state.lead){
+    if((requested==="directory" || requested==="events") && !state.lead){
 
         $("#accessNote").textContent =
-        "Connectez-vous pour accéder à l'annuaire.";
+        requested==="events"
+          ? "Connectez-vous pour accéder à l'agenda."
+          : "Connectez-vous pour accéder à l'annuaire.";
 
     }
 
@@ -3936,5 +3938,3 @@ document.getElementById("discordBtn")
 </script>
 </body>
 </html>
-
-
